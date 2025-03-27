@@ -1,0 +1,505 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      /* for the menu part*/
+      .presets {
+        /*display:none;*/
+      }
+      #sqsp-logo-id {
+        filter: invert(1);
+      }
+      body {
+        height: 100vh;
+        overflow: hidden;
+      }
+      #enter_div {
+        margin-left: 0;
+        position: fixed;
+      }
+      #enter_div {
+        top: 12vw;
+      }
+      footer {
+        position: fixed !important;
+        bottom: 50px !important;
+      }
+      body,
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .name-section {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.4s ease;
+        overflow: hidden;
+        background: black;
+      }
+
+      .name-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      .name-section video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      #section1 {
+        background-color: black;
+      }
+      #section2 {
+        background-color: black;
+      }
+      #section3 {
+        background-color: black;
+      }
+      #section4 {
+        background-color: black;
+      }
+
+      .section-title,
+      .menu-title-content {
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+      }
+
+      #menu-content span {
+        color: white;
+        font-size: 10vw;
+        font-family: Clarkson_light !important;
+        letter-spacing: -0.6vw;
+        line-height: 12.3vw;
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu-title-content a {
+        font-family: "Clarkson_med" !important;
+        position: relative;
+        font-size: 18px;
+
+        padding: 10px 0;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        text-decoration: underline;
+        /* text-underline-offset: 5px;
+    text-decoration-thickness: 2.8px;*/
+      }
+      #enter_div {
+        top: 12vw;
+      }
+
+      .dots {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        right: 61px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        background: rgba(250, 250, 250, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+
+      .dot.active {
+        background: rgba(250, 250, 250, 1);
+      }
+      .underline-l {
+        width: 7.2vw;
+        height: 0.85vw;
+        margin: 0vw 0.88vw 2.6vw 0.7vw;
+        background-color: white;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+      }
+      #loading-animation-section {
+        background-color: white;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999999999;
+      }
+      #name-menu-id {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        .fixed-to-top,
+        .center-inside {
+          /*height: 100vh;*/
+        }
+        .section-title {
+          top: 45%;
+        }
+        #menu-content {
+          height: 100vh;
+          width: 100vw;
+          top: 0;
+          position: fixed;
+          left: 0;
+          transform: none;
+        }
+        #present-logo img {
+          width: 30vw;
+          position: absolute;
+          text-align: center;
+          top: 43%;
+          z-index: 9999;
+        }
+        .the-logo-animation-div-s {
+          /* transform:translate(0%, -3%) scale(1.2);*/
+          /*  transform:scale(1.2);
+          transform-origin: center;*/
+        }
+        #loading-animation-section {
+          /*   transform:translate(0, -3%) scale(1.2);
+          transform-origin: center;*/
+        }
+        .section-title {
+          /*transform: translate(-50%, -53%) scale(1.2);*/
+          /*  transform: translate(-50%, -50%) scale(1.2);
+          transform-origin: center;*/
+          position: absolute;
+        }
+        .logo-co-l,
+        .logoRightText,
+        .logoRightText {
+          position: fixed;
+          /* top:50vh;*/
+          top: 45%;
+        }
+
+        .menu-title-content a {
+          /* top: 57vh; */
+          text-decoration-thickness: 1.5px;
+          font-size: 16px;
+        }
+        .dots {
+          position: absolute;
+          transform: translateY(-50%) scale(0.5);
+          right: 20px;
+          top: 45%;
+        }
+      }
+      #menu-center-cta {
+        width: 100%;
+        text-align: center;
+      }
+      .menu-title-content a {
+        /* top: 57vh; */
+        text-decoration-thickness: 0;
+        text-decoration: 0;
+      }
+      #enter_div {
+        margin-left: 0;
+      }
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        #enter_div {
+          top: 57vh;
+        }
+      }
+      .menu-title-content a {
+        font-family: "Clarkson_med" !important;
+        position: relative;
+        font-size: 18px;
+        padding: 10px 0;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- loading animation section -->
+
+    <!-- name menu section -->
+    <section id="name-menu-id">
+      <div class="menu-title-content" id="menu-content">
+        <div class="section-title">
+          <span class="menu-title">Co</span>
+          <div class="underline-l"></div>
+          <span id="title" class="menu-title">Jeff Koons</span>
+        </div>
+        <div
+          class="flex cta-s-div hover-underline-animation white-text"
+          id="enter_div"
+        >
+          <a class="white-text" id="enter" href="#">Enter</a>
+          <!---     <div id="menu-center-cta">
+   </div>-->
+        </div>
+        <!---<a href="#" id="enter">Enter</a>-->
+      </div>
+
+      <div class="name-section" id="section1">
+        <video autoplay muted playsinline loop>
+          <source
+            src="https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/67001e3dc414c63bf5c3fcb4/1728060991267/Co_LoadingAnimation_JK1.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="name-section" id="section2">
+        <video autoplay muted playsinline loop>
+          <source
+            src="https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66fc598e6fce2809e7cf2d87/1727814031127/Co_RR_LoadingSequence_1.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="name-section" id="section3">
+        <video autoplay muted playsinline loop>
+          <source
+            src="https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66fc5991de470a2d0ebd8fc0/1727814033796/Co_Magnum_LoadingSequence.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="name-section" id="section4">
+        <video autoplay muted playsinline loop>
+          <source
+            src="https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66fc598c9f53bf1ab64851f9/1727814028678/Co_Bjork_LoadingSequence.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="dots">
+        <span class="dot active" data-section="1"></span>
+        <span class="dot" data-section="2"></span>
+        <span class="dot" data-section="3"></span>
+        <span class="dot" data-section="4"></span>
+      </div>
+    </section>
+
+    <script>
+      const words = document.querySelectorAll(".col-names-span");
+
+      words.forEach((word, index) => {
+        word.style.animationDelay = `${index * 0.25 + 5.2}s`;
+      });
+
+      const loadingAnimationSection = document.getElementById(
+        "loading-animation-section"
+      );
+
+      let isScrollEnabled = false;
+
+      const hasVisited = sessionStorage.getItem("hasVisited");
+
+      if (!hasVisited) {
+        sessionStorage.setItem("hasVisited", "true");
+        loadingAnimationSection.style.display = "block";
+
+        setTimeout(() => {
+          loadingAnimationSection.style.transition = "opacity 0.1s ease-out";
+          loadingAnimationSection.style.opacity = "0";
+
+          loadingAnimationSection.addEventListener("transitionend", () => {
+            loadingAnimationSection.style.display = "none";
+            enableWheelListening();
+          });
+        }, 7000);
+      } else {
+        loadingAnimationSection.style.display = "none";
+        enableWheelListening();
+      }
+
+      function enableWheelListening() {
+        isScrollEnabled = true;
+        console.log("Scroll is now enabled.");
+      }
+      function wheelHandler(event) {
+        if (!isScrollEnabled) {
+          event.preventDefault();
+          return;
+        }
+
+        if (scrollLocked || scrollTriggered) return;
+
+        totalScroll += Math.abs(event.deltaY);
+
+        if (totalScroll >= threshold) {
+          const direction = event.deltaY > 0 ? 1 : -1;
+          scrollToSection(direction);
+          totalScroll = 0;
+        }
+      }
+
+      window.addEventListener("wheel", wheelHandler, { passive: false });
+
+      // name-menu section code
+
+      let currentSection = 0;
+      const totalSections = 4;
+      const sections = document.querySelectorAll(".name-section");
+      const dots = document.querySelectorAll(".dot");
+      const titleElement = document.getElementById("title");
+      const enterElement = document.getElementById("enter");
+      const sectionTitles = ["Jeff Koons", "Rick Rubin", "Magnum", "Björk"];
+      const enterLinks = ["/jeffkoons", "/rickrubin", "/magnum", "/bjork"];
+
+      let scrollLocked = false;
+      let scrollTriggered = false;
+      const scrollLockDuration = 500;
+
+      let totalScroll = 0;
+      const viewportHeight = window.innerHeight;
+      const threshold = viewportHeight * 0.5;
+
+      function updateContent(index) {
+        titleElement.textContent = sectionTitles[index];
+        enterElement.setAttribute("href", enterLinks[index]);
+      }
+
+      function updateSection(index) {
+        sections.forEach((section, i) => {
+          section.style.transform = `translateY(${(i - index) * 100}vh)`;
+        });
+
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+
+        updateContent(index);
+      }
+
+      function scrollToSection(direction) {
+        if (scrollLocked || scrollTriggered) {
+          console.log(
+            "Scroll is locked or already triggered. Ignoring additional scrolls."
+          );
+          return;
+        }
+
+        scrollTriggered = true;
+        scrollLocked = true;
+
+        currentSection =
+          (currentSection + direction + totalSections) % totalSections;
+        updateSection(currentSection);
+
+        setTimeout(() => {
+          scrollLocked = false;
+          scrollTriggered = false;
+        }, scrollLockDuration);
+      }
+
+      window.addEventListener("keydown", (event) => {
+        if (isScrollEnabled && !scrollLocked && !scrollTriggered) {
+          const direction =
+            event.key === "ArrowDown" ? 1 : event.key === "ArrowUp" ? -1 : null;
+          if (direction !== null) {
+            scrollToSection(direction);
+          }
+        }
+      });
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          if (!scrollLocked && !scrollTriggered) {
+            scrollToSection(index - currentSection);
+          }
+        });
+      });
+
+      let touchStartY = 0;
+      let touchEndY = 0;
+      const swipeThreshold = 50;
+
+      window.addEventListener(
+        "touchstart",
+        (event) => {
+          touchStartY = event.changedTouches[0].screenY;
+        },
+        { passive: false }
+      );
+
+      window.addEventListener(
+        "touchend",
+        (event) => {
+          touchEndY = event.changedTouches[0].screenY;
+          handleSwipe();
+        },
+        { passive: false }
+      );
+
+      function handleSwipe() {
+        const touchDistance = Math.abs(touchStartY - touchEndY);
+        if (isScrollEnabled && touchDistance > swipeThreshold) {
+          const direction = touchStartY > touchEndY ? 1 : -1;
+          scrollToSection(direction);
+        }
+      }
+
+      function getSectionFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        const section = params.get("section");
+        return section ? parseInt(section, 10) : 0;
+      }
+
+      function initializeSection() {
+        const sectionIndex = getSectionFromURL(); // 获取要展示的 section
+        updateSection(sectionIndex);
+      }
+
+      window.addEventListener("DOMContentLoaded", initializeSection);
+    </script>
+  </body>
+</html>

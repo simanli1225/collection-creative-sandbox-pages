@@ -1,0 +1,72 @@
+@import url("../../styles/style-guide/index.less");
+
+/* Styles for the gallery section */
+.gallerySection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // Two-column grid layout
+  padding: @one-grid; // Padding around the section
+  //   background-color: #202020; // Dark background color
+  //   color: white; // Default text color
+  padding: 4vw; // Padding around the section
+  grid-gap: 97px 80px;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .gallerySection {
+    padding: 4vw 4vw 22vw 4vw;
+  }
+}
+
+/* Styles for a single gallery item */
+.galleryItem {
+  //   display: flex;
+  //   flex-direction: column; // Stack content vertically
+  //   align-items: center; // Center-align items horizontally
+  //   text-align: left; // Center-align text
+  //   background: #333; // Darker background for each item
+  border-radius: 10px; // Rounded corners
+  overflow: hidden; // Hide overflow content
+  color: white;
+}
+.galleryItem h3,
+.galleryItem p {
+  text-align: left;
+  color: white;
+  max-width: 94%;
+}
+.galleryItem h3 {
+  font-family: Clarkson_serif_regular;
+  font-size: calc((var(--title-font-size-value) - 1) * 1.2vw + 14px);
+}
+.galleryItem p {
+  margin-top: 2%;
+  font-size: calc((var(--body-font-size-value) - 1) * 1.2vw + 14px);
+  letter-spacing: normal;
+}
+/* Styles for the image */
+.image {
+  width: 100%; // Full width of the container
+  height: auto; // Maintain aspect ratio
+  border-radius: 10px; // Rounded corners
+  margin-bottom: 6%;
+}
+
+/* Styles for the title */
+.title {
+  font-size: 1.5rem; // Font size for the title
+  font-weight: bold; // Bold font weight
+  margin-bottom: 10px; // Space below the title
+}
+
+/* Styles for the description */
+.description {
+  font-size: 1rem; // Font size for the description
+  line-height: 1.5; // Line height for readability
+  color: #ccc; // Slightly lighter text color
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .gallerySection {
+    grid-template-columns: 1fr; // Single-column layout for small screens
+  }
+}

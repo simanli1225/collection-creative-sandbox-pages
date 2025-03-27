@@ -1,0 +1,42 @@
+@import url("../../styles/style-guide/index.less");
+.videoContainer {
+  width: 77.8%;
+  // margin: 1 * @one-grid @one-grid;
+  margin: .grid-column(1, 0) [] 0; // 使用 3 列宽度，无间距
+}
+
+.titleText h1 {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .titleText {
+    width: 100%;
+  }
+  .titleText h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  .videoContainer {
+    width: 100%;
+    margin-bottom: 12vw; // 使用 3 列宽度，无间距
+  }
+}
+.videoContainer video {
+  width: 100%;
+}
+.underlineCTA {
+  //   padding-bottom: 10%;
+}
+.section {
+  //   padding-bottom: 10%;
+}
+.section :global(.underlineCTA) {
+  //   margin-top: 30px; // Add margin above UnderlineCTA
+  padding-bottom: 10px; // Add padding below UnderlineCTA
+}

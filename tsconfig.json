@@ -1,0 +1,17 @@
+{
+  "extends": "@sqs/febs-ts-config",
+  "include": [
+    "src",
+    ".eslintrc.js"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "allowJs": true,
+    "preserveSymlinks": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [ "src/*" ],
+    }
+  }
+}

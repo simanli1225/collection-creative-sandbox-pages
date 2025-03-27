@@ -1,0 +1,183 @@
+@import url("../../styles/style-guide/index.less");
+.header {
+  position: fixed;
+  // top: 6.1rem; /* 61px */
+  top: var(--site-margin);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  // color: #fff; /* Text color */
+  // width: calc(100% - 12.2rem); /* 100% 宽度减去两侧的 padding (2 * 61px) */
+  width: calc(100% - 2 * var(--site-margin));
+  box-sizing: border-box; /* 包括 padding 在宽高计算中 */
+  z-index: 100;
+  // left: 6.1rem;
+  left: var(--site-margin);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    top: 3rem;
+  }
+}
+
+.preTopLeft {
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+
+  > .logoText,
+  .pageText {
+    height: 1.8rem;
+    font-size: 3rem; /* 30px */
+    font-family: Clarkson_light; /* Use custom font */
+    color: white;
+  }
+
+  > .logoDash {
+    width: 2.24rem; /* 22.4px */
+    height: 0.25rem; /* 2.5px */
+    background-color: white; /* Dash color */
+  }
+}
+.header.light .preTopLeft {
+  > .logoText,
+  .pageText {
+    color: black;
+  }
+  > .logoDash {
+    background-color: black; /* Dash color */
+  }
+}
+.header.dark .preTopLeft {
+  > .logoText,
+  .pageText {
+    color: white;
+  }
+  > .logoDash {
+    background-color: white; /* Dash color */
+  }
+}
+
+.preTopRight {
+  color: white;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 5px */
+  cursor: pointer;
+
+  div {
+    width: 3rem; /* 30px */
+    height: 0.3rem; /* 3px */
+    background-color: white; /* Bar color */
+  }
+}
+.header.light .hamburger {
+  div {
+    // background-color: black; /* Bar color */
+    background-color: black; /* Bar color */
+  }
+}
+.header.dark .hamburger {
+  div {
+    background-color: white; /* Bar color */
+  }
+}
+
+.header.dark {
+}
+.popUpMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  //  transform: translateX(-100%);
+  transform: translateX(100%);
+  //  -webkit-transform: translateX(-100%);
+  -webkit-transform: translateX(100%);
+  z-index: 9999999999;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  transition: transform 0.3s ease-in-out; /* Smooth slide animation */
+}
+
+.slideIn {
+  transform: translateX(0); /* Fully visible */
+}
+
+.menuContent {
+  padding: 2rem; /* 20px */
+  padding: 10vw 3vw;
+  font-family: Clarkson_light;
+
+  .menuItem {
+    margin: 1rem 0; /* 10px */
+    .dashMenu {
+      height: 0.85vw;
+      width: 7.18vw;
+      background-color: white;
+    }
+    .menuLink {
+      text-decoration: none;
+
+      .menuName,
+      span {
+        color: white;
+        // color: #333;
+        align-items: flex-end;
+        // font-size: calc(6vw + 6vh);
+        font-size: 10vw;
+        line-height: 100%;
+        letter-spacing: -0.4vw;
+        white-space: nowrap;
+      }
+      .menuName {
+        order: 1; /* Ensure .menuName appears first */
+      }
+      .menuName:hover + .menuDivSS {
+        opacity: 1; /* Make visible */
+      }
+    }
+  }
+}
+
+.menuDivSS {
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  text-transform: none !important;
+  padding-left: 5%;
+}
+.menuDivSS > a {
+  text-transform: none !important;
+}
+.menuLink {
+  display: flex;
+}
+
+.menuLink a {
+  color: white;
+  display: flex;
+}
+
+.dim {
+  opacity: 50%;
+}
+.dim:hover {
+  opacity: 1;
+}
+
+.menuName {
+  text-transform: none;
+  padding: 0;
+  margin: 0;
+}

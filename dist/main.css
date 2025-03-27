@@ -1,0 +1,674 @@
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+.cta {
+  color: black;
+}
+.cta--light {
+  color: white;
+}
+.cta--has-arrow span[data-arrow="true"] {
+  display: inline-block;
+  margin-left: 8px;
+  margin-bottom: -0.2em;
+}
+.cta--primary,
+.cta--secondary {
+  position: relative;
+}
+.cta--primary::after,
+.cta--secondary::after,
+.cta--primary::before,
+.cta--secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: difference;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cta--primary::after,
+  .cta--secondary::after,
+  .cta--primary::before,
+  .cta--secondary::before {
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+.cta--primary:hover::after,
+.cta--secondary:hover::after,
+.cta--primary:hover::before,
+.cta--secondary:hover::before {
+  transform: scaleX(1);
+}
+.cta--primary {
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  display: inline-block;
+  background-color: transparent;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  padding: 24px 32px;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+}
+html[lang^="ja"] .cta--primary {
+  font-family: "Noto Sans JP";
+}
+.cta--primary::before {
+  content: none;
+}
+.cta--primary::after {
+  opacity: 0.9;
+}
+.cta--primary.index-cta--light-5Gov0 {
+  background-color: white;
+  color: black;
+}
+.cta--secondary {
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  display: inline-block;
+  background-color: transparent;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  padding: 24px 32px;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+html[lang^="ja"] .cta--secondary {
+  font-family: "Noto Sans JP";
+}
+.cta--secondary::before {
+  mix-blend-mode: unset;
+  background-color: white;
+  z-index: -1;
+}
+.cta--secondary span[data-arrow="true"] {
+  margin-left: 17px;
+}
+.cta--secondary.index-cta--light-5Gov0 {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+.cta--secondary.index-cta--light-5Gov0::before {
+  background-color: black;
+}
+.cta--tertiary {
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  background-color: transparent;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  padding: 24px 32px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+}
+html[lang^="ja"] .cta--tertiary {
+  font-family: "Noto Sans JP";
+}
+.cta--tertiary span[data-arrow="true"] {
+  margin-left: 8px;
+  overflow: hidden;
+  width: 1em;
+  white-space: nowrap;
+  text-indent: -2em;
+}
+.cta--tertiary span[data-arrow="true"]::before,
+.cta--tertiary span[data-arrow="true"]::after {
+  content: "→";
+  width: 1em;
+  position: relative;
+  display: inline-block;
+  transform: translateX(-1.8em);
+  text-indent: 0;
+}
+.cta--tertiary span[data-arrow="true"]:after {
+  margin-left: 2em;
+}
+.cta--tertiary.index-cta--underline-hover-9gMkE {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+  background-size: 51% 1px, 50% 1px;
+  background-position: 0% 100%, 100% 100%;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .cta--tertiary {
+    animation: index-ctaUnderlineSlideOut-6WYYL 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+  .cta--tertiary:hover {
+    animation: index-ctaUnderlineSlideIn-ronVW 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+  .cta--tertiary:hover span[data-arrow="true"]::before,
+  .cta--tertiary:hover span[data-arrow="true"]::after {
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: 0.15s;
+    transform: translateX(2.025em);
+  }
+}
+.cta--inline {
+  display: inline-block;
+  background-color: transparent;
+  -webkit-appearance: none;
+  cursor: pointer;
+  display: inline;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+}
+.cta--has-inline-underline {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+  background-size: 51% 1px, 50% 1px;
+  background-position: 0% 100%, 100% 100%;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .cta--has-inline-underline.index-cta--underline-hover-9gMkE {
+    animation: index-ctaUnderlineSlideIn-ronVW 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+  .cta--has-inline-underline.index-cta--underline-hover-9gMkE:hover {
+    animation: index-ctaUnderlineSlideOut-6WYYL 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+}
+@keyframes index-ctaUnderlineSlideIn-ronVW {
+  from {
+    background-position: -200% 100%, -100% 100%;
+  }
+  to {
+    background-position: 0% 100%, 100% 100%;
+  }
+}
+@keyframes index-ctaUnderlineSlideOut-6WYYL {
+  from {
+    background-position: 0% 100%, 100% 100%;
+  }
+  to {
+    background-position: 210% 100%, 300% 100%;
+  }
+}
+.text {
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+html[lang^="ja"] .text {
+  font-family: "Noto Sans JP";
+}
+.text--display {
+  letter-spacing: -0.06em;
+  line-height: 0.93em;
+  font-weight: 300;
+  font-size: calc(-2.8181818181818183rem + 29.09090909090909vw);
+  font-size: clamp(48px, -2.8181818181818183rem + 29.09090909090909vw, 64px);
+}
+@media (min-width: 375px) {
+  .text--display {
+    font-size: calc(2.9837398373983737rem + 4.336043360433604vw);
+    font-size: clamp(64px, 2.9837398373983737rem + 4.336043360433604vw, 80px);
+  }
+}
+@media (min-width: 744px) {
+  .text--display {
+    font-size: calc(-0.0543478260869561rem + 10.869565217391305vw);
+    font-size: clamp(80px, -0.0543478260869561rem + 10.869565217391305vw, 110px);
+  }
+}
+@media (min-width: 1020px) {
+  .text--display {
+    font-size: calc(-0.48076923076923084rem + 11.538461538461538vw);
+    font-size: clamp(110px, -0.48076923076923084rem + 11.538461538461538vw, 140px);
+  }
+}
+@media (min-width: 1280px) {
+  .text--display {
+    font-size: calc(-1.25rem + 12.5vw);
+    font-size: clamp(140px, -1.25rem + 12.5vw, 160px);
+  }
+}
+@media (min-width: 1440px) {
+  .text--display {
+    font-size: calc(0.625rem + 10.416666666666668vw);
+    font-size: clamp(160px, 0.625rem + 10.416666666666668vw, 210px);
+  }
+}
+.text--title1 {
+  letter-spacing: -0.05em;
+  line-height: 0.93em;
+  font-weight: 300;
+  font-size: calc(2.2727272727272725rem + 3.6363636363636362vw);
+  font-size: clamp(48px, 2.2727272727272725rem + 3.6363636363636362vw, 50px);
+}
+@media (min-width: 375px) {
+  .text--title1 {
+    font-size: calc(2.2357723577235773rem + 3.7940379403794036vw);
+    font-size: clamp(50px, 2.2357723577235773rem + 3.7940379403794036vw, 64px);
+  }
+}
+@media (min-width: 744px) {
+  .text--title1 {
+    font-size: calc(-0.38043478260869534rem + 9.420289855072465vw);
+    font-size: clamp(64px, -0.38043478260869534rem + 9.420289855072465vw, 90px);
+  }
+}
+@media (min-width: 1020px) {
+  .text--title1 {
+    font-size: calc(3.173076923076923rem + 3.8461538461538463vw);
+    font-size: clamp(90px, 3.173076923076923rem + 3.8461538461538463vw, 100px);
+  }
+}
+@media (min-width: 1280px) {
+  .text--title1 {
+    font-size: 100px;
+  }
+}
+@media (min-width: 1440px) {
+  .text--title1 {
+    font-size: calc(2.5rem + 4.166666666666666vw);
+    font-size: clamp(100px, 2.5rem + 4.166666666666666vw, 120px);
+  }
+}
+.text--title2 {
+  letter-spacing: -0.05em;
+  line-height: 0.93em;
+  font-weight: 300;
+  font-size: calc(2.0227272727272725rem + 3.6363636363636362vw);
+  font-size: clamp(44px, 2.0227272727272725rem + 3.6363636363636362vw, 46px);
+}
+@media (min-width: 375px) {
+  .text--title2 {
+    font-size: calc(2.49390243902439rem + 1.6260162601626018vw);
+    font-size: clamp(46px, 2.49390243902439rem + 1.6260162601626018vw, 52px);
+  }
+}
+@media (min-width: 744px) {
+  .text--title2 {
+    font-size: calc(2.5760869565217392rem + 1.4492753623188406vw);
+    font-size: clamp(52px, 2.5760869565217392rem + 1.4492753623188406vw, 56px);
+  }
+}
+@media (min-width: 1020px) {
+  .text--title2 {
+    font-size: calc(0.06730769230769207rem + 5.384615384615385vw);
+    font-size: clamp(56px, 0.06730769230769207rem + 5.384615384615385vw, 70px);
+  }
+}
+@media (min-width: 1280px) {
+  .text--title2 {
+    font-size: calc(-0.625rem + 6.25vw);
+    font-size: clamp(70px, -0.625rem + 6.25vw, 80px);
+  }
+}
+@media (min-width: 1440px) {
+  .text--title2 {
+    font-size: calc(0.125rem + 5.416666666666667vw);
+    font-size: clamp(80px, 0.125rem + 5.416666666666667vw, 106px);
+  }
+}
+.text--title3 {
+  letter-spacing: -0.04em;
+  line-height: 1em;
+  font-size: calc(-0.05681818181818166rem + 10.909090909090908vw);
+  font-size: clamp(34px, -0.05681818181818166rem + 10.909090909090908vw, 40px);
+}
+@media (min-width: 375px) {
+  .text--title3 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1020px) {
+  .text--title3 {
+    font-size: calc(0.048076923076922906rem + 3.8461538461538463vw);
+    font-size: clamp(40px, 0.048076923076922906rem + 3.8461538461538463vw, 50px);
+  }
+}
+@media (min-width: 1280px) {
+  .text--title3 {
+    font-size: calc(0.125rem + 3.75vw);
+    font-size: clamp(50px, 0.125rem + 3.75vw, 56px);
+  }
+}
+@media (min-width: 1440px) {
+  .text--title3 {
+    font-size: calc(0.125rem + 3.75vw);
+    font-size: clamp(56px, 0.125rem + 3.75vw, 74px);
+  }
+}
+.text--subtitle1 {
+  letter-spacing: -0.04em;
+  font-size: 22px;
+  line-height: 1em;
+}
+@media (min-width: 375px) {
+  .text--subtitle1 {
+    font-size: 26px;
+  }
+}
+@media (min-width: 1020px) {
+  .text--subtitle1 {
+    font-size: 32px;
+  }
+}
+@media (min-width: 1280px) {
+  .text--subtitle1 {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1440px) {
+  .text--subtitle1 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1920px) {
+  .text--subtitle1 {
+    font-size: 50px;
+  }
+}
+.text--subtitle2 {
+  letter-spacing: -0.02em;
+  font-size: 20px;
+  line-height: 1em;
+}
+@media (min-width: 744px) {
+  .text--subtitle2 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1020px) {
+  .text--subtitle2 {
+    font-size: 26px;
+  }
+}
+@media (min-width: 1920px) {
+  .text--subtitle2 {
+    font-size: 34px;
+  }
+}
+.text--subtitle3 {
+  letter-spacing: -0.01em;
+  font-size: 18px;
+  line-height: 1.2em;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+@media (min-width: 744px) {
+  .text--subtitle3 {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1280px) {
+  .text--subtitle3 {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1920px) {
+  .text--subtitle3 {
+    font-size: 26px;
+  }
+}
+.text--body {
+  letter-spacing: -0.001em;
+  font-size: 16px;
+  line-height: 1.4em;
+}
+.text--body a {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+  background-size: 51% 1px, 50% 1px;
+  background-position: 0% 100%, 100% 100%;
+}
+.text--body-medium {
+  letter-spacing: -0.001em;
+  line-height: 1.4em;
+  font-size: 16px;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+.text--footnote {
+  font-size: 12px;
+  line-height: 1.4em;
+}
+.text--eyebrow {
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.text--light {
+  color: white;
+}
+.text--font-clarkson-serif {
+  font-family: "Clarkson Serif", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+html[lang^="ja"] .text--font-clarkson-serif {
+  font-family: "Noto Serif JP";
+}
+
+picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+.index-container-wS91e {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+  width: 100vw;
+}
+.index-heroImage-Mfne5 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  filter: none;
+  transition: opacity 1.5s ease, filter 0.25s ease;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+.index-grid-e\+cQg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(12, var(--grid-column-width));
+  grid-gap: var(--grid-gutter-width);
+  padding-left: var(--grid-gutter-width);
+}
+.index-gridColumn-51PS7 {
+  width: var(--grid-column-width);
+  height: 100%;
+  background-color: #7B61FF;
+  opacity: 0.3;
+}
+
+
+/*# sourceMappingURL=main.css.map*/

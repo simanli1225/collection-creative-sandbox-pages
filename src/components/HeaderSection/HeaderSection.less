@@ -1,0 +1,213 @@
+@import url("../../styles/style-guide/index.less");
+.headerSection {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  .copyrightText {
+    font-size: 12px !important;
+    bottom: 30px;
+    position: absolute;
+    left: var(--site-margin);
+  }
+  h1 {
+    color: white;
+    margin-bottom: 3%;
+    font-size: calc(1.3 * (var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+  .imgBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Background layer */
+    overflow: hidden;
+
+    .backgroundVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the video fills the area without distortion */
+    }
+  }
+  .contentOverlay {
+    position: relative;
+    z-index: 2; /* Content layer above the video */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    // background: rgba(0, 0, 0, 0.5); /* Optional: darken the video */
+  }
+}
+
+.headerSection a,
+.headerSection p {
+  color: white;
+}
+
+.loadingText {
+  font-family: Clarkson_serif_light !important;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  color: white;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 110%; /* 62.1px */
+  letter-spacing: -0.025em;
+  width: 1300px;
+  // margin-bottom: 4%;
+  margin-bottom: 5rem;
+  font-size: 4rem;
+  max-width: 1020px;
+}
+.loadingText span {
+  font-family: Clarkson;
+  font-size: 38px;
+}
+@media screen and (max-width: 1200px) {
+  .loadingText {
+    width: 640px;
+    font-size: 4rem;
+  }
+}
+
+.centerDiv {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+}
+.videoBtn {
+  font-family: Clarkson_med !important;
+  text-transform: uppercase !important;
+}
+
+.secondVideoBtn {
+  margin-left: 5.6rem;
+}
+.videoBtn {
+  font-size: 18px;
+}
+@media screen and (max-width: 1440px) {
+}
+/*hover animation underline*/
+.hoverUnderlineAnimation {
+  display: inline-block;
+  position: relative;
+  color: white;
+  cursor: pointer;
+}
+
+.hoverUnderlineAnimation:after {
+  background-color: white;
+  content: "";
+  position: relative;
+  width: 100%;
+  height: 0.28rem;
+  left: 0;
+  top: 0.8rem;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scaleX(1);
+  display: block;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .hoverUnderlineAnimation:after {
+    height: 1.5px !important;
+  }
+}
+.hoverUnderlineAnimation:hover:after {
+  animation-name: lineChange;
+  animation-duration: 0.4s;
+  transform-origin: bottom left;
+}
+@keyframes lineChange {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.exploreDiv {
+  position: absolute;
+  top: 85vh;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9;
+}
+.exploreDiv p:nth-of-type(1) {
+  margin: 5px 0;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .exploreDiv {
+    bottom: 35vh;
+  }
+  .ctaDiv {
+    flex-direction: column;
+    text-align: center;
+  }
+  .secondVideoBtn {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .headerSection {
+    .copyrightText {
+      // bottom: 30px;
+      position: relative;
+      left: unset;
+      bottom: 5vh;
+      // left: var(--site-margin);
+    }
+  }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .loadingText {
+    padding: 0 8%;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 109.5%;
+    letter-spacing: -0.22px;
+    padding: 0 5vw;
+    width: auto !important;
+  }
+  .loadingText span {
+    font-size: 21px;
+  }
+  .videoBtn {
+    font-size: 16px;
+  }
+}

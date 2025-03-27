@@ -1,0 +1,65 @@
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+.grid-column(@columns: 1, @gutters: @columns - 1) {
+  @columnSize: ~"(var(--grid-column-width) * @{columns})";
+  @gutterSize: ~"(var(--grid-gutter-width) * @{gutters})";
+  @result: ~"calc(@{columnSize} + @{gutterSize})";
+}
+
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+.grid-column(@columns: 1, @gutters: @columns - 1) when (@gutters = 0) {
+  @result: ~"calc(var(--grid-column-width) * @{columns})";
+}
+
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+.grid-column(@columns: 1, @gutters: @columns - 1) when (@columns = 1) and (@gutters = 0) {
+  @result: var(--grid-column-width);
+}
+
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+.grid-column(@columns: 1, @gutters: @columns - 1) when (@columns = 0) {
+  @result: ~"calc(var(--grid-gutter-width) * @{gutters})";
+}
+
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+.grid-column(@columns: 1, @gutters: @columns - 1) when (@columns = 0) and (@gutters = 1) {
+  @result: var(--grid-gutter-width);
+}
+

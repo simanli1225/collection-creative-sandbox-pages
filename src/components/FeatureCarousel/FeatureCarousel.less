@@ -1,0 +1,132 @@
+@import url("../../styles/style-guide/index.less");
+.featureCarousel {
+  overflow: hidden; // Hide overflowing content
+  // padding-top: 5vmax;
+  padding-top: 20vw;
+  padding-bottom: 10vmax;
+  text-align: center;
+  .sectionP {
+    padding-top: 30px;
+    width: 70%;
+    margin: auto;
+  }
+  .carouselWrapper {
+    display: flex; // Horizontal layout
+    transition: transform 0.5s ease; // Smooth transition
+    margin-top: 3vmax;
+  }
+
+  .featureItem {
+    flex: 0 0 33.333%; // Desktop: Each item takes up 1/3 of the width
+    text-align: left;
+    padding: 30px;
+
+    @media (max-width: 768px) {
+      flex: 0 0 100%; // Mobile: Each item takes up full width
+    }
+
+    .image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 6%;
+    }
+    h3.title {
+      font-size: calc((var(--title-font-size-value) - 1) * 1.2vw + 14px);
+      font-family: Clarkson_serif_regular !important;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 120%;
+    }
+
+    .description {
+      margin-top: 3%;
+      color: #cccccc;
+      font-size: calc((var(--body-font-size-value) - 1) * 1.2vw + 14px);
+      font-family: Clarkson_light;
+    }
+  }
+  .navigationButtons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; // Position below the image and text
+  }
+
+  .prevButton,
+  .nextButton {
+    background: transparent;
+    // border: 1px solid #ffffff;
+    color: white;
+    font-size: 3rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      //   background-color: #ffffff;
+      //   color: #1e1e1e;
+    }
+
+    &.prevButton {
+      margin-right: 10px; // Add spacing between buttons
+    }
+  }
+
+  // .user-items-list-carousel__arrow-icon {
+  .carouselArrowIcon {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 36px;
+    height: 36px;
+  }
+  svg:not(:root) {
+    overflow: hidden;
+  }
+  .carouselArrowIconPath {
+    stroke: white;
+  }
+  .carouselArrowIconPath {
+    stroke-width: 2px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    fill: none;
+  }
+  :not(svg) {
+    transform-origin: 0px 0px;
+  }
+}
+.magnumCarouselCTA {
+  text-align: left;
+  padding-top: 12%;
+  font-size: calc(
+    (var(--button-font-size-value) - 1) * 1.2vw + 14px
+  ) !important;
+  font-size: 11px !important;
+}
+.magnumCarouselCTA > a {
+  font-size: 11px !important;
+}
+.magnumCarouselCTA > a:after {
+  top: 1px;
+  height: 0.18rem;
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .magnumCarouselCTA {
+    padding-top: 10%;
+    font-size: 12px !important;
+  }
+
+  .carouselArrowIcon {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .prevButton,
+  .nextButton {
+    padding: 0 15px !important;
+  }
+  .navigationButtons {
+    margin-top: 10px !important; // Position below the image and text
+  }
+}

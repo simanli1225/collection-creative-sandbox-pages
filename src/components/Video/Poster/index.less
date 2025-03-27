@@ -1,0 +1,15 @@
+@import "styles/style-guide/index.less";
+
+:global(.video-base) {
+  &__poster {
+    position: relative;
+    transition: opacity 0.3s @easings[cubicInOut],
+      visibility 0.3s @easings[cubicInOut];
+    z-index: 2;
+
+    &--hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

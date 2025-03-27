@@ -1,0 +1,20 @@
+{
+  "extends": "@sqs/febs-ts-config",
+  "include": [
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "./config/jest/setupTestFramework.ts"
+  ],
+  "exclude": [
+    "**/*.cypress.test.ts",
+    "**/*.cypress.test.tsx",
+    "./node_modules/cypress",
+    "node_modules/cypress",
+    "cypress"
+  ],
+  "compilerOptions": {
+    "noEmit": true,
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types"]
+  }
+}

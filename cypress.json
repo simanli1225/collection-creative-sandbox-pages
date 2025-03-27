@@ -1,0 +1,12 @@
+{
+  "env": {
+    "URL": "http://localhost:1337"
+  },
+  "component": {
+    "testFiles": "**/*.cypress.test.{js,ts,jsx,tsx}",
+    "componentFolder": "src"
+  },
+  "videoUploadOnPasses": false,
+  "video": true,
+  "videoCompression": false
+}

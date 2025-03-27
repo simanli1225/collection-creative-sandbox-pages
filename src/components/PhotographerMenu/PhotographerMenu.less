@@ -1,0 +1,50 @@
+@import url("https://use.typekit.net/gub2trj.css");
+
+.hover-effect-container {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+  transition: background-image 0.3s ease; // 背景切换时的平滑过渡
+  background-position: center;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+    a {
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+      display: block;
+      font-family: Clarkson_light;
+      // font-family: "ivyora-text", sans-serif;
+      // font-family: "ivyora-text", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      text-align: center;
+      color: #fff;
+      font-size: 5.5vw;
+      letter-spacing: -0.35vw;
+      text-transform: capitalize;
+      line-height: 9vh;
+      font-family: "ivyora-display", serif;
+      font-weight: 300;
+      font-style: normal;
+      &:hover,
+      &.active {
+        opacity: 1;
+      }
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        font-size: 8vw;
+        line-height: 10vw;
+        letter-spacing: -0.2vw;
+      }
+    }
+  }
+}

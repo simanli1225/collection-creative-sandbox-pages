@@ -1,0 +1,71 @@
+.imageCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  // padding: 20px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  width: 60%;
+  padding: 20px 0 10% 0;
+  .imageContainer {
+    max-width: 65vw;
+    display: flex;
+    justify-content: center;
+
+    img,
+    picture {
+      max-width: 100%;
+      height: auto;
+      // border-radius: 4px;
+    }
+  }
+
+  .textContainer {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    margin-top: 5%;
+    width: 100%;
+    width: 80%;
+    text-align: center;
+
+    .pageIndex {
+      margin-right: 20px; /* 与描述文字间距 */
+      position: absolute;
+      left: 12vw;
+    }
+
+    .description {
+      font-size: 14px;
+      flex: 1; /* 占据剩余空间 */
+      text-align: center;
+    }
+  }
+}
+.imageCard:last-of-type {
+  padding-bottom: 0;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .imageCard {
+    width: 100%;
+    padding: 20px 0 25% 0;
+
+    .imageContainer,
+    .imageContainer picture {
+      width: 70%;
+    }
+    .textContainer {
+      flex-direction: column;
+      margin-top: 3%;
+      .pageIndex {
+        font-size: 35px;
+        margin-right: 0; /* 与描述文字间距 */
+        position: unset !important;
+        left: unset !important;
+      }
+      .description {
+        margin-top: 8%;
+      }
+    }
+  }
+}

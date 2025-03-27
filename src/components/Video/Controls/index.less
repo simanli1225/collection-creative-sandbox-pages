@@ -1,0 +1,37 @@
+@import "styles/style-guide/index.less";
+
+:global(.video-base) {
+  &__control {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 8px;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media @minWidth[744] {
+      padding: 16px;
+    }
+  }
+
+  &__button-svg {
+    height: 30px;
+    width: 30px;
+    stroke: none;
+    fill: none;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+
+    &--light {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    &--has-blur {
+      backdrop-filter: blur(25px);
+    }
+  }
+}

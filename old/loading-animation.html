@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Animation</title>
+    <style>
+      @font-face {
+        font-family: Clarkson_light;
+        src: url("Clarkson-Light.otf");
+      }
+      @font-face {
+        font-family: Clarkson_med;
+        src: url("./src/assets/fonts/Clarkson-BookProduct.otf");
+      }
+
+      body {
+        max-height: 100vh;
+        overflow: hidden;
+      }
+
+      .fixed-to-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        /* background-color: white; */
+        opacity: 0;
+        z-index: 9999;
+        height: 95vh;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .text-logo {
+        font-size: 10vw;
+        font-family: Clarkson_light;
+        /* letter-spacing: -0.45vw; */
+        letter-spacing: -0.6vw;
+        line-height: 12.3vw;
+        margin: 0;
+      }
+
+      #the-fake-l {
+        width: 0.85vw;
+        height: 7.2vw;
+        background-color: black;
+        transform-origin: bottom right;
+        transform: rotate(0deg);
+        margin-left: 0.4vw;
+      }
+      .text-logo-sqsp {
+        font-size: 1.9vw;
+        font-family: Clarkson_med;
+        opacity: 0;
+        display: none;
+      }
+
+      .logo-co-l {
+        display: flex;
+        align-items: baseline;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        left: 35%;
+      }
+
+      .logoRightText {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        white-space: nowrap;
+        left: 57%;
+        align-items: flex-start;
+        left: 56.5%;
+      }
+      .logo-co-only {
+        /* padding-right: 0.9vw; */
+        /* padding-right: 0.5vw; */
+        padding-right: 0.7vw;
+      }
+      /* ---------all the animation control here ---------*/
+      /*present here*/
+      .present-fade-animation {
+        animation: fadeInOut 2s ease-in-out 0.5s forwards; /* 2秒完成一次动画，停止在最后一帧 */
+      }
+      .coAnimation {
+        opacity: 0;
+        animation: appear 0.7s ease-out 2.2s forwards;
+      }
+
+      .co-l-animation {
+        animation: backCenter ease-in-out 0.24s 4.5s forwards,
+          backLeftAgain ease-in-out 0.24s 4.99s forwards;
+      }
+
+      .fake-l-animation {
+        opacity: 0;
+        animation: appear 0.7s ease-out 2.6s forwards,
+          flip 0.24s ease-in-out 3.85s forwards, moveLeft 0.3s 3.8s forwards;
+      }
+
+      .lection-animation {
+        opacity: 0;
+        animation: appear 0.7s ease-out 2.6s forwards,
+          moveRight 0.2s ease-out 3.8s forwards,
+          moveBottom 0.15s ease-out 4.4s forwards,
+          disappear 0.001s ease-out 4.42s forwards;
+      }
+
+      .fixed-to-top {
+        animation: appear 0.7s ease-out 2.6s forwards;
+      }
+      .logo-text-mag {
+        opacity: 0;
+        margin-left: 8.5vw;
+        margin-bottom: 19.5vw;
+        /* animation: moveDown 0.15s ease-in-out 3.1s forwards; */
+      }
+
+      #col-name-divs {
+        position: relative;
+        width: 50vw;
+        height: 12.3vw;
+        overflow: hidden;
+        margin-left: 7vw;
+        left: 57.2%;
+      }
+      .col-names-span {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        animation: slide-in-out 0.33s 3s ease-in-out forwards;
+        text-align: left;
+        margin: 0 !important;
+        letter-spacing: -0.6vw;
+      }
+      .last-word {
+        animation: slide-in-word 0.16s ease-in-out forwards;
+      }
+      /*--------- all the animation control ends here ---------*/
+
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes flip {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(90deg);
+        }
+      }
+
+      @keyframes moveLeft {
+        0% {
+          margin-left: 0;
+        }
+        100% {
+          margin-right: 7vw;
+          margin-left: -1vw;
+        }
+      }
+
+      @keyframes moveRight {
+        0% {
+          padding-left: 0;
+        }
+        100% {
+          padding-left: 5.7vw;
+        }
+      }
+      @keyframes moveBottom {
+        0% {
+          margin-top: 0;
+        }
+        100% {
+          margin-top: 4vw;
+        }
+      }
+      @keyframes disappear {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes backCenter {
+        0% {
+          left: 35%;
+        }
+        100% {
+          left: 50%;
+        }
+      }
+      @keyframes backLeftAgain {
+        0% {
+          left: 50%;
+        }
+        100% {
+          left: 28%;
+        }
+      }
+      @keyframes moveDown {
+        0% {
+          margin-bottom: 19.5vw;
+          opacity: 0;
+        }
+        100% {
+          margin-bottom: 0vw;
+          opacity: 1;
+        }
+      }
+
+      .mini-logo {
+        position: absolute;
+        top: calc(50% + 5.4vw);
+        transform: translate(-50%, -50%);
+        left: 64.1%;
+      }
+
+      @keyframes btnAppear {
+        0% {
+          opacity: 0;
+          margin-bottom: -1%;
+        }
+        100% {
+          opacity: 1;
+          margin-bottom: 0px;
+        }
+      }
+      .text-logo-sqsp {
+        font-size: 1.68vw;
+      }
+      .mini-logo {
+        left: 65%;
+      }
+      .the-logo-animation-div-s {
+        transform: scale(1);
+        transform-origin: center;
+        height: 100vh;
+      }
+
+      @keyframes slide-in-out {
+        0% {
+          top: -100%;
+          top: -80%;
+          top: -60%;
+          top: -30%;
+          opacity: 0;
+        }
+        /* 10% { */
+        10% {
+          top: 0;
+          opacity: 1;
+        }
+        /* 60% { */
+        60% {
+          top: 0;
+          opacity: 1;
+        }
+        90% {
+          top: 100%;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+
+      @keyframes slide-in-word {
+        0% {
+          top: -100%;
+          top: -60%;
+          opacity: 0;
+        }
+        100% {
+          top: 0;
+          opacity: 1;
+        }
+      }
+
+      .abs-pos {
+        position: absolute;
+      }
+      #present-logo {
+        position: fixed;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        opacity: 0;
+        top: 0;
+      }
+      #present-logo img {
+        max-width: 100%;
+        height: auto;
+        width: 20vw;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+        }
+        40% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- loading animation section -->
+    <div id="loading-animation-section" style="display: none">
+      <!-- present by image -->
+      <div class="present-fade-animation" id="present-logo">
+        <img
+          src="https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66fae49b0051b72927feffaf/1727718555942/SQSP_Black.png
+  "
+          alt=""
+        />
+      </div>
+      <!-- loading text animation -->
+      <div class="fixed-to-top">
+        <div class="the-logo-animation-div-s">
+          <div class="logo-co-l co-l-animation">
+            <div class="text-logo slowChange logo-co-only coAnimation">Co</div>
+            <div id="the-fake-l" class="fake-l-animation"></div>
+          </div>
+
+          <div class="logoRightText lection-animation">
+            <span class="text-logo">lection</span>
+          </div>
+          <div class="logoRightText" id="col-name-divs">
+            <span class="text-logo logo-text-mag col-names-span">Björk</span>
+            <span class="text-logo logo-text-mag col-names-span">Magnum</span>
+            <span class="text-logo logo-text-mag col-names-span"
+              >Rick Rubin</span
+            >
+            <span class="text-logo logo-text-mag col-names-span last-word">
+              Jeff Koons
+            </span>
+          </div>
+
+          <div class="mini-logo mini-logo-animation">
+            <span class="text-logo-sqsp appearThird">SQUARESPACE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const words = document.querySelectorAll(".col-names-span");
+
+      words.forEach((word, index) => {
+        word.style.animationDelay = `${index * 0.25 + 5.2}s`;
+      });
+
+      // Display the loading section
+      const loadingAnimationSection = document.getElementById(
+        "loading-animation-section"
+      );
+      loadingAnimationSection.style.display = "block";
+    </script>
+  </body>
+</html>

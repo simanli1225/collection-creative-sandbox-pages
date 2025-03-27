@@ -1,0 +1,15 @@
+{
+  "extends": "@sqs/febs-ts-config",
+  "include": [
+    "cypress",
+    "src/**/*.cypress.test.ts",
+    "src/**/*.cypress.test.tsx",
+    "./node_modules/cypress"
+  ],
+  "compilerOptions": {
+    "noEmit": true,
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["cypress"]
+  }
+}

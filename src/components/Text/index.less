@@ -1,0 +1,212 @@
+@import "styles/style-guide/index.less";
+@import "components/Cta/index.less";
+
+:global(.text) {
+  .font-base-clarkson();
+
+  &--display {
+    letter-spacing: -0.06em;
+    line-height: 0.93em;
+    font-weight: 300;
+    .scale-font-size(48px, 64px, 320px, 375px);
+
+    @media @minWidth[375] {
+      .scale-font-size(64px, 80px, 375px, 744px);
+    }
+
+    @media @minWidth[744] {
+      .scale-font-size(80px, 110px, 744px, 1020px);
+    }
+
+    @media @minWidth[1020] {
+      .scale-font-size(110px, 140px, 1020px, 1280px);
+    }
+
+    @media @minWidth[1280] {
+      .scale-font-size(140px, 160px, 1280px, 1440px);
+    }
+
+    @media @minWidth[1440] {
+      .scale-font-size(160px, 210px, 1440px, 1920px);
+    }
+  }
+
+  &--title1 {
+    letter-spacing: -0.05em;
+    line-height: 0.93em;
+    font-weight: 300;
+    .scale-font-size(48px, 50px, 320px, 375px);
+
+    @media @minWidth[375] {
+      .scale-font-size(50px, 64px, 375px, 744px);
+    }
+
+    @media @minWidth[744] {
+      .scale-font-size(64px, 90px, 744px, 1020px);
+    }
+
+    @media @minWidth[1020] {
+      .scale-font-size(90px, 100px, 1020px, 1280px);
+    }
+
+    @media @minWidth[1280] {
+      font-size: 100px;
+    }
+
+    @media @minWidth[1440] {
+      .scale-font-size(100px, 120px, 1440px, 1920px);
+    }
+  }
+
+  &--title2 {
+    letter-spacing: -0.05em;
+    line-height: 0.93em;
+    font-weight: 300;
+    .scale-font-size(44px, 46px, 320px, 375px);
+
+    @media @minWidth[375] {
+      .scale-font-size(46px, 52px, 375px, 744px);
+    }
+
+    @media @minWidth[744] {
+      .scale-font-size(52px, 56px, 744px, 1020px);
+    }
+
+    @media @minWidth[1020] {
+      .scale-font-size(56px, 70px, 1020px, 1280px);
+    }
+
+    @media @minWidth[1280] {
+      .scale-font-size(70px, 80px, 1280px, 1440px);
+    }
+
+    @media @minWidth[1440] {
+      .scale-font-size(80px, 106px, 1440px, 1920px);
+    }
+  }
+
+  &--title3 {
+    letter-spacing: -0.04em;
+    line-height: 1em;
+    .scale-font-size(34px, 40px, 320px, 375px);
+
+    @media @minWidth[375] {
+      font-size: 40px;
+    }
+
+    @media @minWidth[1020] {
+      .scale-font-size(40px, 50px, 1020px, 1280px);
+    }
+
+    @media @minWidth[1280] {
+      .scale-font-size(50px, 56px, 1280px, 1440px);
+    }
+
+    @media @minWidth[1440] {
+      .scale-font-size(56px, 74px, 1440px, 1920px);
+    }
+  }
+
+  &--subtitle1 {
+    letter-spacing: -0.04em;
+    font-size: 22px;
+    line-height: 1em;
+
+    @media @minWidth[375] {
+      font-size: 26px;
+    }
+
+    @media @minWidth[1020] {
+      font-size: 32px;
+    }
+
+    @media @minWidth[1280] {
+      font-size: 36px;
+    }
+
+    @media @minWidth[1440] {
+      font-size: 40px;
+    }
+
+    @media @minWidth[1920] {
+      font-size: 50px;
+    }
+  }
+
+  &--subtitle2 {
+    letter-spacing: -0.02em;
+    font-size: 20px;
+    line-height: 1em;
+
+    @media @minWidth[744] {
+      font-size: 24px;
+    }
+
+    @media @minWidth[1020] {
+      font-size: 26px;
+    }
+
+    @media @minWidth[1920] {
+      font-size: 34px;
+    }
+  }
+
+  &--subtitle3 {
+    letter-spacing: -0.01em;
+    font-size: 18px;
+    line-height: 1.2em;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+
+    @media @minWidth[744] {
+      font-size: 20px;
+    }
+
+    @media @minWidth[1280] {
+      font-size: 22px;
+    }
+
+    @media @minWidth[1920] {
+      font-size: 26px;
+    }
+  }
+
+  &--body {
+    letter-spacing: -0.001em;
+    font-size: 16px;
+    line-height: 1.4em;
+
+    a {
+      .underline();
+    }
+  }
+
+  &--body-medium {
+    letter-spacing: -0.001em;
+    line-height: 1.4em;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  &--footnote {
+    font-size: 12px;
+    line-height: 1.4em;
+  }
+
+  &--eyebrow {
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+
+  &--light {
+    color: white;
+  }
+
+  &--font-clarkson-serif {
+    .font-base-clarkson-serif();
+  }
+}

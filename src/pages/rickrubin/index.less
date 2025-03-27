@@ -1,0 +1,79 @@
+@import "styles/style-guide/index.less";
+
+.rickVideoSection {
+  // height: 90vh;
+  background-color: white;
+}
+.rickVideoDiv {
+  display: flex;
+}
+
+.squareDiv {
+  width: 50vw;
+  height: 50vw;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.squareDiv img,
+.squareDiv picture {
+  height: 100%;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+.squareDivText {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  flex-direction: column;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+}
+.squareDivText p {
+  margin-top: 9%;
+}
+.rickVideoSection div:nth-of-type(2) {
+  background-color: #d6d4cf;
+}
+.rickfullVideoSection {
+  height: 56vw;
+  width: 100vw;
+}
+.rickfullVideoSection video {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.video-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto; /* 保持原始高度 */
+  display: block; /* 避免视频下方有空隙 */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .rickVideoDiv {
+    display: flex;
+    flex-direction: column;
+  }
+  .squareDiv {
+    width: 100vw;
+    height: 100vw;
+  }
+  .squareDiv img {
+    width: 100%;
+  }
+  .rickVideoDiv:nth-of-type(2) {
+    flex-direction: column-reverse;
+  }
+  .rickfullVideoSection {
+    height: 56vw;
+  }
+}

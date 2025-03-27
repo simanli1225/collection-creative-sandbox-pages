@@ -1,0 +1,256 @@
+// body {
+//   width: 100vw;
+//   // height: 100vh;
+//   color: black;
+//   overflow: hidden;
+// }
+
+#loadingAnimationSection {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  left: 0;
+  background-color: white;
+  z-index: 999999;
+}
+
+.textLogo {
+  font-size: 10vw;
+  font-family: Clarkson_light;
+  letter-spacing: -0.6vw;
+  line-height: 12.3vw;
+  margin: 0;
+  color: black;
+}
+
+.logoCoL {
+  display: flex;
+  align-items: baseline;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  left: 35%;
+}
+
+.logoRightText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  align-items: flex-start;
+  left: 56.5%;
+}
+.logoCoOnly {
+  padding-right: 0.7vw;
+}
+
+.presentFadeAnimation {
+  animation: fadeInOut 2s ease-in-out 0.2s forwards;
+}
+.coAnimation {
+  opacity: 0;
+  animation: appear 0.7s ease-out 2.2s forwards;
+}
+
+.coLAnimation {
+  animation: backCenter ease-in-out 0.24s 4.5s forwards,
+    backLeftAgain ease-in-out 0.24s 4.99s forwards;
+}
+
+.fakeLAnimation {
+  width: 0.85vw;
+  height: 7.2vw;
+  background-color: black;
+  transform-origin: bottom right;
+  transform: rotate(0deg);
+  margin-left: 0.4vw;
+  opacity: 0;
+  animation: appear 0.7s ease-out 2.6s forwards,
+    flip 0.24s ease-in-out 3.85s forwards, moveLeft 0.3s 3.8s forwards;
+}
+.lectionAnimation {
+  opacity: 0;
+  animation: appear 0.7s ease-out 2.6s forwards,
+    moveRight 0.2s ease-out 3.8s forwards,
+    moveBottom 0.15s ease-out 4.4s forwards,
+    disappear 0.001s ease-out 4.42s forwards;
+}
+
+.logoTextMag {
+  opacity: 0;
+  margin-left: 8.5vw;
+  margin-bottom: 19.5vw;
+}
+
+.colNameDivs {
+  position: relative;
+  width: 50vw;
+  height: 12.3vw;
+  overflow: hidden;
+  margin-left: 7vw;
+  left: 57.2%;
+}
+.colNamesSpan {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  animation: slideInOut 0.33s 3s ease-in-out forwards;
+  text-align: left;
+  margin: 0 !important;
+  letter-spacing: -0.6vw;
+}
+.lastWord {
+  animation: slideInWord 0.16s ease-in-out forwards;
+}
+.logoAnimation {
+  transform: scale(1);
+  transform-origin: center;
+  height: 100vh;
+}
+.presentLogo {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  opacity: 0;
+  top: 0;
+}
+.presentLogo img {
+  max-width: 100%;
+  height: auto;
+  width: 20vw;
+}
+
+/*--------- all the animation control ends here ---------*/
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-right: 7vw;
+    margin-left: -1vw;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    padding-left: 0;
+  }
+  100% {
+    padding-left: 5.7vw;
+  }
+}
+@keyframes moveBottom {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 4vw;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes backCenter {
+  0% {
+    left: 35%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@keyframes backLeftAgain {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 28%;
+  }
+}
+
+@keyframes slideInOut {
+  0% {
+    top: -100%;
+    top: -80%;
+    top: -60%;
+    top: -30%;
+    opacity: 0;
+  }
+  /* 10% { */
+  10% {
+    top: 0;
+    opacity: 1;
+  }
+  /* 60% { */
+  60% {
+    top: 0;
+    opacity: 1;
+  }
+  90% {
+    top: 100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes slideInWord {
+  0% {
+    top: -100%;
+    top: -60%;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

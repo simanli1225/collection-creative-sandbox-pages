@@ -1,0 +1,109 @@
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.viewTempFloat {
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.floatTempBlockText {
+  position: absolute;
+  //   bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.viewTempSLink {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.viewTempFloat {
+  cursor: pointer;
+  position: fixed;
+  z-index: 10;
+  height: 90px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2.5px);
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.4s;
+  transform: scale(0.8);
+  transform-origin: bottom right;
+  right: var(--site-margin);
+  bottom: var(--site-margin);
+  white-space: nowrap;
+  width: max-content;
+  padding: 6px 22px 6px 6px;
+}
+.viewTempFloat:hover {
+  box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.2);
+}
+.viewTempFloat {
+  // width: 403px;
+  // height: 90px;
+}
+.viewTempFloat img {
+  width: 78px;
+  /* height: 78px; */
+  flex-shrink: 0;
+  border-radius: 15px;
+  margin-right: 6px;
+}
+.viewTempFloat a {
+  color: #fff;
+  font-family: Clarkson_med;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 135.5%; /* 21.68px */
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-left: 22px;
+  display: contents;
+}
+.viewTempFloat.light {
+  > a {
+    color: black;
+  }
+}
+.viewTempFloat.light a {
+  color: black;
+}
+.viewTempFloat.dark a {
+  color: #fff;
+}
+#float-temp-block-text {
+  cursor: pointer;
+  transition: 0.2s;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .viewTempFloat {
+    bottom: 10px;
+    left: 5%;
+    text-align: center;
+    width: 90% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px !important;
+    transform: none;
+    right: unset;
+  }
+  .viewTempFloat img {
+    display: none;
+  }
+}

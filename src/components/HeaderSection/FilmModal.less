@@ -1,0 +1,50 @@
+@import url("../../styles/style-guide/index.less");
+
+.modal {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  // display: none;
+  position: fixed;
+  z-index: 999999999999999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  // overflow: auto;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(20px);
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.movieBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.movieBoxS {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 450px;
+}
+
+.movieBoxS iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .movieBoxS {
+    width: 80vw;
+    height: 44.8vw;
+  }
+}

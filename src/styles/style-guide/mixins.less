@@ -1,0 +1,82 @@
+.font-base-clarkson() {
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+
+  html[lang^="ja"] & { 
+    font-family: "Noto Sans JP"; 
+  }
+}
+
+.font-base-clarkson-serif() {
+  font-family: "Clarkson Serif", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+
+  html[lang^="ja"] & { 
+    font-family: "Noto Serif JP"; 
+  }
+}
+
+.font-base-canela() {
+  font-family: "Canela", Helvetica, serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+.scale-font-size(@minFontSize, @maxFontSize, @minViewportWidth: 320px, @maxViewportWidth: 1920px) {
+  @remPixelSize: 16px;
+
+  @minFontSizeRem: unit((@minFontSize / @remPixelSize), rem);
+  @maxFontSizeRem: unit((@maxFontSize / @remPixelSize), rem);
+
+  @minViewportWidthRem: unit((@minViewportWidth / @remPixelSize), rem);
+  @maxViewportWidthRem: unit((@maxViewportWidth / @remPixelSize), rem);
+
+  @slope: ((@maxFontSizeRem - @minFontSizeRem) / (@maxViewportWidthRem - @minViewportWidthRem));
+  @yIntersect: -@minViewportWidthRem * @slope + @minFontSizeRem;
+  @preferredSlope: (@slope * 100vw);
+
+  font-size:~"calc(@{yIntersect} + @{preferredSlope})"; // Fallback for clamp support
+  font-size:~"clamp(@{minFontSize}, @{yIntersect} + @{preferredSlope}, @{maxFontSize})";
+}
+
+.aspect-ratio(@width, @height, @position: relative) {
+  position: @position;
+  display: block;
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    @percent: (@height / @width) * 100%;
+    padding-top: (round(@percent * 1000) / 1000);
+  }
+}
+
+.toggle-ja-elements() {
+    // Hide ja (Japanese) elements
+    &[data-lang-code="ja"] {
+      html:not([lang^="ja"]) & {
+        display: none;
+      }
+    }
+    
+    // Hide non ja (Japanese) elements
+    &:not([data-lang-code="ja"]) {
+      html[lang^="ja"] & { 
+        display: none;
+      }
+    }
+}

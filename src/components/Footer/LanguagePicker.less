@@ -1,0 +1,60 @@
+.languagePicker {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.slideIn {
+    transform: translateY(0);
+  }
+
+  &.slideOut {
+    transform: translateY(100%);
+  }
+  p {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 300;
+    font-family: Clarkson_light;
+    padding-bottom: 2%;
+    letter-spacing: -0.035em;
+    color: white;
+  }
+}
+
+.languageLink {
+  color: #fff;
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  text-transform: capitalize !important;
+  line-height: 120%;
+  font-size: 35px;
+  letter-spacing: -0.035em;
+  padding: 3vw 0 0 0;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 1vw;
+    text-decoration-thickness: 0.2vw;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  display: block;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}

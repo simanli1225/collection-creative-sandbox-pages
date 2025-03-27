@@ -1,0 +1,222 @@
+@import "./index.less";
+s #sqsp-logo-id {
+  filter: invert(1);
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+.nameSection {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: transform 0.8s ease-in-out;
+}
+
+.enterDiv {
+  position: absolute;
+  top: 16vw;
+  margin-left: 0;
+  // position: fixed;
+  // width: 100%;
+  // top: 12vw;
+}
+
+// .nameSection {
+//   width: 100vw;
+//   height: 100vh;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   transform: translateY(100%); /* 初始状态为不可见 */
+//   transition: transform 0.8s ease; /* 平滑过渡 */
+//   overflow: hidden;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background: black;
+// }
+
+// .nameSection.active {
+//   transform: translateY(0); /* 当前可见状态 */
+// }
+
+// .nameSection::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0, 0, 0, 0.1);
+//   z-index: 1;
+// }
+
+.nameSection video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.menuTitleContent {
+  position: absolute;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menuTitleContent span {
+  color: white;
+  font-size: 10vw;
+  font-family: Clarkson_light !important;
+  letter-spacing: -0.6vw;
+  line-height: 12.3vw;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.menuTitleContent a {
+  font-family: "Clarkson_med" !important;
+  position: relative;
+  font-size: 18px;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.dots {
+  position: fixed;
+  top: 50%;
+  right: 6.1rem;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: rgba(250, 250, 250, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+.dot.active {
+  background: rgba(250, 250, 250, 1);
+}
+
+.underline {
+  width: 7.2vw;
+  height: 0.85vw;
+  margin: 0vw 0.88vw 2.6vw 0.7vw;
+  background-color: white;
+}
+
+.sectionTitle {
+  // position: fixed;
+  // width: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+#loading-animation-section {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999999;
+}
+
+#name-menu-id,
+.nameMenu {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.enterDiv {
+  margin-left: 0;
+}
+
+.menuTitleContent a {
+  font-family: "Clarkson_med" !important;
+  position: relative;
+  font-size: 18px;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-thickness: 0;
+  text-decoration: 0;
+}
+.nameSection {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.4s ease;
+  overflow: hidden;
+  background: black;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .sectionTitle {
+    top: 45%;
+  }
+  .dots {
+    transform: translateY(-50%) scale(0.5);
+    right: 20px;
+  }
+
+  .enterDiv {
+    top: 18vh;
+  }
+  .menuTitleContent a {
+    /* top: 57vh; */
+    font-size: 1.6rem;
+  }
+  .menuTitleContent {
+    position: fixed;
+    top: 45%;
+  }
+  .dots {
+    top: 45%;
+  }
+}

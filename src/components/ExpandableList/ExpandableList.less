@@ -1,0 +1,103 @@
+.expandable-list {
+  font-family: Clarkson;
+  font-weight: 300;
+  width: 16.67vw;
+  margin: 20px 0;
+  border-top: 1px solid #000;
+  color: black;
+  // transition: 0.4s;
+  margin-left: auto;
+  margin-right: calc(100vw / 27);
+  margin-top: -9vw;
+}
+
+.expandable-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  padding-top: 2vw;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+}
+
+.accordion-icon-container {
+  height: 14px;
+  width: 14px;
+  position: relative;
+}
+
+.plus {
+  color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.plus__horizontal-line {
+  height: 1px;
+  display: block;
+  width: 100%;
+  background-color: currentColor;
+  transition: transform 0.2s;
+  position: absolute;
+}
+
+.plus__vertical-line {
+  height: 1px;
+  transform: rotate(90deg);
+  display: block;
+  width: 100%;
+  background-color: black;
+  transition: transform 0.2s;
+  position: absolute;
+}
+
+.rotate {
+  transform: rotate(0deg); /* On click, rotate 90 degrees */
+}
+
+.expandable-list-content {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.4s ease-out; /* Transition max-height */
+}
+
+.expandable-list-content.expanded {
+  max-height: 500px; /* Set a large enough value for max-height */
+}
+
+li {
+  margin-bottom: 2px;
+  color: black;
+  line-height: 120%;
+  font-weight: 400;
+}
+
+li:first-of-type {
+  font-weight: 500;
+  padding: 1vw 0;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .expandable-list {
+    width: 90vw;
+    margin: 0;
+  }
+  .expandable-list-header {
+    padding: 30px 0 10px 0;
+  }
+  li:first-of-type {
+    padding: 20px 0;
+  }
+}
