@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 export const useGlobalFadeIn = () => {
   useEffect(() => {
-    const elements = document.querySelectorAll('img, p, h1, h2, h3, h4, h5, h6, .fade-target')
+    const elements = document.querySelectorAll('img, p, h1, h2, h3, h4, h5, h6, a,.fade-target')
     // console.log(elements);
     elements.forEach(el => {
       el.classList.add('auto-fade-in')
