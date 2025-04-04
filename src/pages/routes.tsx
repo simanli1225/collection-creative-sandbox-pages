@@ -8,6 +8,8 @@ import BrucePage from './brucegilden'
 import JacobPage from './jacobAueSobol'
 import OliviaPage from './oliviaArthur'
 import SabihaPage from './saibihaCimen'
+import WilliamPage from './williamKeo'
+import StevePage from './SteveMccurry'
 
 const routes = [
   {
@@ -45,6 +47,14 @@ const routes = [
   {
     path: '/sabiha-cimen',
     element: <SabihaPage />,
+  },
+  {
+    path: '/william-keo',
+    element: <WilliamPage />,
+  },
+  {
+    path: '/steve-mccurry',
+    element: <StevePage />,
   },
 ]
 

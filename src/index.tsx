@@ -4,6 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './pages'
 import DevApp from './dev/DevApp'
+// import './styles/index.less'
 
 if (module.hot) {
   // Enable hot module replacement

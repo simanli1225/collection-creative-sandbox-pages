@@ -16,11 +16,15 @@ export default class ImageFileAnatomy {
 
   constructor(src: string) {
     const splitByFolder = src.split("/");
+    //for saving
     // const filename = splitByFolder.pop()!
-    const filename = splitByFolder.pop();
-    if (!filename) {
-      throw new Error("Failed to extract filename");
-    }
+    // const filename = splitByFolder.pop();
+
+    //for developing
+    // if (!filename) {
+    //   throw new Error("Failed to extract filename");
+    // }
+    const filename = splitByFolder.pop()!
     const filenameSplit = filename.split(".");
     const file = filenameSplit[0];
     const extension = filenameSplit[1];
