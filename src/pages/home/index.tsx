@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/Footer'
 import LoadingAnimation from './LoadingAnimation'
 import DotsNavigation from './DotsNavigation'
 import styles from './index.less'
+import AnimatedPage from '../../components/AnimatedPage/AnimatedPage';
 
 const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false) // Manage loading state
@@ -28,6 +29,7 @@ const HomePage: React.FC = () => {
   }, [])
 
   return (
+    <AnimatedPage>
     <div className={styles.homePage}>
       {/* Header: Only show when loading is complete */}
       {!isLoading && <Header theme="dark" />}
@@ -56,6 +58,8 @@ const HomePage: React.FC = () => {
         }}
       />
     </div>
+    </AnimatedPage>
+
   )
 }
 
