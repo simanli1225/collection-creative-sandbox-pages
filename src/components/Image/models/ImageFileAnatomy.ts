@@ -15,21 +15,26 @@ export default class ImageFileAnatomy {
   private extension: ImageFileExtension;
 
   constructor(src: string) {
-    const splitByFolder = src.split("/");
-    // const filename = splitByFolder.pop()!
-    const filename = splitByFolder.pop();
-    if (!filename) {
+    console.log("ImageFileAnatomy received src:", src); // ✅ 帮助你调试
+
+    if (!src || typeof src !== "string" || !src.includes(".")) {
+      console.error("❌ Invalid src passed to ImageFileAnatomy:", src);
       throw new Error("Failed to extract filename");
     }
-    const filenameSplit = filename.split(".");
-    const file = filenameSplit[0];
-    const extension = filenameSplit[1];
 
+    const splitByFolder = src.split("/").filter(Boolean); // 移除空元素
+    const filename = splitByFolder.pop();
+
+    if (!filename || !filename.includes(".")) {
+      console.error("❌ Invalid filename extracted from src:", src);
+      throw new Error("Failed to extract filename");
+    }
+
+    const [file, extension] = filename.split(".");
     this.folder = splitByFolder.join("/");
     this.file = file;
     this.extension = extension as ImageFileExtension;
   }
-
   public getLocalizedSrc(locale: LanguageCode) {
     return `${this.folder}/${locale}/${this.file}.${this.extension}`;
   }
@@ -58,7 +63,10 @@ export default class ImageFileAnatomy {
         ? `${this.folder}/${this.file}.${this.extension}`
         : `${CDN}${this.folder}/${this.file}.${this.extension}`;
     }
-    return `${CDN}${this.folder}/${this.file}-${size}w.${extension}`;
+    // return `${CDN}${this.folder}/${this.file}-${size}w.${extension}`;
+    return `${CDN.replace(/\/$/, "")}/${this.folder}/${
+      this.file
+    }-${size}w.${extension}`;
   }
 
   public getMimeType() {

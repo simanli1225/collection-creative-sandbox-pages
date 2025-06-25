@@ -1,97 +1,97 @@
-import React from 'react'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
-import FloatTemplateCTA from '../../components/FloatTemplateCTA/FloatTemplateCTA'
-import HeaderSection from '../../components/HeaderSection/HeaderSection'
-import JeffImageSection from '../../components/ImageSections/JeffImageSection'
-import WebsiteSection from '../../components/WebsiteSection/WebsiteSection'
-import FeatureSection from '../../components/FeatureSection/FeatureSection'
-import FeatureCarousel from '../../components/FeatureCarousel/FeatureCarousel'
-import PreviousCollection from '../../components/PreviousCollection/PreviousCollection'
-import { useDynamicScrollBehavior } from '../../hooks/useDynamicScrollBehavior'
+import React from "react";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import FloatTemplateCTA from "../../components/FloatTemplateCTA/FloatTemplateCTA";
+import HeaderSection from "../../components/HeaderSection/HeaderSection";
+import JeffImageSection from "../../components/ImageSections/JeffImageSection";
+import WebsiteSection from "../../components/WebsiteSection/WebsiteSection";
+import FeatureSection from "../../components/FeatureSection/FeatureSection";
+import FeatureCarousel from "../../components/FeatureCarousel/FeatureCarousel";
+import PreviousCollection from "../../components/PreviousCollection/PreviousCollection";
+import { useDynamicScrollBehavior } from "../../hooks/useDynamicScrollBehavior";
 
 const featureData = [
   {
     imageSrc:
-      'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_POWERFUL_DISPLAY_v1_01.gif',
-    title: 'A Powerful Display',
+      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_POWERFUL_DISPLAY_v1_01.gif",
+    title: "A Powerful Display",
     description:
-      'Jeff Koons wanted to display multiple images in an overlapping yet organized flow so that each has its own space without any one image overpowering the others.',
+      "Jeff Koons wanted to display multiple images in an overlapping yet organized flow so that each has its own space without any one image overpowering the others.",
   },
   {
     imageSrc:
-      'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_FOCUSED_v2_01.gif',
-    title: 'Focused Viewing',
+      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_FOCUSED_v2_01.gif",
+    title: "Focused Viewing",
     description:
-      'Clicking into any image opens a full screen view of it in orderto experience the artwork on its own the way you would inside a gallery.',
+      "Clicking into any image opens a full screen view of it in orderto experience the artwork on its own the way you would inside a gallery.",
   },
   {
     imageSrc:
-      'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_TIMELINE_v2_01.gif',
-    title: 'Visual Timeline',
+      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_TIMELINE_v2_01.gif",
+    title: "Visual Timeline",
     description:
-      'This style of gallery allows the viewer to experience a series of work as a whole, as well as amongst other series, creating a larger picture of Jeff Koons’ work.',
+      "This style of gallery allows the viewer to experience a series of work as a whole, as well as amongst other series, creating a larger picture of Jeff Koons’ work.",
   },
   {
     imageSrc:
-      'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_AWARDS_v1_01.gif',
-    title: 'Archival Columns',
+      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_AWARDS_v1_01.gif",
+    title: "Archival Columns",
     description:
-      'With such a prolific career, organized columns of information highlight Jeff Koons’ successes in an easy-to-navigate format.',
+      "With such a prolific career, organized columns of information highlight Jeff Koons’ successes in an easy-to-navigate format.",
   },
-]
+];
 const carouselData = [
   {
     imageSrc:
-      'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_03.gif',
-    title: 'Block Pinning',
+      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_03.gif",
+    title: "Block Pinning",
     description:
-      'Key content blocks are pinned throughout the homepage to deliver an engaging, stylized scrolling experience.',
+      "Key content blocks are pinned throughout the homepage to deliver an engaging, stylized scrolling experience.",
   },
   {
     imageSrc:
-      'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_02.gif',
-    title: 'Gallery Sections',
+      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_02.gif",
+    title: "Gallery Sections",
     description:
-      'Our best format for beautifully presenting collections of images or videos sequentially on a page.',
+      "Our best format for beautifully presenting collections of images or videos sequentially on a page.",
   },
   {
     imageSrc:
-      'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_04.gif',
-    title: 'Online Store',
+      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_04.gif",
+    title: "Online Store",
     description:
       "A digital storefront offers a full series of prints for sale, transforming an artist's brand into a business.",
   },
   {
     imageSrc:
-      'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_01.gif',
-    title: 'Accordions',
+      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_01.gif",
+    title: "Accordions",
     description:
-      'Supporting text is easily expanded and collapsed — helping core messages stand out even more.',
+      "Supporting text is easily expanded and collapsed — helping core messages stand out even more.",
   },
-]
+];
 const previousCollection = [
   {
-    imageSrc: '/collections/jeff-koons/previous-collection/Co_RR.jpg',
-    link: '/rickrubin',
+    imageSrc: "/collections/jeff-koons/previous-collection/Co_RR.jpg",
+    link: "/rickrubin",
   },
   {
-    imageSrc: '/collections/jeff-koons/previous-collection/Co_Magnum.jpg',
-    link: '/magnum',
+    imageSrc: "/collections/jeff-koons/previous-collection/Co_Magnum.jpg",
+    link: "/magnum",
   },
   {
-    imageSrc: '/collections/jeff-koons/previous-collection/Co_Bjork.jpg',
-    link: '/bjork',
+    imageSrc: "/collections/jeff-koons/previous-collection/Co_Bjork.jpg",
+    link: "/bjork",
   },
-]
+];
 interface GridItem {
-  type: 'image' | 'text';
+  type: "image" | "text";
   content: string;
   altText?: string;
 }
 
 const JeffPage = () => {
-  const { headerTheme, ctaTheme, isCTAHidden } = useDynamicScrollBehavior() // 获取主题状态
+  const { headerTheme, ctaTheme, isCTAHidden } = useDynamicScrollBehavior(); // 获取主题状态
 
   return (
     <div>
@@ -100,7 +100,7 @@ const JeffPage = () => {
         data-theme="dark"
         text={
           <>
-            A collaboration with <span className="highlight">Jeff Koons</span>{' '}
+            A collaboration with <span className="highlight">Jeff Koons</span>{" "}
             to develop an online gallery — showcasing his complete works all in
             one place for the first time ever — and an exclusive template,
             Reflect, to showcase your own work.
@@ -158,11 +158,11 @@ const JeffPage = () => {
         textColor="white"
         images={previousCollection}
         data-last-section
-      />{' '}
+      />{" "}
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 // export default JeffPage;
-export default JeffPage
+export default JeffPage;
