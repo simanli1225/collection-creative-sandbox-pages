@@ -6139,6 +6139,7 @@ var Picture = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.forwardRef)(fun
     excludeDefaultSourceTag = _ref$excludeDefaultSo === void 0 ? false : _ref$excludeDefaultSo,
     children = _ref.children,
     rest = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, _excluded);
+<<<<<<< HEAD
   if (!src || typeof src !== "string" || !src.includes(".")) {
     console.error("❌ Invalid src passed to <Picture>: ", src);
     return null;
@@ -6152,6 +6153,9 @@ var Picture = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.forwardRef)(fun
   }
   // const fileAnatomy = new ImageFileAnatomy(src)
 
+=======
+  var fileAnatomy = new _models_ImageFileAnatomy__WEBPACK_IMPORTED_MODULE_4__["default"](src);
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   var webpSrcSet = fileAnatomy.getSrcSet(_models_ImageFileAnatomy__WEBPACK_IMPORTED_MODULE_4__.ImageFileExtension.WEBP);
   var jpgSrcSet = fileAnatomy.getSrcSet();
   var fallbackSrc = fileAnatomy.getSizedImageSrc(_constants_sizes__WEBPACK_IMPORTED_MODULE_3__.FALLBACK_SIZE);
@@ -6288,6 +6292,7 @@ var ImageFileExtension = /*#__PURE__*/function (ImageFileExtension) {
 }({});
 var ImageFileAnatomy = /*#__PURE__*/function () {
   function ImageFileAnatomy(src) {
+<<<<<<< HEAD
     (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, ImageFileAnatomy);
     (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "folder", void 0);
     (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "file", void 0);
@@ -6308,6 +6313,21 @@ var ImageFileAnatomy = /*#__PURE__*/function () {
       _filename$split2 = (0,_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_filename$split, 2),
       file = _filename$split2[0],
       extension = _filename$split2[1];
+=======
+    (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ImageFileAnatomy);
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(this, "folder", void 0);
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(this, "file", void 0);
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(this, "extension", void 0);
+    var splitByFolder = src.split("/");
+    // const filename = splitByFolder.pop()!
+    var filename = splitByFolder.pop();
+    if (!filename) {
+      throw new Error("Failed to extract filename");
+    }
+    var filenameSplit = filename.split(".");
+    var file = filenameSplit[0];
+    var extension = filenameSplit[1];
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
     this.folder = splitByFolder.join("/");
     this.file = file;
     this.extension = extension;
@@ -6324,7 +6344,11 @@ var ImageFileAnatomy = /*#__PURE__*/function () {
       var extension = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.extension;
       var srcSet = _constants_sizes__WEBPACK_IMPORTED_MODULE_4__.IMAGE_SIZES.reduce(function (acc, size, sizeIndex) {
         var srcSetItem = "".concat(_this.getSizedImageSrc(size, extension), " ").concat(size, "w");
+<<<<<<< HEAD
         if (sizeIndex < _constants_sizes__WEBPACK_IMPORTED_MODULE_4__.IMAGE_SIZES.length - 1) {
+=======
+        if (sizeIndex < _constants_sizes__WEBPACK_IMPORTED_MODULE_3__.IMAGE_SIZES.length - 1) {
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
           srcSetItem += ", ";
         }
         return acc + srcSetItem;
@@ -6340,10 +6364,16 @@ var ImageFileAnatomy = /*#__PURE__*/function () {
     value: function getSizedImageSrc(size) {
       var extension = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.extension;
       if (this.extension === ImageFileExtension.GIF) {
+<<<<<<< HEAD
         return this.folder.startsWith("http") ? "".concat(this.folder, "/").concat(this.file, ".").concat(this.extension) : "".concat(_constants__WEBPACK_IMPORTED_MODULE_5__.CDN).concat(this.folder, "/").concat(this.file, ".").concat(this.extension);
       }
       // return `${CDN}${this.folder}/${this.file}-${size}w.${extension}`;
       return "".concat(_constants__WEBPACK_IMPORTED_MODULE_5__.CDN.replace(/\/$/, ""), "/").concat(this.folder, "/").concat(this.file, "-").concat(size, "w.").concat(extension);
+=======
+        return this.folder.startsWith("http") ? "".concat(this.folder, "/").concat(this.file, ".").concat(this.extension) : "".concat(_constants__WEBPACK_IMPORTED_MODULE_4__.CDN).concat(this.folder, "/").concat(this.file, ".").concat(this.extension);
+      }
+      return "".concat(_constants__WEBPACK_IMPORTED_MODULE_4__.CDN).concat(this.folder, "/").concat(this.file, "-").concat(size, "w.").concat(extension);
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
     }
   }, {
     key: "getMimeType",
@@ -6556,7 +6586,11 @@ var GalleryBlock = function GalleryBlock(_ref) {
     imageOnRight = _ref$imageOnRight === void 0 ? false : _ref$imageOnRight,
     ctaLink = _ref.ctaLink;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+<<<<<<< HEAD
     className: "".concat(_GalleryBlock_less__WEBPACK_IMPORTED_MODULE_1__["default"].galleryBlock, " ").concat(imageOnRight ? _GalleryBlock_less__WEBPACK_IMPORTED_MODULE_1__["default"].reverse : "")
+=======
+    className: "".concat(_GalleryBlock_less__WEBPACK_IMPORTED_MODULE_1__["default"].galleryBlock, " ").concat(imageOnRight ? _GalleryBlock_less__WEBPACK_IMPORTED_MODULE_1__["default"].reverse : '')
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: _GalleryBlock_less__WEBPACK_IMPORTED_MODULE_1__["default"].textContainer
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
@@ -7911,7 +7945,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/arthur-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-AueSobol.png',
@@ -7920,7 +7958,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/aue-sobol-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Cimen.gif',
@@ -7929,7 +7971,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/cimen-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Gilden.png',
@@ -7938,7 +7984,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/gilden-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Keo.png',
@@ -7947,7 +7997,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/keo-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-McCurry.png',
@@ -7956,14 +8010,22 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/mccurry-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }];
 var BrucePage = function BrucePage() {
   var _useDynamicScrollBeha = (0,_hooks_useDynamicScrollBehavior__WEBPACK_IMPORTED_MODULE_7__.useDynamicScrollBehavior)(),
     headerTheme = _useDynamicScrollBeha.headerTheme,
     ctaTheme = _useDynamicScrollBeha.ctaTheme,
+<<<<<<< HEAD
     isCTAHidden = _useDynamicScrollBeha.isCTAHidden; // 获取主题状态
+=======
+    isCTAHidden = _useDynamicScrollBeha.isCTAHidden; 
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
     theme: headerTheme,
@@ -8496,7 +8558,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/arthur-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-AueSobol.png',
@@ -8505,7 +8571,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/aue-sobol-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Cimen.gif',
@@ -8514,7 +8584,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/cimen-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Gilden.png',
@@ -8523,7 +8597,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/gilden-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Keo.png',
@@ -8532,7 +8610,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/keo-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-McCurry.png',
@@ -8547,7 +8629,11 @@ var JacobPage = function JacobPage() {
   var _useDynamicScrollBeha = (0,_hooks_useDynamicScrollBehavior__WEBPACK_IMPORTED_MODULE_7__.useDynamicScrollBehavior)(),
     headerTheme = _useDynamicScrollBeha.headerTheme,
     ctaTheme = _useDynamicScrollBeha.ctaTheme,
+<<<<<<< HEAD
     isCTAHidden = _useDynamicScrollBeha.isCTAHidden; // 获取主题状态
+=======
+    isCTAHidden = _useDynamicScrollBeha.isCTAHidden; 
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
     theme: headerTheme,
@@ -8690,6 +8776,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var featureData = [{
+<<<<<<< HEAD
   imageSrc: "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_POWERFUL_DISPLAY_v1_01.gif",
   title: "A Powerful Display",
   description: "Jeff Koons wanted to display multiple images in an overlapping yet organized flow so that each has its own space without any one image overpowering the others."
@@ -8732,12 +8819,60 @@ var previousCollection = [{
 }, {
   imageSrc: "/collections/jeff-koons/previous-collection/Co_Bjork.jpg",
   link: "/bjork"
+=======
+  imageSrc: 'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_POWERFUL_DISPLAY_v1_01.gif',
+  title: 'A Powerful Display',
+  description: 'Jeff Koons wanted to display multiple images in an overlapping yet organized flow so that each has its own space without any one image overpowering the others.'
+}, {
+  imageSrc: 'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_FOCUSED_v2_01.gif',
+  title: 'Focused Viewing',
+  description: 'Clicking into any image opens a full screen view of it in orderto experience the artwork on its own the way you would inside a gallery.'
+}, {
+  imageSrc: 'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_TIMELINE_v2_01.gif',
+  title: 'Visual Timeline',
+  description: 'This style of gallery allows the viewer to experience a series of work as a whole, as well as amongst other series, creating a larger picture of Jeff Koons’ work.'
+}, {
+  imageSrc: 'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_AWARDS_v1_01.gif',
+  title: 'Archival Columns',
+  description: 'With such a prolific career, organized columns of information highlight Jeff Koons’ successes in an easy-to-navigate format.'
+}];
+var carouselData = [{
+  imageSrc: 'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_03.gif',
+  title: 'Block Pinning',
+  description: 'Key content blocks are pinned throughout the homepage to deliver an engaging, stylized scrolling experience.'
+}, {
+  imageSrc: 'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_02.gif',
+  title: 'Gallery Sections',
+  description: 'Our best format for beautifully presenting collections of images or videos sequentially on a page.'
+}, {
+  imageSrc: 'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_04.gif',
+  title: 'Online Store',
+  description: "A digital storefront offers a full series of prints for sale, transforming an artist's brand into a business."
+}, {
+  imageSrc: 'https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_01.gif',
+  title: 'Accordions',
+  description: 'Supporting text is easily expanded and collapsed — helping core messages stand out even more.'
+}];
+var previousCollection = [{
+  imageSrc: '/collections/jeff-koons/previous-collection/Co_RR.jpg',
+  link: '/rickrubin'
+}, {
+  imageSrc: '/collections/jeff-koons/previous-collection/Co_Magnum.jpg',
+  link: '/magnum'
+}, {
+  imageSrc: '/collections/jeff-koons/previous-collection/Co_Bjork.jpg',
+  link: '/bjork'
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 }];
 var JeffPage = function JeffPage() {
   var _useDynamicScrollBeha = (0,_hooks_useDynamicScrollBehavior__WEBPACK_IMPORTED_MODULE_10__.useDynamicScrollBehavior)(),
     headerTheme = _useDynamicScrollBeha.headerTheme,
     ctaTheme = _useDynamicScrollBeha.ctaTheme,
+<<<<<<< HEAD
     isCTAHidden = _useDynamicScrollBeha.isCTAHidden; // 获取主题状态
+=======
+    isCTAHidden = _useDynamicScrollBeha.isCTAHidden; 
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
     theme: headerTheme,
@@ -8746,7 +8881,11 @@ var JeffPage = function JeffPage() {
     "data-theme": "dark",
     text: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, "A collaboration with ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
       className: "highlight"
+<<<<<<< HEAD
     }, "Jeff Koons"), " ", "to develop an online gallery \u2014 showcasing his complete works all in one place for the first time ever \u2014 and an exclusive template, Reflect, to showcase your own work."),
+=======
+    }, "Jeff Koons"), ' ', "to develop an online gallery \u2014 showcasing his complete works all in one place for the first time ever \u2014 and an exclusive template, Reflect, to showcase your own work."),
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
     FilmButtonLabel: "Watch Film",
     SecondFilmButtonLabel: "Watch Second Film",
     showSecondButton: true,
@@ -8793,7 +8932,11 @@ var JeffPage = function JeffPage() {
     textColor: "white",
     images: previousCollection,
     "data-last-section": true
+<<<<<<< HEAD
   }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+=======
+  }), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 };
 
 // export default JeffPage;
@@ -8838,7 +8981,11 @@ var carouselData = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/arthur-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-AueSobol.png',
@@ -8847,7 +8994,11 @@ var carouselData = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/aue-sobol-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Cimen.gif',
@@ -8856,7 +9007,11 @@ var carouselData = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/cimen-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Gilden.png',
@@ -8865,7 +9020,11 @@ var carouselData = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/gilden-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Keo.png',
@@ -8874,7 +9033,11 @@ var carouselData = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/keo-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-McCurry.png',
@@ -8883,7 +9046,11 @@ var carouselData = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/mccurry-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }];
 var scrollToLastSection = function scrollToLastSection(event) {
@@ -8902,7 +9069,11 @@ var MagnumPage = function MagnumPage() {
   var _useDynamicScrollBeha = (0,_hooks_useDynamicScrollBehavior__WEBPACK_IMPORTED_MODULE_7__.useDynamicScrollBehavior)(),
     headerTheme = _useDynamicScrollBeha.headerTheme,
     ctaTheme = _useDynamicScrollBeha.ctaTheme,
+<<<<<<< HEAD
     isCTAHidden = _useDynamicScrollBeha.isCTAHidden; // 获取主题状态
+=======
+    isCTAHidden = _useDynamicScrollBeha.isCTAHidden; 
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
     theme: headerTheme,
@@ -9040,7 +9211,11 @@ var carouselData = [{
   description: "A digital storefront offers a full series of prints for sale, transforming an artist's brand into a business.",
   ctaLink: 'https://www.squarespace.com/templates/arthur-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'light'
 }, {
   imageSrc: 'https://via.placeholder.com/443x255',
@@ -9048,7 +9223,11 @@ var carouselData = [{
   description: 'Our best format for beautifully presenting collections of images...',
   ctaLink: '',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'light'
 }, {
   imageSrc: 'https://via.placeholder.com/443x255',
@@ -9056,7 +9235,11 @@ var carouselData = [{
   description: 'A digital storefront offers a full series of prints for sale...',
   ctaLink: '',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'light'
 }, {
   imageSrc: 'https://via.placeholder.com/443x255',
@@ -9064,7 +9247,11 @@ var carouselData = [{
   description: 'Support for expanding content blocks, perfect for FAQs or highlights...',
   ctaLink: '',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'light'
 }];
 var carouselData2 = [{
@@ -9074,7 +9261,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/arthur-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: 'https://via.placeholder.com/443x255',
@@ -9083,7 +9274,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: '',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: 'https://via.placeholder.com/443x255',
@@ -9092,7 +9287,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: '',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: 'https://via.placeholder.com/443x255',
@@ -9101,14 +9300,22 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: '',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }];
 var OliviaPage = function OliviaPage() {
   var _useDynamicScrollBeha = (0,_hooks_useDynamicScrollBehavior__WEBPACK_IMPORTED_MODULE_7__.useDynamicScrollBehavior)(),
     headerTheme = _useDynamicScrollBeha.headerTheme,
     ctaTheme = _useDynamicScrollBeha.ctaTheme,
+<<<<<<< HEAD
     isCTAHidden = _useDynamicScrollBeha.isCTAHidden; // 获取主题状态
+=======
+    isCTAHidden = _useDynamicScrollBeha.isCTAHidden; 
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
     theme: headerTheme,
@@ -9266,7 +9473,11 @@ var RickPage = function RickPage() {
   var _useDynamicScrollBeha = (0,_hooks_useDynamicScrollBehavior__WEBPACK_IMPORTED_MODULE_11__.useDynamicScrollBehavior)(),
     headerTheme = _useDynamicScrollBeha.headerTheme,
     ctaTheme = _useDynamicScrollBeha.ctaTheme,
+<<<<<<< HEAD
     isCTAHidden = _useDynamicScrollBeha.isCTAHidden; // 获取主题状态
+=======
+    isCTAHidden = _useDynamicScrollBeha.isCTAHidden; 
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
     theme: headerTheme,
@@ -9498,7 +9709,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/arthur-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-AueSobol.png',
@@ -9507,7 +9722,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/aue-sobol-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Cimen.gif',
@@ -9516,7 +9735,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/cimen-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Gilden.png',
@@ -9525,7 +9748,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/gilden-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-Keo.png',
@@ -9534,7 +9761,11 @@ var carouselData2 = [{
   ctaText: 'START WITH THIS DESIGN',
   ctaLink: 'https://www.squarespace.com/templates/keo-fluid-demo',
   openInNewTab: true,
+<<<<<<< HEAD
   // 控制是否打开新窗口
+=======
+   
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   CTAtheme: 'dark'
 }, {
   imageSrc: '/collections/magnum/template/MagnumCollection-McCurry.png',
@@ -9549,7 +9780,11 @@ var BrucePage = function BrucePage() {
   var _useDynamicScrollBeha = (0,_hooks_useDynamicScrollBehavior__WEBPACK_IMPORTED_MODULE_7__.useDynamicScrollBehavior)(),
     headerTheme = _useDynamicScrollBeha.headerTheme,
     ctaTheme = _useDynamicScrollBeha.ctaTheme,
+<<<<<<< HEAD
     isCTAHidden = _useDynamicScrollBeha.isCTAHidden; // 获取主题状态
+=======
+    isCTAHidden = _useDynamicScrollBeha.isCTAHidden; 
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
     theme: headerTheme,

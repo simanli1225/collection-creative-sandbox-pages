@@ -8,6 +8,8 @@ import HeaderSection from '../../components/HeaderSection/HeaderSection'
 import { useDynamicScrollBehavior } from '../../hooks/useDynamicScrollBehavior'
 import UnderlineCTA from '@/components/Cta/UnderlineCTA'
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel'
+import { useGlobalFadeIn } from '../../hooks/useGlobalFadeIn'
+import AnimatedPage from '../../components/AnimatedPage/AnimatedPage';
 
 const images = [
   '/collections/bjork/slides/Ancestress_02.png',
@@ -20,8 +22,10 @@ const images = [
 ]
 const BjorkPage = () => {
   const { headerTheme, ctaTheme, isCTAHidden } = useDynamicScrollBehavior()
+  useGlobalFadeIn()
 
   return (
+    // <AnimatedPage>
     <div>
       <Header theme={headerTheme} page="Björk" />
       <HeaderSection
@@ -174,6 +178,8 @@ const BjorkPage = () => {
       </section>
       <Footer isDark={false} />
     </div>
+    // </AnimatedPage>
+
   )
 }
 

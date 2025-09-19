@@ -33,7 +33,6 @@
     "serve:ci": "serve --single dist --listen 5000",
     "test": "jest --passWithNoTests",
     "watch": "webpack --watch"
-
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
@@ -49,7 +48,7 @@
     "caniuse-lite": "^1.0.30001352",
     "classnames": "^2.5.1",
     "core-js": "^3.6.1",
-    "framer-motion": "^11.11.10",
+    "framer-motion": "^11.18.2",
     "postcss": "^8.3.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

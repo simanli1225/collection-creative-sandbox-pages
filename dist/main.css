@@ -6374,7 +6374,11 @@ p {
   background: white;
   margin: 0 auto;
   font-family: Arial, sans-serif;
+<<<<<<< HEAD
   width: 60%;
+=======
+  width: 80%;
+>>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
   padding: 20px 0 10% 0;
 }
 .ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k- {

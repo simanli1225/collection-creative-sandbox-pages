@@ -7,6 +7,7 @@ import HeaderSection from '../../components/HeaderSection/HeaderSection'
 import FeatureCarousel from '../../components/FeatureCarousel/FeatureCarousel'
 import { useDynamicScrollBehavior } from '../../hooks/useDynamicScrollBehavior'
 import GalleryBlock from '../../components/MagnumGalleryBlock/GalleryBlock'
+import { useGlobalFadeIn } from '../../hooks/useGlobalFadeIn'
 
 const carouselData = [
   {
@@ -16,7 +17,7 @@ const carouselData = [
       'An airy design created in collaboration with Olivia Arthur, with abundant white space and an organic layout.',
     ctaText: 'START WITH THIS DESIGN',
     ctaLink: 'https://www.squarespace.com/templates/arthur-fluid-demo',
-    openInNewTab: true, // 控制是否打开新窗口
+    openInNewTab: true,  
     CTAtheme: 'dark',
   },
   {
@@ -26,7 +27,7 @@ const carouselData = [
       'A versatile design created in collaboration with Jacob Aue Sobol, with bold typography and a prominent display for products.',
     ctaText: 'START WITH THIS DESIGN',
     ctaLink: 'https://www.squarespace.com/templates/aue-sobol-fluid-demo',
-    openInNewTab: true, // 控制是否打开新窗口
+    openInNewTab: true,  
     CTAtheme: 'dark',
   },
   {
@@ -36,7 +37,7 @@ const carouselData = [
       'A video-forward design created in collaboration with Sabiha Çimen, with a versatile multi-column layout to exhibit varying work.',
     ctaText: 'START WITH THIS DESIGN',
     ctaLink: 'https://www.squarespace.com/templates/cimen-fluid-demo',
-    openInNewTab: true, // 控制是否打开新窗口
+    openInNewTab: true,  
     CTAtheme: 'dark',
   },
   {
@@ -46,7 +47,7 @@ const carouselData = [
       'A contemporary and powerful design created in collaboration with Bruce Gilden.',
     ctaText: 'START WITH THIS DESIGN',
     ctaLink: 'https://www.squarespace.com/templates/gilden-fluid-demo',
-    openInNewTab: true, // 控制是否打开新窗口
+    openInNewTab: true,  
     CTAtheme: 'dark',
   },
   {
@@ -56,7 +57,7 @@ const carouselData = [
       'A brutalist design created in collaboration with William Keo, with a roomy grid layout and a multitude of pages to highlight your work.',
     ctaText: 'START WITH THIS DESIGN',
     ctaLink: 'https://www.squarespace.com/templates/keo-fluid-demo',
-    openInNewTab: true, // 控制是否打开新窗口
+    openInNewTab: true,  
     CTAtheme: 'dark',
   },
   {
@@ -66,7 +67,7 @@ const carouselData = [
       'A well-structured design created in collaboration with Steve McCurry, with distinct elements throughout, and generous room for a multitude of projects.',
     ctaText: 'START WITH THIS DESIGN',
     ctaLink: 'https://www.squarespace.com/templates/mccurry-fluid-demo',
-    openInNewTab: true, // 控制是否打开新窗口
+    openInNewTab: true,  
     CTAtheme: 'dark',
   },
 ] as const
@@ -85,7 +86,8 @@ const scrollToLastSection = (event: React.MouseEvent) => {
 }
 
 const MagnumPage = () => {
-  const { headerTheme, ctaTheme, isCTAHidden } = useDynamicScrollBehavior() // 获取主题状态
+  const { headerTheme, ctaTheme, isCTAHidden } = useDynamicScrollBehavior() 
+  useGlobalFadeIn()
 
   return (
     <div>

@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = ({ isDark = false, style }) => {
       style={footerStyle} // 动态设置 z-index
     >
       {/* Bottom Left Links */}
-      <div>
+      <div className={styles.footerLinks}>
         <a
           className={styles.blackText}
           href="https://www.squarespace.com/privacy"

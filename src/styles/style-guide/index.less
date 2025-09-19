@@ -199,3 +199,18 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+
+
+:global(.auto-fade-in) {
+  opacity: 0;
+  // transform: translateY(30px);
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+
+:global(.auto-fade-in.visible) {
+  opacity: 1;
+  transform: none;
+}
+
