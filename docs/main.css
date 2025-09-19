@@ -246,6 +246,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .Header-header-H0SKy {
   position: fixed;
   top: var(--site-margin);
@@ -661,6 +671,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 footer {
   position: relative;
   display: flex;
@@ -691,7 +711,7 @@ footer img {
 footer img.Footer-dark-fB-vm {
   filter: none !important;
 }
-footer.Footer-dark-fB-vm a {
+footer.Footer-dark-fB-vm .Footer-footerLinks-Vd3ex > a {
   color: black !important;
 }
 footer.Footer-dark-fB-vm img {
@@ -1248,6 +1268,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .DotsNavigation-loadingAnimation-rbeSF {
   opacity: 1;
   transition: opacity 1s ease-in-out;
@@ -1275,10 +1305,6 @@ p {
 }
 s #DotsNavigation-sqsp-logo-id-I\+GQ5 {
   filter: invert(1);
-}
-body,
-html {
-  scroll-behavior: smooth;
 }
 .DotsNavigation-nameSection-vmT3n {
   position: absolute;
@@ -1693,6 +1719,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .index-loadingAnimation-sw106 {
   opacity: 1;
   transition: opacity 1s ease-in-out;
@@ -2069,6 +2105,16 @@ p {
   section:last-of-type {
     padding-bottom: 18vmax;
   }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
 }
 .HeaderSection-headerSection-rdM09 {
   width: 100vw;
@@ -2519,6 +2565,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .FilmModal-modal-WmBzI {
   transition: opacity 0.3s ease, visibility 0.3s ease;
   position: fixed;
@@ -2808,6 +2864,16 @@ p {
   section:last-of-type {
     padding-bottom: 18vmax;
   }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
 }
 .JeffImageSection-gridSection-9zJVw {
   display: grid;
@@ -3364,6 +3430,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .video-base__control {
   position: absolute;
   bottom: 0;
@@ -3644,6 +3720,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .video-base__poster {
   position: relative;
   transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -3900,6 +3986,16 @@ p {
   section:last-of-type {
     padding-bottom: 18vmax;
   }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
 }
 .WebsiteSection-videoContainer-M8iKj {
   width: 77.8%;
@@ -4242,6 +4338,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 /* Styles for the gallery section */
 .FeatureSection-gallerySection-UFD8W {
   display: grid;
@@ -4548,6 +4654,16 @@ p {
   section:last-of-type {
     padding-bottom: 18vmax;
   }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
 }
 .FeatureCarousel-featureCarousel-523h4 {
   overflow: hidden;
@@ -4912,6 +5028,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .PreviousCollection-titleText-RrWrB {
   margin-bottom: 20px;
 }
@@ -5219,6 +5345,16 @@ p {
   section:last-of-type {
     padding-bottom: 18vmax;
   }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
 }
 .index-rickVideoSection-x-E4P {
   background-color: white;
@@ -5543,6 +5679,16 @@ p {
   section:last-of-type {
     padding-bottom: 18vmax;
   }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
 }
 .index-bjorkWebsiteSection-TSznO {
   background-color: #16030a;
@@ -6035,6 +6181,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .index-magnumGallerySection-M7e0m {
   background: white;
 }
@@ -6360,6 +6516,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .index-magnumGallerySection-Y2HRR {
   background: white;
 }
@@ -6374,11 +6540,11 @@ p {
   background: white;
   margin: 0 auto;
   font-family: Arial, sans-serif;
-  width: 60%;
+  width: 70%;
   padding: 20px 0 10% 0;
 }
 .ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k- {
-  max-width: 65vw;
+  max-width: 80vw;
   display: flex;
   justify-content: center;
 }
@@ -6413,12 +6579,19 @@ p {
 }
 @media screen and (max-width: 767px) and (orientation: portrait) {
   .ImageCard-imageCard-7ftJc {
+    overflow: hidden;
     width: 100%;
-    padding: 20px 0 25% 0;
+    padding: 20px 0 18% 0;
+    padding: 20px 0 15% 0;
   }
   .ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k-,
   .ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k- picture {
-    width: 70%;
+    max-width: 100%;
+  }
+  .ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k- img,
+  .ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k- picture img {
+    max-width: 100%;
+    min-height: 55vw;
   }
   .ImageCard-imageCard-7ftJc .ImageCard-textContainer-QRsKq {
     flex-direction: column;
@@ -6802,6 +6975,16 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .index-magnumGallerySection-wh-zU {
   background: white;
 }
@@ -7055,6 +7238,16 @@ p {
   section:last-of-type {
     padding-bottom: 18vmax;
   }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
 }
 .index-magnumGallerySection-9x\+7M {
   background: white;
@@ -7310,10 +7503,548 @@ p {
     padding-bottom: 18vmax;
   }
 }
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
 .index-magnumGallerySection-zf5Iw {
   background: white;
 }
 .index-gallerySection-UBiIA {
+  margin-top: 6%;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-j7-I\+ {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-j7-I\+ {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-vrwnF {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-sSKfV {
+  color: white;
+}
+.index-blackText-yIu8h {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-eevdE {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-GjZqS {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-GjZqS p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-GjZqS p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-eevdE {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-eevdE h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-vrwnF {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-XVYJY:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-XVYJY:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-XVYJY:hover:after {
+  animation-name: index-lineChange-UDyQX;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-UDyQX {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-TYPwv {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-XVYJY:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+.index-magnumGallerySection-gcAkz {
+  background: white;
+}
+.index-gallerySection-VRHqH {
+  margin-top: 6%;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-JNGJi {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-JNGJi {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-4EHc2 {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-eHFgl {
+  color: white;
+}
+.index-blackText-nRpSS {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-K3FKR {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-yVn46 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-yVn46 p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-yVn46 p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-K3FKR {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-K3FKR h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-4EHc2 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-Ow4Oj:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-Ow4Oj:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-Ow4Oj:hover:after {
+  animation-name: index-lineChange-axrdc;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-axrdc {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-3ncnX {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-Ow4Oj:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+.index-magnumGallerySection-WyNbG {
+  background: white;
+}
+.index-gallerySection-LpNrL {
   margin-top: 6%;
 }
 
@@ -7563,6 +8294,16 @@ p {
   section:last-of-type {
     padding-bottom: 18vmax;
   }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
 }
 .index-grid-e\+cQg {
   position: fixed;
