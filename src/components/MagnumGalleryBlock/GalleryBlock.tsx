@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from './GalleryBlock.less'
-import UnderlineCTA from '../Cta/UnderlineCTA'
-import Image from '../../components/Image'
+import React from "react";
+import styles from "./GalleryBlock.less";
+import UnderlineCTA from "../Cta/UnderlineCTA";
+import Image from "../../components/Image";
 
 type GalleryBlockProps = {
   title: string;
@@ -9,9 +9,9 @@ type GalleryBlockProps = {
   buttonText: string;
   imageUrl: string;
   imageAlt: string;
-  imageOnRight?: boolean; // 是否将图片放在右侧，默认在左侧
+  imageOnRight?: boolean;
   ctaLink: string;
-}
+};
 
 const GalleryBlock: React.FC<GalleryBlockProps> = ({
   title,
@@ -24,7 +24,7 @@ const GalleryBlock: React.FC<GalleryBlockProps> = ({
 }) => {
   return (
     <div
-      className={`${styles.galleryBlock} ${imageOnRight ? styles.reverse : ''}`}
+      className={`${styles.galleryBlock} ${imageOnRight ? styles.reverse : ""}`}
     >
       <div className={styles.textContainer}>
         <h2 className={styles.title}>{title}</h2>
@@ -43,7 +43,7 @@ const GalleryBlock: React.FC<GalleryBlockProps> = ({
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default GalleryBlock
+export default GalleryBlock;
