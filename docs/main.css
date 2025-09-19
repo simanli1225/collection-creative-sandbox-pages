@@ -1,0 +1,7588 @@
+@import url(https://use.typekit.net/gub2trj.css);
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.Header-one-grid-ZoNbE {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Header-one-grid-ZoNbE {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.Header-sectionTitleH1-MVngt {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.Header-whiteText-OZMIc {
+  color: white;
+}
+.Header-blackText-EAdqv {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.Header-section-NO3Oq {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.Header-titleText-kDTXs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.Header-titleText-kDTXs p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Header-titleText-kDTXs p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .Header-section-NO3Oq {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .Header-section-NO3Oq h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.Header-sectionTitleH1-MVngt {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.Header-underlineAnimation-LzzgP:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Header-underlineAnimation-LzzgP:after {
+    height: 1.5px !important;
+  }
+}
+.Header-underlineAnimation-LzzgP:hover:after {
+  animation-name: Header-lineChange-pp7X-;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes Header-lineChange-pp7X- {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.Header-close-Jo\+Pp {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Header-underlineAnimation-LzzgP:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.Header-header-H0SKy {
+  position: fixed;
+  top: var(--site-margin);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 2 * var(--site-margin));
+  box-sizing: border-box;
+  /* 包括 padding 在宽高计算中 */
+  z-index: 100;
+  left: var(--site-margin);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+@media screen and (max-width: 767px) {
+  .Header-header-H0SKy {
+    top: 3rem;
+  }
+}
+.Header-preTopLeft-zYuN6 {
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.Header-preTopLeft-zYuN6 > .Header-logoText-Bc2tm,
+.Header-preTopLeft-zYuN6 .Header-pageText-yPgn9 {
+  height: 1.8rem;
+  font-size: 3rem;
+  /* 30px */
+  font-family: Clarkson_light;
+  /* Use custom font */
+  color: white;
+}
+.Header-preTopLeft-zYuN6 > .Header-logoDash-s\+kM\+ {
+  width: 2.24rem;
+  /* 22.4px */
+  height: 0.25rem;
+  /* 2.5px */
+  background-color: white;
+  /* Dash color */
+}
+.Header-header-H0SKy.Header-light-CIbzS .Header-preTopLeft-zYuN6 > .Header-logoText-Bc2tm,
+.Header-header-H0SKy.Header-light-CIbzS .Header-preTopLeft-zYuN6 .Header-pageText-yPgn9 {
+  color: black;
+}
+.Header-header-H0SKy.Header-light-CIbzS .Header-preTopLeft-zYuN6 > .Header-logoDash-s\+kM\+ {
+  background-color: black;
+  /* Dash color */
+}
+.Header-header-H0SKy.Header-dark-QzJxY .Header-preTopLeft-zYuN6 > .Header-logoText-Bc2tm,
+.Header-header-H0SKy.Header-dark-QzJxY .Header-preTopLeft-zYuN6 .Header-pageText-yPgn9 {
+  color: white;
+}
+.Header-header-H0SKy.Header-dark-QzJxY .Header-preTopLeft-zYuN6 > .Header-logoDash-s\+kM\+ {
+  background-color: white;
+  /* Dash color */
+}
+.Header-preTopRight-LuUYs {
+  color: white;
+  cursor: pointer;
+}
+.Header-hamburger-z6XRc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* 5px */
+  cursor: pointer;
+}
+.Header-hamburger-z6XRc div {
+  width: 3rem;
+  /* 30px */
+  height: 0.3rem;
+  /* 3px */
+  background-color: white;
+  /* Bar color */
+}
+.Header-header-H0SKy.Header-light-CIbzS .Header-hamburger-z6XRc div {
+  background-color: black;
+  /* Bar color */
+}
+.Header-header-H0SKy.Header-dark-QzJxY .Header-hamburger-z6XRc div {
+  background-color: white;
+  /* Bar color */
+}
+.Header-popUpMenu-GR-E5 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  z-index: 9999999999;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  transition: transform 0.3s ease-in-out;
+  /* Smooth slide animation */
+}
+.Header-slideIn-IddyR {
+  transform: translateX(0);
+  /* Fully visible */
+}
+.Header-menuContent-R6iTg {
+  padding: 2rem;
+  /* 20px */
+  padding: 10vw 3vw;
+  font-family: Clarkson_light;
+}
+.Header-menuContent-R6iTg .Header-menuItem-D83Q9 {
+  margin: 1rem 0;
+  /* 10px */
+}
+.Header-menuContent-R6iTg .Header-menuItem-D83Q9 .Header-dashMenu-m0l4F {
+  height: 0.85vw;
+  width: 7.18vw;
+  background-color: white;
+}
+.Header-menuContent-R6iTg .Header-menuItem-D83Q9 .Header-menuLink-9j7l3 {
+  text-decoration: none;
+}
+.Header-menuContent-R6iTg .Header-menuItem-D83Q9 .Header-menuLink-9j7l3 .Header-menuName-xowS0,
+.Header-menuContent-R6iTg .Header-menuItem-D83Q9 .Header-menuLink-9j7l3 span {
+  color: white;
+  align-items: flex-end;
+  font-size: 10vw;
+  line-height: 100%;
+  letter-spacing: -0.4vw;
+  white-space: nowrap;
+}
+.Header-menuContent-R6iTg .Header-menuItem-D83Q9 .Header-menuLink-9j7l3 .Header-menuName-xowS0 {
+  order: 1;
+  /* Ensure .menuName appears first */
+}
+.Header-menuContent-R6iTg .Header-menuItem-D83Q9 .Header-menuLink-9j7l3 .Header-menuName-xowS0:hover + .Header-menuDivSS-XWcId {
+  opacity: 1;
+  /* Make visible */
+}
+.Header-menuDivSS-XWcId {
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  text-transform: none !important;
+  padding-left: 5%;
+}
+.Header-menuDivSS-XWcId > a {
+  text-transform: none !important;
+}
+.Header-menuLink-9j7l3 {
+  display: flex;
+}
+.Header-menuLink-9j7l3 a {
+  color: white;
+  display: flex;
+}
+.Header-dim-Kf0ML {
+  opacity: 50%;
+}
+.Header-dim-Kf0ML:hover {
+  opacity: 1;
+}
+.Header-menuName-xowS0 {
+  text-transform: none;
+  padding: 0;
+  margin: 0;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.Footer-one-grid-toWHX {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Footer-one-grid-toWHX {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.Footer-sectionTitleH1-nDUd3 {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.Footer-whiteText-qY\+91 {
+  color: white;
+}
+.Footer-blackText-Ql5yu {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.Footer-section-nxCEa {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.Footer-titleText-8wfuc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.Footer-titleText-8wfuc p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Footer-titleText-8wfuc p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .Footer-section-nxCEa {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .Footer-section-nxCEa h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.Footer-sectionTitleH1-nDUd3 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.Footer-underlineAnimation-cFJba:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Footer-underlineAnimation-cFJba:after {
+    height: 1.5px !important;
+  }
+}
+.Footer-underlineAnimation-cFJba:hover:after {
+  animation-name: Footer-lineChange-kioA0;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes Footer-lineChange-kioA0 {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.Footer-close-EgV9p {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .Footer-underlineAnimation-cFJba:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--site-margin);
+  color: white;
+  bottom: var(--site-margin);
+  width: 100%;
+  z-index: 99;
+  height: 0;
+}
+footer a {
+  color: white;
+  text-transform: uppercase;
+  padding-right: 2.1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+footer a:last-of-type {
+  padding-right: 0 !important;
+}
+footer img {
+  width: 29px;
+  padding: 0;
+  filter: invert(1);
+}
+footer img.Footer-dark-fB-vm {
+  filter: none !important;
+}
+footer.Footer-dark-fB-vm a {
+  color: black !important;
+}
+footer.Footer-dark-fB-vm img {
+  filter: none !important;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  footer {
+    flex-direction: column;
+    bottom: 80px;
+  }
+  footer a:last-of-type {
+    padding-right: 0 !important;
+    padding-top: 3rem;
+  }
+  footer a:last-of-type img {
+    width: 22px;
+  }
+}
+
+.LanguagePicker-languagePicker-Id8Ex {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.LanguagePicker-languagePicker-Id8Ex.LanguagePicker-slideIn-vtXL4 {
+  transform: translateY(0);
+}
+.LanguagePicker-languagePicker-Id8Ex.LanguagePicker-slideOut-rdxM0 {
+  transform: translateY(100%);
+}
+.LanguagePicker-languagePicker-Id8Ex p {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 300;
+  font-family: Clarkson_light;
+  padding-bottom: 2%;
+  letter-spacing: -0.035em;
+  color: white;
+}
+.LanguagePicker-languageLink-mGyQG {
+  color: #fff;
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  text-transform: capitalize !important;
+  line-height: 120%;
+  font-size: 35px;
+  letter-spacing: -0.035em;
+  padding: 3vw 0 0 0;
+}
+.LanguagePicker-languageLink-mGyQG:hover {
+  text-decoration: underline;
+  text-underline-offset: 1vw;
+  text-decoration-thickness: 0.2vw;
+}
+.LanguagePicker-closeButton-tws3x {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  display: block;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#LoadingAnimation-loadingAnimationSection-y1P9W {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  left: 0;
+  background-color: white;
+  z-index: 999999;
+}
+.LoadingAnimation-textLogo-MprxK {
+  font-size: 10vw;
+  font-family: Clarkson_light;
+  letter-spacing: -0.6vw;
+  line-height: 12.3vw;
+  margin: 0;
+  color: black;
+}
+.LoadingAnimation-logoCoL-hTcd1 {
+  display: flex;
+  align-items: baseline;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  left: 35%;
+}
+.LoadingAnimation-logoRightText-WpWFI {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  align-items: flex-start;
+  left: 56.5%;
+}
+.LoadingAnimation-logoCoOnly-XwQyi {
+  padding-right: 0.7vw;
+}
+.LoadingAnimation-presentFadeAnimation-A2BTT {
+  animation: LoadingAnimation-fadeInOut-ed3j6 2s ease-in-out 0.2s forwards;
+}
+.LoadingAnimation-coAnimation-tnzxK {
+  opacity: 0;
+  animation: LoadingAnimation-appear-XIfF1 0.7s ease-out 2.2s forwards;
+}
+.LoadingAnimation-coLAnimation-BVJ8H {
+  animation: LoadingAnimation-backCenter-\+aHcH ease-in-out 0.24s 4.5s forwards, LoadingAnimation-backLeftAgain-23XnW ease-in-out 0.24s 4.99s forwards;
+}
+.LoadingAnimation-fakeLAnimation-UQu-a {
+  width: 0.85vw;
+  height: 7.2vw;
+  background-color: black;
+  transform-origin: bottom right;
+  transform: rotate(0deg);
+  margin-left: 0.4vw;
+  opacity: 0;
+  animation: LoadingAnimation-appear-XIfF1 0.7s ease-out 2.6s forwards, LoadingAnimation-flip-0S5xM 0.24s ease-in-out 3.85s forwards, LoadingAnimation-moveLeft-rm1k7 0.3s 3.8s forwards;
+}
+.LoadingAnimation-lectionAnimation-ymDTO {
+  opacity: 0;
+  animation: LoadingAnimation-appear-XIfF1 0.7s ease-out 2.6s forwards, LoadingAnimation-moveRight-0sBpX 0.2s ease-out 3.8s forwards, LoadingAnimation-moveBottom-1kPN- 0.15s ease-out 4.4s forwards, LoadingAnimation-disappear-teoum 0.001s ease-out 4.42s forwards;
+}
+.LoadingAnimation-logoTextMag-p7i8e {
+  opacity: 0;
+  margin-left: 8.5vw;
+  margin-bottom: 19.5vw;
+}
+.LoadingAnimation-colNameDivs-QRIrR {
+  position: relative;
+  width: 50vw;
+  height: 12.3vw;
+  overflow: hidden;
+  margin-left: 7vw;
+  left: 57.2%;
+}
+.LoadingAnimation-colNamesSpan-uQmpu {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  animation: LoadingAnimation-slideInOut-a5LgV 0.33s 3s ease-in-out forwards;
+  text-align: left;
+  margin: 0 !important;
+  letter-spacing: -0.6vw;
+}
+.LoadingAnimation-lastWord-x\+bur {
+  animation: LoadingAnimation-slideInWord-NT1c\+ 0.16s ease-in-out forwards;
+}
+.LoadingAnimation-logoAnimation-Qn17c {
+  transform: scale(1);
+  transform-origin: center;
+  height: 100vh;
+}
+.LoadingAnimation-presentLogo-An17y {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  opacity: 0;
+  top: 0;
+}
+.LoadingAnimation-presentLogo-An17y img {
+  max-width: 100%;
+  height: auto;
+  width: 20vw;
+}
+/*--------- all the animation control ends here ---------*/
+@keyframes LoadingAnimation-appear-XIfF1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes LoadingAnimation-flip-0S5xM {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes LoadingAnimation-moveLeft-rm1k7 {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-right: 7vw;
+    margin-left: -1vw;
+  }
+}
+@keyframes LoadingAnimation-moveRight-0sBpX {
+  0% {
+    padding-left: 0;
+  }
+  100% {
+    padding-left: 5.7vw;
+  }
+}
+@keyframes LoadingAnimation-moveBottom-1kPN- {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 4vw;
+  }
+}
+@keyframes LoadingAnimation-disappear-teoum {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes LoadingAnimation-backCenter-\+aHcH {
+  0% {
+    left: 35%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@keyframes LoadingAnimation-backLeftAgain-23XnW {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 28%;
+  }
+}
+@keyframes LoadingAnimation-slideInOut-a5LgV {
+  0% {
+    top: -100%;
+    top: -80%;
+    top: -60%;
+    top: -30%;
+    opacity: 0;
+  }
+  /* 10% { */
+  10% {
+    top: 0;
+    opacity: 1;
+  }
+  /* 60% { */
+  60% {
+    top: 0;
+    opacity: 1;
+  }
+  90% {
+    top: 100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes LoadingAnimation-slideInWord-NT1c\+ {
+  0% {
+    top: -100%;
+    top: -60%;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes LoadingAnimation-fadeInOut-ed3j6 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.DotsNavigation-one-grid-2QEGD {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .DotsNavigation-one-grid-2QEGD {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.DotsNavigation-sectionTitleH1-7weUz {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.DotsNavigation-whiteText-6E0Pr {
+  color: white;
+}
+.DotsNavigation-blackText-1-Nus {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.DotsNavigation-section-Vmybx {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.DotsNavigation-titleText-AR6xJ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.DotsNavigation-titleText-AR6xJ p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .DotsNavigation-titleText-AR6xJ p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .DotsNavigation-section-Vmybx {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .DotsNavigation-section-Vmybx h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.DotsNavigation-sectionTitleH1-7weUz {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.DotsNavigation-underlineAnimation-V6s2T:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .DotsNavigation-underlineAnimation-V6s2T:after {
+    height: 1.5px !important;
+  }
+}
+.DotsNavigation-underlineAnimation-V6s2T:hover:after {
+  animation-name: DotsNavigation-lineChange-K-L\+Z;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes DotsNavigation-lineChange-K-L\+Z {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.DotsNavigation-close-aqhND {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .DotsNavigation-underlineAnimation-V6s2T:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.DotsNavigation-loadingAnimation-rbeSF {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.DotsNavigation-loadingAnimation-rbeSF.DotsNavigation-fadeOut-tgffW {
+  opacity: 0;
+  pointer-events: none;
+}
+.DotsNavigation-loadingAnimation-rbeSF {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.DotsNavigation-fadeOut-tgffW {
+  opacity: 0;
+}
+.DotsNavigation-dotsNavigation-w7V9J {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+.DotsNavigation-dotsNavigation-w7V9J.DotsNavigation-hidden-cCQ\+a {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+s #DotsNavigation-sqsp-logo-id-I\+GQ5 {
+  filter: invert(1);
+}
+body,
+html {
+  scroll-behavior: smooth;
+}
+.DotsNavigation-nameSection-vmT3n {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: transform 0.8s ease-in-out;
+}
+.DotsNavigation-enterDiv-1RBbM {
+  position: absolute;
+  top: 16vw;
+  margin-left: 0;
+}
+.DotsNavigation-nameSection-vmT3n video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 0;
+}
+.DotsNavigation-menuTitleContent-g8cgb {
+  position: absolute;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.DotsNavigation-menuTitleContent-g8cgb span {
+  color: white;
+  font-size: 10vw;
+  font-family: Clarkson_light !important;
+  letter-spacing: -0.6vw;
+  line-height: 12.3vw;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+.DotsNavigation-menuTitleContent-g8cgb a {
+  font-family: "Clarkson_med" !important;
+  position: relative;
+  font-size: 18px;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.DotsNavigation-dots-Jo3lJ {
+  position: fixed;
+  top: 50%;
+  right: 6.1rem;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.DotsNavigation-dot-U4S8S {
+  width: 6px;
+  height: 6px;
+  background: rgba(250, 250, 250, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+.DotsNavigation-dot-U4S8S.DotsNavigation-active-1QVqr {
+  background: #fafafa;
+}
+.DotsNavigation-underline-VcTVl {
+  width: 7.2vw;
+  height: 0.85vw;
+  margin: 0vw 0.88vw 2.6vw 0.7vw;
+  background-color: white;
+}
+.DotsNavigation-sectionTitle-\+aigG {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+#DotsNavigation-loading-animation-section-4sMuN {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999999;
+}
+#DotsNavigation-name-menu-id-k\+v6A,
+.DotsNavigation-nameMenu-DKzBD {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.DotsNavigation-enterDiv-1RBbM {
+  margin-left: 0;
+}
+.DotsNavigation-menuTitleContent-g8cgb a {
+  font-family: "Clarkson_med" !important;
+  position: relative;
+  font-size: 18px;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-thickness: 0;
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+}
+.DotsNavigation-nameSection-vmT3n {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.4s ease;
+  overflow: hidden;
+  background: black;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .DotsNavigation-sectionTitle-\+aigG {
+    top: 45%;
+  }
+  .DotsNavigation-dots-Jo3lJ {
+    transform: translateY(-50%) scale(0.5);
+    right: 20px;
+  }
+  .DotsNavigation-enterDiv-1RBbM {
+    top: 18vh;
+  }
+  .DotsNavigation-menuTitleContent-g8cgb a {
+    /* top: 57vh; */
+    font-size: 1.6rem;
+  }
+  .DotsNavigation-menuTitleContent-g8cgb {
+    position: fixed;
+    top: 45%;
+  }
+  .DotsNavigation-dots-Jo3lJ {
+    top: 45%;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-tUGVa {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-tUGVa {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-KLLOd {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-UC\+px {
+  color: white;
+}
+.index-blackText-vr4sZ {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-1I3o1 {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-BC3lD {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-BC3lD p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-BC3lD p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-1I3o1 {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-1I3o1 h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-KLLOd {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-YfdRK:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-YfdRK:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-YfdRK:hover:after {
+  animation-name: index-lineChange-YiqA-;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-YiqA- {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-lThpo {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-YfdRK:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.index-loadingAnimation-sw106 {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.index-loadingAnimation-sw106.index-fadeOut-FPv5\+ {
+  opacity: 0;
+  pointer-events: none;
+}
+.index-loadingAnimation-sw106 {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.index-fadeOut-FPv5\+ {
+  opacity: 0;
+}
+.index-dotsNavigation-EW\+zI {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+.index-dotsNavigation-EW\+zI.index-hidden-H7NKT {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.FloatTemplateCTA-hidden-TPOXn {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.FloatTemplateCTA-viewTempFloat-r\+VHa {
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
+}
+.FloatTemplateCTA-floatTempBlockText-3I9p7 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.FloatTemplateCTA-viewTempSLink-VOXxn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.FloatTemplateCTA-viewTempFloat-r\+VHa {
+  cursor: pointer;
+  position: fixed;
+  z-index: 10;
+  height: 90px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(2.5px);
+          backdrop-filter: blur(2.5px);
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.4s;
+  transform: scale(0.8);
+  transform-origin: bottom right;
+  right: var(--site-margin);
+  bottom: var(--site-margin);
+  white-space: nowrap;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 6px 22px 6px 6px;
+}
+.FloatTemplateCTA-viewTempFloat-r\+VHa:hover {
+  box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.2);
+}
+.FloatTemplateCTA-viewTempFloat-r\+VHa img {
+  width: 78px;
+  /* height: 78px; */
+  flex-shrink: 0;
+  border-radius: 15px;
+  margin-right: 6px;
+}
+.FloatTemplateCTA-viewTempFloat-r\+VHa a {
+  color: #fff;
+  font-family: Clarkson_med;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 135.5%;
+  /* 21.68px */
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-left: 22px;
+  display: contents;
+}
+.FloatTemplateCTA-viewTempFloat-r\+VHa.FloatTemplateCTA-light-o29cY > a {
+  color: black;
+}
+.FloatTemplateCTA-viewTempFloat-r\+VHa.FloatTemplateCTA-light-o29cY a {
+  color: black;
+}
+.FloatTemplateCTA-viewTempFloat-r\+VHa.FloatTemplateCTA-dark-cLtmW a {
+  color: #fff;
+}
+#FloatTemplateCTA-float-temp-block-text-31OdO {
+  cursor: pointer;
+  transition: 0.2s;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FloatTemplateCTA-viewTempFloat-r\+VHa {
+    bottom: 10px;
+    left: 5%;
+    text-align: center;
+    width: 90% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px !important;
+    transform: none;
+    right: unset;
+  }
+  .FloatTemplateCTA-viewTempFloat-r\+VHa img {
+    display: none;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.HeaderSection-one-grid-ifjrn {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .HeaderSection-one-grid-ifjrn {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.HeaderSection-sectionTitleH1-gaeso {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.HeaderSection-whiteText-Yub0F {
+  color: white;
+}
+.HeaderSection-blackText-G30oL {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.HeaderSection-section-ySbce {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.HeaderSection-titleText-pQxwI {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.HeaderSection-titleText-pQxwI p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .HeaderSection-titleText-pQxwI p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .HeaderSection-section-ySbce {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .HeaderSection-section-ySbce h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.HeaderSection-sectionTitleH1-gaeso {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.HeaderSection-underlineAnimation-5cFfA:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .HeaderSection-underlineAnimation-5cFfA:after {
+    height: 1.5px !important;
+  }
+}
+.HeaderSection-underlineAnimation-5cFfA:hover:after {
+  animation-name: HeaderSection-lineChange-EXw64;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes HeaderSection-lineChange-EXw64 {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.HeaderSection-close-m6gEG {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .HeaderSection-underlineAnimation-5cFfA:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.HeaderSection-headerSection-rdM09 {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+.HeaderSection-headerSection-rdM09 .HeaderSection-copyrightText-UyHY\+ {
+  font-size: 12px !important;
+  bottom: 30px;
+  position: absolute;
+  left: var(--site-margin);
+}
+.HeaderSection-headerSection-rdM09 h1 {
+  color: white;
+  margin-bottom: 3%;
+  font-size: calc(1.3 * (var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+}
+.HeaderSection-headerSection-rdM09 .HeaderSection-imgBackground-fQ01n {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.HeaderSection-headerSection-rdM09 .HeaderSection-imgBackground-fQ01n img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.HeaderSection-headerSection-rdM09 .HeaderSection-videoBackground-EocO7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* Background layer */
+  overflow: hidden;
+}
+.HeaderSection-headerSection-rdM09 .HeaderSection-videoBackground-EocO7 .HeaderSection-backgroundVideo-1iMXp {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* Ensures the video fills the area without distortion */
+}
+.HeaderSection-headerSection-rdM09 .HeaderSection-contentOverlay-uKCPA {
+  position: relative;
+  z-index: 2;
+  /* Content layer above the video */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+}
+.HeaderSection-headerSection-rdM09 a,
+.HeaderSection-headerSection-rdM09 p {
+  color: white;
+}
+.HeaderSection-loadingText-arXTy {
+  font-family: Clarkson_serif_light !important;
+  text-align: center;
+  color: white;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 110%;
+  /* 62.1px */
+  letter-spacing: -0.025em;
+  width: 1300px;
+  margin-bottom: 5rem;
+  font-size: 4rem;
+  max-width: 1020px;
+}
+.HeaderSection-loadingText-arXTy span {
+  font-family: Clarkson;
+  font-size: 38px;
+}
+@media screen and (max-width: 1200px) {
+  .HeaderSection-loadingText-arXTy {
+    width: 640px;
+    font-size: 4rem;
+  }
+}
+.HeaderSection-centerDiv-kbfn9 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.HeaderSection-flex-mCFEy {
+  display: flex;
+}
+.HeaderSection-videoBtn-BHMJ8 {
+  font-family: Clarkson_med !important;
+  text-transform: uppercase !important;
+}
+.HeaderSection-secondVideoBtn--8\+fP {
+  margin-left: 5.6rem;
+}
+.HeaderSection-videoBtn-BHMJ8 {
+  font-size: 18px;
+}
+/*hover animation underline*/
+.HeaderSection-hoverUnderlineAnimation-b8rSC {
+  display: inline-block;
+  position: relative;
+  color: white;
+  cursor: pointer;
+}
+.HeaderSection-hoverUnderlineAnimation-b8rSC:after {
+  background-color: white;
+  content: "";
+  position: relative;
+  width: 100%;
+  height: 0.28rem;
+  left: 0;
+  top: 0.8rem;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scaleX(1);
+  display: block;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .HeaderSection-hoverUnderlineAnimation-b8rSC:after {
+    height: 1.5px !important;
+  }
+}
+.HeaderSection-hoverUnderlineAnimation-b8rSC:hover:after {
+  animation-name: HeaderSection-lineChange-EXw64;
+  animation-duration: 0.4s;
+  transform-origin: bottom left;
+}
+@keyframes HeaderSection-lineChange-EXw64 {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.HeaderSection-exploreDiv-4KXaE {
+  position: absolute;
+  top: 85vh;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9;
+}
+.HeaderSection-exploreDiv-4KXaE p:nth-of-type(1) {
+  margin: 5px 0;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .HeaderSection-exploreDiv-4KXaE {
+    bottom: 35vh;
+  }
+  .HeaderSection-ctaDiv-1XIbN {
+    flex-direction: column;
+    text-align: center;
+  }
+  .HeaderSection-secondVideoBtn--8\+fP {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .HeaderSection-headerSection-rdM09 .HeaderSection-copyrightText-UyHY\+ {
+    position: relative;
+    left: unset;
+    bottom: 5vh;
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .HeaderSection-loadingText-arXTy {
+    padding: 0 8%;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 109.5%;
+    letter-spacing: -0.22px;
+    padding: 0 5vw;
+    width: auto !important;
+  }
+  .HeaderSection-loadingText-arXTy span {
+    font-size: 21px;
+  }
+  .HeaderSection-videoBtn-BHMJ8 {
+    font-size: 16px;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.FilmModal-one-grid-Jp58n {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FilmModal-one-grid-Jp58n {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.FilmModal-sectionTitleH1-DrTy- {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.FilmModal-whiteText-9tbmf {
+  color: white;
+}
+.FilmModal-blackText-jQ5Zo {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.FilmModal-section-aqLhZ {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.FilmModal-titleText-dMenS {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.FilmModal-titleText-dMenS p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FilmModal-titleText-dMenS p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .FilmModal-section-aqLhZ {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .FilmModal-section-aqLhZ h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.FilmModal-sectionTitleH1-DrTy- {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.FilmModal-underlineAnimation-t2LWZ:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FilmModal-underlineAnimation-t2LWZ:after {
+    height: 1.5px !important;
+  }
+}
+.FilmModal-underlineAnimation-t2LWZ:hover:after {
+  animation-name: FilmModal-lineChange-qgWYX;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes FilmModal-lineChange-qgWYX {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.FilmModal-close-2GShV {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FilmModal-underlineAnimation-t2LWZ:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.FilmModal-modal-WmBzI {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  position: fixed;
+  z-index: 999999999999999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.68);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+.FilmModal-modal-WmBzI.FilmModal-open-viHix {
+  opacity: 1;
+  visibility: visible;
+}
+.FilmModal-movieBox-qgRnv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+.FilmModal-movieBoxS-cvUG2 {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 450px;
+}
+.FilmModal-movieBoxS-cvUG2 iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FilmModal-movieBoxS-cvUG2 {
+    width: 80vw;
+    height: 44.8vw;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.JeffImageSection-one-grid-5Jy2r {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .JeffImageSection-one-grid-5Jy2r {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.JeffImageSection-sectionTitleH1-aaSNW {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.JeffImageSection-whiteText-LqLob {
+  color: white;
+}
+.JeffImageSection-blackText-CEWwj {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.JeffImageSection-section-ctOAt {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.JeffImageSection-titleText-NhnUd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.JeffImageSection-titleText-NhnUd p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .JeffImageSection-titleText-NhnUd p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .JeffImageSection-section-ctOAt {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .JeffImageSection-section-ctOAt h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.JeffImageSection-sectionTitleH1-aaSNW {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.JeffImageSection-underlineAnimation--HM5L:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .JeffImageSection-underlineAnimation--HM5L:after {
+    height: 1.5px !important;
+  }
+}
+.JeffImageSection-underlineAnimation--HM5L:hover:after {
+  animation-name: JeffImageSection-lineChange-vnJcz;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes JeffImageSection-lineChange-vnJcz {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.JeffImageSection-close-uB0bR {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .JeffImageSection-underlineAnimation--HM5L:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.JeffImageSection-gridSection-9zJVw {
+  display: grid;
+  grid-template-columns: repeat(26, 1fr);
+  /* 12 列布局 */
+}
+.JeffImageSection-section-ctOAt {
+  padding-left: 0;
+  padding-right: 0;
+}
+.JeffImageSection-gridItem-bDbNJ p {
+  padding-top: 6%;
+}
+.JeffImageSection-gridItem-bDbNJ {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10% 0 13% 0;
+  font-family: Clarkson;
+  font-weight: 300;
+  line-height: 120%;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 1rem);
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(1) {
+  grid-column: 2 / span 9;
+  /* 文本默认占 6 列 */
+  overflow: visible;
+  margin-top: -3vw;
+}
+.JeffImageSection-gridItem-bDbNJ .JeffImageSection-flower-ac\+Fy {
+  position: relative;
+  width: 8vw;
+  top: 6vw;
+  left: 2vw;
+  z-index: 9;
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(2) {
+  grid-column: 13 / span 15;
+  /* 文本默认占 6 列 */
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(3),
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(5) {
+  grid-column: 2 / span 11;
+  /* 文本默认占 6 列 */
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(3) video {
+  padding: 1vw 0;
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(4),
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(6) {
+  display: flex;
+  align-items: center;
+  grid-column: 15 / span 10;
+  /* 文本默认占 6 列 */
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(4) {
+  min-height: 30vw;
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(3),
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(4) {
+  padding-bottom: 0;
+  padding-top: 8%;
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(5),
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(6) {
+  padding-top: 0;
+  padding-bottom: 5%;
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(6) p {
+  max-width: 80%;
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(7) {
+  grid-column: 2 / span 6;
+  /* 文本默认占 6 列 */
+  overflow: visible;
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(7) .JeffImageSection-balloonFlower-PFCKn.JeffImageSection-parent-db6zn {
+  z-index: 2;
+  width: 100%;
+}
+picture:has(> img.JeffImageSection-balloonFlower-PFCKn) {
+  width: 100%;
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(7) .JeffImageSection-metallicVenus-JCB10 {
+  position: relative;
+  top: -3%;
+  left: 35%;
+}
+picture:has(> img.JeffImageSection-metallicVenus-JCB10) {
+  width: 100%;
+  z-index: -1;
+}
+.JeffImageSection-gridItem-bDbNJ:nth-of-type(8) {
+  grid-column: 12 / span 16;
+  /* 文本默认占 6 列 */
+  padding: 14vw 0;
+}
+.JeffImageSection-gridItem-bDbNJ img {
+  width: -webkit-fill-available;
+}
+.JeffImageSection-image-hkTJI img {
+  height: auto;
+  display: block;
+}
+.JeffImageSection-text-BrDcc {
+  grid-column: span 6;
+  /* 文本默认占 6 列 */
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .JeffImageSection-gridSection-9zJVw {
+    padding-top: 10vw;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(1) {
+    grid-column: 1 / span 25;
+    padding: 0 !important;
+    margin-top: -15vw;
+    align-items: flex-start;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(1) video {
+    width: 75%;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(1) p {
+    padding-left: 6%;
+  }
+  .JeffImageSection-titleText-NhnUd p {
+    padding: 0 6vw;
+  }
+  .JeffImageSection-gridItem-bDbNJ .JeffImageSection-flower-ac\+Fy {
+    width: 12vw;
+    top: 12vw;
+    left: 66vw;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(2) {
+    grid-column: 10 / span 18;
+    padding-top: 15vw;
+    padding-bottom: 0;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(3) {
+    grid-column: 1 / span 22;
+    padding-top: 0;
+    margin-top: -5vw;
+    z-index: 9;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(4) {
+    grid-column: 12 / span 24;
+    padding: 0;
+    margin-top: -5vw;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(4) img {
+    width: 80vw;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(5) {
+    grid-column: 0 / span 0;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(6) {
+    grid-column: 1 / span 26;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(6) p {
+    max-width: 92%;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(7) {
+    grid-column: 3 / span 6;
+    order: 8;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(8) {
+    grid-column: 1 / span 22;
+    order: 7;
+    padding-top: 16vw;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(7) .JeffImageSection-balloonFlower-PFCKn {
+    position: relative;
+    top: -10vw;
+  }
+  .JeffImageSection-gridItem-bDbNJ:nth-of-type(7) .JeffImageSection-metallicVenus-JCB10 {
+    position: relative;
+    top: -25vw;
+    left: 32vw;
+    width: 42vw;
+  }
+}
+
+.ExpandableList-expandable-list-r7AGi {
+  font-family: Clarkson;
+  font-weight: 300;
+  width: 16.67vw;
+  margin: 20px 0;
+  border-top: 1px solid #000;
+  color: black;
+  margin-left: auto;
+  margin-right: calc(100vw / 27);
+  margin-top: -9vw;
+}
+.ExpandableList-expandable-list-header-kHjr\+ {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  padding-top: 2vw;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+}
+.ExpandableList-accordion-icon-container-CkYxb {
+  height: 14px;
+  width: 14px;
+  position: relative;
+}
+.ExpandableList-plus-pRd5b {
+  color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.ExpandableList-plus__horizontal-line-znXQr {
+  height: 1px;
+  display: block;
+  width: 100%;
+  background-color: currentColor;
+  transition: transform 0.2s;
+  position: absolute;
+}
+.ExpandableList-plus__vertical-line-xPXDE {
+  height: 1px;
+  transform: rotate(90deg);
+  display: block;
+  width: 100%;
+  background-color: black;
+  transition: transform 0.2s;
+  position: absolute;
+}
+.ExpandableList-rotate-F47kt {
+  transform: rotate(0deg);
+  /* On click, rotate 90 degrees */
+}
+.ExpandableList-expandable-list-content-I\+MNd {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.4s ease-out;
+  /* Transition max-height */
+}
+.ExpandableList-expandable-list-content-I\+MNd.ExpandableList-expanded-mtse4 {
+  max-height: 500px;
+  /* Set a large enough value for max-height */
+}
+li {
+  margin-bottom: 2px;
+  color: black;
+  line-height: 120%;
+  font-weight: 400;
+}
+li:first-of-type {
+  font-weight: 500;
+  padding: 1vw 0;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .ExpandableList-expandable-list-r7AGi {
+    width: 90vw;
+    margin: 0;
+  }
+  .ExpandableList-expandable-list-header-kHjr\+ {
+    padding: 30px 0 10px 0;
+  }
+  li:first-of-type {
+    padding: 20px 0;
+  }
+}
+
+.video-base__video {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.video-base {
+  width: 100%;
+  height: 100%;
+  min-height: 18vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .video-base {
+    min-height: 48vw;
+  }
+}
+
+.video-base {
+  position: relative;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-SJF9T {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-SJF9T {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-uIVc9 {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-PP7IW {
+  color: white;
+}
+.index-blackText-tiycE {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-vx6IG {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-LMQIJ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-LMQIJ p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-LMQIJ p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-vx6IG {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-vx6IG h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-uIVc9 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-aCDGI:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-aCDGI:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-aCDGI:hover:after {
+  animation-name: index-lineChange-49CaK;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-49CaK {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-Lhnws {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-aCDGI:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.video-base__control {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 8px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 744px) {
+  .video-base__control {
+    padding: 16px;
+  }
+}
+.video-base__button-svg {
+  height: 30px;
+  width: 30px;
+  stroke: none;
+  fill: none;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+.video-base__button-svg--light {
+  background: rgba(255, 255, 255, 0.3);
+}
+.video-base__button-svg--has-blur {
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-G24D1 {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-G24D1 {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-ph01D {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-s3kph {
+  color: white;
+}
+.index-blackText-reJKS {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-LdkF- {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-UzyeG {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-UzyeG p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-UzyeG p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-LdkF- {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-LdkF- h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-ph01D {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-NIDRP:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-NIDRP:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-NIDRP:hover:after {
+  animation-name: index-lineChange-XyZhB;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-XyZhB {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-2Ze-3 {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-NIDRP:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.video-base__poster {
+  position: relative;
+  transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 2;
+}
+.video-base__poster--hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.WebsiteSection-one-grid-447hR {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .WebsiteSection-one-grid-447hR {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.WebsiteSection-sectionTitleH1-q8BqH {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.WebsiteSection-whiteText-DhEZ3 {
+  color: white;
+}
+.WebsiteSection-blackText-GPWGN {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.WebsiteSection-section-bvcmi {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.WebsiteSection-titleText-oQDfy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.WebsiteSection-titleText-oQDfy p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .WebsiteSection-titleText-oQDfy p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .WebsiteSection-section-bvcmi {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .WebsiteSection-section-bvcmi h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.WebsiteSection-sectionTitleH1-q8BqH {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.WebsiteSection-underlineAnimation-uOjiM:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .WebsiteSection-underlineAnimation-uOjiM:after {
+    height: 1.5px !important;
+  }
+}
+.WebsiteSection-underlineAnimation-uOjiM:hover:after {
+  animation-name: WebsiteSection-lineChange-hGHdk;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes WebsiteSection-lineChange-hGHdk {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.WebsiteSection-close-I297O {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .WebsiteSection-underlineAnimation-uOjiM:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.WebsiteSection-videoContainer-M8iKj {
+  width: 77.8%;
+  margin: var(--grid-column-width) 0;
+}
+.WebsiteSection-titleText-oQDfy h1 {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .WebsiteSection-titleText-oQDfy {
+    width: 100%;
+  }
+  .WebsiteSection-titleText-oQDfy h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  .WebsiteSection-videoContainer-M8iKj {
+    width: 100%;
+    margin-bottom: 12vw;
+  }
+}
+.WebsiteSection-videoContainer-M8iKj video {
+  width: 100%;
+}
+.WebsiteSection-section-bvcmi .underlineCTA {
+  padding-bottom: 10px;
+}
+
+.UnderlineCTA-underlineCTA-GlOUQ {
+  text-align: center;
+}
+.UnderlineCTA-underlineCTA-GlOUQ a {
+  font-family: Clarkson_med !important;
+  text-transform: uppercase !important;
+  font-size: 1.8rem;
+  display: inline-block;
+  color: inherit;
+}
+.UnderlineCTA-underlineCTA-GlOUQ a:after {
+  content: "";
+  position: relative;
+  width: 100%;
+  height: 0.28rem;
+  left: 0;
+  top: 0.8rem;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scaleX(1);
+  display: block;
+}
+.UnderlineCTA-underlineCTA-GlOUQ a:hover:after {
+  animation-name: UnderlineCTA-lineChange-PWEfh;
+  animation-duration: 0.4s;
+  transform-origin: bottom left;
+}
+@keyframes UnderlineCTA-lineChange-PWEfh {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/* Light theme */
+.UnderlineCTA-light-Jv3Qd {
+  color: white;
+}
+.UnderlineCTA-light-Jv3Qd a:after {
+  background-color: white;
+}
+/* Dark theme */
+.UnderlineCTA-dark-rCVZy {
+  color: black;
+}
+.UnderlineCTA-dark-rCVZy a:after {
+  background-color: black;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .UnderlineCTA-underlineCTA-GlOUQ a:after {
+    height: 1.5px !important;
+  }
+  .UnderlineCTA-underlineCTA-GlOUQ a {
+    font-size: 16px;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.FeatureSection-one-grid-UpkSn {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureSection-one-grid-UpkSn {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.FeatureSection-sectionTitleH1-E\+Q2D {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.FeatureSection-whiteText--4-Om {
+  color: white;
+}
+.FeatureSection-blackText-ZB5q5 {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.FeatureSection-section-OTtg\+ {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.FeatureSection-titleText-jtd\+G {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.FeatureSection-titleText-jtd\+G p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureSection-titleText-jtd\+G p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .FeatureSection-section-OTtg\+ {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .FeatureSection-section-OTtg\+ h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.FeatureSection-sectionTitleH1-E\+Q2D {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.FeatureSection-underlineAnimation-Ba40b:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureSection-underlineAnimation-Ba40b:after {
+    height: 1.5px !important;
+  }
+}
+.FeatureSection-underlineAnimation-Ba40b:hover:after {
+  animation-name: FeatureSection-lineChange-DAUVa;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes FeatureSection-lineChange-DAUVa {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.FeatureSection-close-lSpbS {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureSection-underlineAnimation-Ba40b:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+/* Styles for the gallery section */
+.FeatureSection-gallerySection-UFD8W {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3.7vw;
+  padding: 4vw;
+  grid-gap: 97px 80px;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureSection-gallerySection-UFD8W {
+    padding: 4vw 4vw 22vw 4vw;
+  }
+}
+/* Styles for a single gallery item */
+.FeatureSection-galleryItem-qZAMT {
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+}
+.FeatureSection-galleryItem-qZAMT h3,
+.FeatureSection-galleryItem-qZAMT p {
+  text-align: left;
+  color: white;
+  max-width: 94%;
+}
+.FeatureSection-galleryItem-qZAMT h3 {
+  font-family: Clarkson_serif_regular;
+  font-size: calc((var(--title-font-size-value) - 1) * 1.2vw + 14px);
+}
+.FeatureSection-galleryItem-qZAMT p {
+  margin-top: 2%;
+  font-size: calc((var(--body-font-size-value) - 1) * 1.2vw + 14px);
+  letter-spacing: normal;
+}
+/* Styles for the image */
+.FeatureSection-image-O\+ERr {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 6%;
+}
+/* Styles for the title */
+.FeatureSection-title-2TInJ {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* Styles for the description */
+.FeatureSection-description-CzExA {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureSection-gallerySection-UFD8W {
+    grid-template-columns: 1fr;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.FeatureCarousel-one-grid-tuH6I {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureCarousel-one-grid-tuH6I {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.FeatureCarousel-sectionTitleH1-VX1y4 {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.FeatureCarousel-whiteText-A77re {
+  color: white;
+}
+.FeatureCarousel-blackText-22F5B {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.FeatureCarousel-section-r7zCT {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.FeatureCarousel-titleText-Xs0U3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.FeatureCarousel-titleText-Xs0U3 p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureCarousel-titleText-Xs0U3 p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .FeatureCarousel-section-r7zCT {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .FeatureCarousel-section-r7zCT h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.FeatureCarousel-sectionTitleH1-VX1y4 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.FeatureCarousel-underlineAnimation-0kRzE:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureCarousel-underlineAnimation-0kRzE:after {
+    height: 1.5px !important;
+  }
+}
+.FeatureCarousel-underlineAnimation-0kRzE:hover:after {
+  animation-name: FeatureCarousel-lineChange-DFnsC;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes FeatureCarousel-lineChange-DFnsC {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.FeatureCarousel-close-BPj15 {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureCarousel-underlineAnimation-0kRzE:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.FeatureCarousel-featureCarousel-523h4 {
+  overflow: hidden;
+  padding-top: 20vw;
+  padding-bottom: 10vmax;
+  text-align: center;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-sectionP-2qqDN {
+  padding-top: 30px;
+  width: 70%;
+  margin: auto;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-carouselWrapper-JT-Uu {
+  display: flex;
+  transition: transform 0.5s ease;
+  margin-top: 3vmax;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-featureItem-XAnNS {
+  flex: 0 0 33.333%;
+  text-align: left;
+  padding: 30px;
+}
+@media (max-width: 768px) {
+  .FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-featureItem-XAnNS {
+    flex: 0 0 100%;
+  }
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-featureItem-XAnNS .FeatureCarousel-image-xmTxl {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 6%;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-featureItem-XAnNS h3.FeatureCarousel-title-mg-eq {
+  font-size: calc((var(--title-font-size-value) - 1) * 1.2vw + 14px);
+  font-family: Clarkson_serif_regular !important;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-featureItem-XAnNS .FeatureCarousel-description-Xg4jp {
+  margin-top: 3%;
+  color: #cccccc;
+  font-size: calc((var(--body-font-size-value) - 1) * 1.2vw + 14px);
+  font-family: Clarkson_light;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-navigationButtons-QltTA {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-prevButton-wCqhE,
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-nextButton-eJTKM {
+  background: transparent;
+  color: white;
+  font-size: 3rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-prevButton-wCqhE.FeatureCarousel-prevButton-wCqhE,
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-nextButton-eJTKM.FeatureCarousel-prevButton-wCqhE {
+  margin-right: 10px;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-carouselArrowIcon-g6UdD {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 36px;
+  height: 36px;
+}
+.FeatureCarousel-featureCarousel-523h4 svg:not(:root) {
+  overflow: hidden;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-carouselArrowIconPath-cSTKt {
+  stroke: white;
+}
+.FeatureCarousel-featureCarousel-523h4 .FeatureCarousel-carouselArrowIconPath-cSTKt {
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  fill: none;
+}
+.FeatureCarousel-featureCarousel-523h4 :not(svg) {
+  transform-origin: 0px 0px;
+}
+.FeatureCarousel-magnumCarouselCTA-26ZgT {
+  text-align: left;
+  padding-top: 12%;
+  font-size: calc((var(--button-font-size-value) - 1) * 1.2vw + 14px) !important;
+  font-size: 11px !important;
+}
+.FeatureCarousel-magnumCarouselCTA-26ZgT > a {
+  font-size: 11px !important;
+}
+.FeatureCarousel-magnumCarouselCTA-26ZgT > a:after {
+  top: 1px;
+  height: 0.18rem;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .FeatureCarousel-magnumCarouselCTA-26ZgT {
+    padding-top: 10%;
+    font-size: 12px !important;
+  }
+  .FeatureCarousel-carouselArrowIcon-g6UdD {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .FeatureCarousel-prevButton-wCqhE,
+  .FeatureCarousel-nextButton-eJTKM {
+    padding: 0 15px !important;
+  }
+  .FeatureCarousel-navigationButtons-QltTA {
+    margin-top: 10px !important;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.PreviousCollection-one-grid-FEfFX {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PreviousCollection-one-grid-FEfFX {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.PreviousCollection-sectionTitleH1--Pl3n {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.PreviousCollection-whiteText-maJjJ {
+  color: white;
+}
+.PreviousCollection-blackText-Oo0gV {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.PreviousCollection-section-7sCFf {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.PreviousCollection-titleText-RrWrB {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.PreviousCollection-titleText-RrWrB p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PreviousCollection-titleText-RrWrB p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .PreviousCollection-section-7sCFf {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .PreviousCollection-section-7sCFf h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.PreviousCollection-sectionTitleH1--Pl3n {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.PreviousCollection-underlineAnimation-y4AN\+:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PreviousCollection-underlineAnimation-y4AN\+:after {
+    height: 1.5px !important;
+  }
+}
+.PreviousCollection-underlineAnimation-y4AN\+:hover:after {
+  animation-name: PreviousCollection-lineChange-oEzZv;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes PreviousCollection-lineChange-oEzZv {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.PreviousCollection-close-19x4\+ {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PreviousCollection-underlineAnimation-y4AN\+:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.PreviousCollection-titleText-RrWrB {
+  margin-bottom: 20px;
+}
+.PreviousCollection-imageWrapper-KRq-Q {
+  width: var(--image-wrapper-width, 31%);
+  /* 默认值为 31% */
+}
+.PreviousCollection-imageGrid-LPKjv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: var(--grid-column-width) 0;
+}
+.PreviousCollection-imageWrapper-KRq-Q {
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: 31%;
+}
+.PreviousCollection-imageWrapper-KRq-Q:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.PreviousCollection-imageWrapper-KRq-Q a {
+  display: block;
+  text-decoration: none;
+}
+.PreviousCollection-image-nprJj {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.twoImageStyle .PreviousCollection-imageWrapper-KRq-Q {
+  width: 44%;
+  /* 针对全局类名 */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PreviousCollection-imageGrid-LPKjv {
+    flex-direction: column;
+  }
+  .PreviousCollection-imageWrapper-KRq-Q,
+  .twoImageStyle .PreviousCollection-imageWrapper-KRq-Q {
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+  }
+  .PreviousCollection-section-7sCFf {
+    padding-left: 6vw;
+    padding-right: 6vw;
+    padding-bottom: 18vw;
+  }
+  .PreviousCollection-image-nprJj {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-g1B8c {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-g1B8c {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-ZmH\+1 {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-HfkHN {
+  color: white;
+}
+.index-blackText-dSPSc {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-KipBU {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-Xtnp- {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-Xtnp- p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-Xtnp- p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-KipBU {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-KipBU h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-ZmH\+1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-v1X3R:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-v1X3R:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-v1X3R:hover:after {
+  animation-name: index-lineChange-sErG2;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-sErG2 {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-\+c92h {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-v1X3R:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.index-rickVideoSection-x-E4P {
+  background-color: white;
+}
+.index-rickVideoDiv-dogX- {
+  display: flex;
+}
+.index-squareDiv-RsDQS {
+  width: 50vw;
+  height: 50vw;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+}
+.index-squareDiv-RsDQS img,
+.index-squareDiv-RsDQS picture {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+.index-squareDivText-wSkIF {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  flex-direction: column;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+}
+.index-squareDivText-wSkIF p {
+  margin-top: 9%;
+}
+.index-rickVideoSection-x-E4P div:nth-of-type(2) {
+  background-color: #d6d4cf;
+}
+.index-rickfullVideoSection-qh-h\+ {
+  height: 56vw;
+  width: 100vw;
+}
+.index-rickfullVideoSection-qh-h\+ video {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.index-video-container-QBtQ5 {
+  width: 100%;
+  overflow: hidden;
+}
+.index-video-container-QBtQ5 video {
+  width: 100%;
+  height: auto;
+  /* 保持原始高度 */
+  display: block;
+  /* 避免视频下方有空隙 */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-rickVideoDiv-dogX- {
+    display: flex;
+    flex-direction: column;
+  }
+  .index-squareDiv-RsDQS {
+    width: 100vw;
+    height: 100vw;
+  }
+  .index-squareDiv-RsDQS img {
+    width: 100%;
+  }
+  .index-rickVideoDiv-dogX-:nth-of-type(2) {
+    flex-direction: column-reverse;
+  }
+  .index-rickfullVideoSection-qh-h\+ {
+    height: 56vw;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-tNeiL {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-tNeiL {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-UWp6d {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-fvsYE {
+  color: white;
+}
+.index-blackText-gleeq {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-AwYQx {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-ikF1i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-ikF1i p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-ikF1i p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-AwYQx {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-AwYQx h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-UWp6d {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-z9wm6:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-z9wm6:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-z9wm6:hover:after {
+  animation-name: index-lineChange-uMFgF;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-uMFgF {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-0GUvf {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-z9wm6:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.index-bjorkWebsiteSection-TSznO {
+  background-color: #16030a;
+  color: white;
+  justify-content: unset;
+  padding: 11.1vw 3.7vw 0 3.7vw;
+}
+.index-bjorkWebsiteSection-TSznO h1,
+.index-bjorkWebsiteSection-TSznO p {
+  color: white;
+}
+.index-bjorkTemplateSection-8eh2k {
+  background-color: #0c1203;
+}
+.index-bjorkTemplateSection-8eh2k h1,
+.index-bjorkTemplateSection-8eh2k p {
+  color: white;
+}
+.index-bjorkWebsiteSection-TSznO p {
+  padding-bottom: 5%;
+}
+.index-bjorkWebImageBg-syGej {
+  height: 70vw;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.index-bjorkWebImageBg-syGej img {
+  position: absolute;
+}
+.index-spore1-8m23a {
+  width: 25vw;
+  left: 0;
+  top: 0%;
+  z-index: 1;
+}
+.index-spore2-G8WA7 {
+  width: 30vw;
+  left: 28%;
+  top: 45%;
+  z-index: 1;
+}
+.index-flower1-f78xU {
+  position: relative;
+  width: 23vw;
+  top: 75%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
+.index-flower2-wIMkP {
+  bottom: 10%;
+  right: 0%;
+  z-index: 9;
+  width: 20vw;
+  top: 10%;
+}
+.index-flower3-kCWdJ {
+  bottom: 15%;
+  right: 0%;
+  z-index: 1;
+  width: 18vw;
+}
+.index-bjorkCarousel-W-4ot {
+  position: relative;
+  width: 80vw;
+  height: 40vw;
+  margin: auto;
+  margin-top: 8vw;
+  z-index: 9;
+}
+.index-bjorkCarousel-W-4ot .index-carousel-2VoOv {
+  width: 100%;
+}
+.index-templateImagesDiv-BLlcu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  padding: 8% 0 12% 0;
+}
+.index-templateImagesDiv-BLlcu picture img {
+  width: 100%;
+}
+.index-templateImagesDiv-BLlcu img,
+.index-templateImagesDiv-BLlcu picture {
+  flex: 0 0 30%;
+  width: 30vw;
+  max-width: none;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.index-templateImagesDiv-BLlcu img:nth-child(1),
+.index-templateImagesDiv-BLlcu picture:nth-child(1) {
+  flex: 0 0 50%;
+  transform: scale(1.1);
+  z-index: 1;
+  opacity: 1;
+  order: 2;
+}
+.index-templateImagesDiv-BLlcu img:nth-child(2),
+.index-templateImagesDiv-BLlcu picture:nth-child(2) {
+  order: 1;
+}
+.index-templateImagesDiv-BLlcu img:nth-child(3),
+.index-templateImagesDiv-BLlcu picture:nth-child(3) {
+  order: 3;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-bjorkWebImageBg-syGej {
+    height: 50vh;
+  }
+  .index-spore1-8m23a {
+    width: 30vw;
+    left: 0;
+    top: 0%;
+    z-index: 2;
+  }
+  .index-spore2-G8WA7 {
+    width: 50vw;
+    left: 20%;
+    top: 40%;
+    z-index: 2;
+  }
+  .index-flower1-f78xU {
+    position: relative;
+    width: 33vw;
+    left: 20%;
+    top: 65%;
+  }
+  .index-flower2-wIMkP {
+    top: 90%;
+    right: 0%;
+    z-index: 9;
+    width: 22vw;
+    top: 10%;
+  }
+  .index-flower3-kCWdJ {
+    bottom: 10%;
+    right: 0%;
+    z-index: 9;
+    width: 22vw;
+  }
+  .index-bjorkCarousel-W-4ot {
+    width: 94vw;
+    height: 70vw;
+  }
+  .index-templateImagesDiv-BLlcu {
+    display: flex;
+    flex-direction: column;
+  }
+  .index-templateImagesDiv-BLlcu img {
+    width: 100%;
+    padding-bottom: 10%;
+  }
+  .index-templateImagesDiv-BLlcu img:nth-child(1) {
+    order: 1;
+  }
+  .index-templateImagesDiv-BLlcu img:nth-child(2) {
+    order: 2;
+  }
+  .index-bjorkTemplateSection-8eh2k {
+    padding: 20vw 6vw 30vw 6vw;
+  }
+}
+
+.ImageCarousel-carousel-DpE4G {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.ImageCarousel-carouselWrapper-i1NJB {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.ImageCarousel-carouselImage-oJQqS {
+  display: none;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.7s ease;
+}
+.ImageCarousel-carouselImage-oJQqS img,
+.ImageCarousel-carouselImage-oJQqS picture,
+.ImageCarousel-carouselImage-oJQqS .ImageCarousel-slideImage-ziFRz,
+.ImageCarousel-carouselImage-oJQqS .ImageCarousel-slideImage-ziFRz img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+}
+.ImageCarousel-carouselImage-oJQqS.ImageCarousel-active-SxtWC {
+  display: flex;
+  opacity: 1;
+  animation: ImageCarousel-fade-NYRCV 1s;
+}
+@keyframes ImageCarousel-fade-NYRCV {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.ImageCarousel-carouselButton-Nbz4h {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ImageCarousel-carouselButton-Nbz4h:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.ImageCarousel-carouselButton-Nbz4h.ImageCarousel-left-cNxhl {
+  left: 10px;
+}
+.ImageCarousel-carouselButton-Nbz4h.ImageCarousel-right-RutpB {
+  right: 10px;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-yCDpb {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-yCDpb {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-w8UhI {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-TtPJj {
+  color: white;
+}
+.index-blackText-1NUB\+ {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-bcsXY {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-8QjLV {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-8QjLV p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-8QjLV p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-bcsXY {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-bcsXY h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-w8UhI {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-2rDTy:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-2rDTy:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-2rDTy:hover:after {
+  animation-name: index-lineChange-QPSUz;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-QPSUz {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-ZKiow {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-2rDTy:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.index-magnumGallerySection-M7e0m {
+  background: white;
+}
+.index-gallerySection-m95ur {
+  margin-top: 6%;
+}
+
+.GalleryBlock-galleryBlock-IlSil {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6%;
+  margin: 8% 1vw;
+}
+.GalleryBlock-galleryBlock-IlSil.GalleryBlock-reverse-f35tN {
+  flex-direction: row-reverse;
+}
+.GalleryBlock-galleryBlock-IlSil .GalleryBlock-textContainer-EGp5I {
+  flex: 1.5;
+  text-align: center;
+  padding: 0 2%;
+}
+.GalleryBlock-galleryBlock-IlSil .GalleryBlock-textContainer-EGp5I h2 {
+  margin-bottom: 1rem;
+  font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 1rem);
+  letter-spacing: -0.04em;
+  line-height: calc(var(--heading-font-line-height) * (1 + (1 - var(--heading-1-size-value)) / 25));
+}
+.GalleryBlock-galleryBlock-IlSil .GalleryBlock-textContainer-EGp5I .GalleryBlock-description-RKLJR {
+  margin: 12% 0;
+}
+.GalleryBlock-galleryBlock-IlSil.GalleryBlock-reverse-f35tN .GalleryBlock-imageContainer-0inu3 {
+  text-align: center;
+}
+.GalleryBlock-galleryBlock-IlSil .GalleryBlock-imageContainer-0inu3 {
+  flex: 1;
+  text-align: center;
+}
+.GalleryBlock-galleryBlock-IlSil .GalleryBlock-imageContainer-0inu3 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.GalleryBlock-galleryBlock-IlSil:last-of-type {
+  margin-bottom: 3%;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .GalleryBlock-galleryBlock-IlSil {
+    flex-direction: column-reverse;
+    margin: 14% 1vw;
+  }
+  .GalleryBlock-galleryBlock-IlSil.GalleryBlock-reverse-f35tN {
+    flex-direction: column-reverse;
+  }
+  .GalleryBlock-galleryBlock-IlSil .GalleryBlock-imageContainer-0inu3 {
+    padding: 8% 10%;
+    width: 90%;
+  }
+  .GalleryBlock-galleryBlock-IlSil .GalleryBlock-textContainer-EGp5I h2 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .GalleryBlock-galleryBlock-IlSil .GalleryBlock-textContainer-EGp5I .GalleryBlock-description-RKLJR {
+    margin: 8% 0 12% 0;
+  }
+  .GalleryBlock-galleryBlock-IlSil:last-of-type {
+    margin-bottom: 0;
+  }
+  .GalleryBlock-galleryBlock-IlSil:first-of-type {
+    margin-top: 0;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-y2Y6v {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-y2Y6v {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-l4aGx {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-wOi1d {
+  color: white;
+}
+.index-blackText-lXR86 {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-l6Q1B {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-NIteE {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-NIteE p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-NIteE p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-l6Q1B {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-l6Q1B h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-l4aGx {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-ak882:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-ak882:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-ak882:hover:after {
+  animation-name: index-lineChange-OISe7;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-OISe7 {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-drN4N {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-ak882:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.index-magnumGallerySection-Y2HRR {
+  background: white;
+}
+.index-gallerySection-xeSZ8 {
+  margin-top: 6%;
+}
+
+.ImageCard-imageCard-7ftJc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  width: 60%;
+  padding: 20px 0 10% 0;
+}
+.ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k- {
+  max-width: 65vw;
+  display: flex;
+  justify-content: center;
+}
+.ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k- img,
+.ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k- picture {
+  max-width: 100%;
+  height: auto;
+}
+.ImageCard-imageCard-7ftJc .ImageCard-textContainer-QRsKq {
+  display: flex;
+  align-items: center;
+  /* 垂直居中对齐 */
+  margin-top: 5%;
+  width: 100%;
+  width: 80%;
+  text-align: center;
+}
+.ImageCard-imageCard-7ftJc .ImageCard-textContainer-QRsKq .ImageCard-pageIndex-Jpo-r {
+  margin-right: 20px;
+  /* 与描述文字间距 */
+  position: absolute;
+  left: 12vw;
+}
+.ImageCard-imageCard-7ftJc .ImageCard-textContainer-QRsKq .ImageCard-description--MUJG {
+  font-size: 14px;
+  flex: 1;
+  /* 占据剩余空间 */
+  text-align: center;
+}
+.ImageCard-imageCard-7ftJc:last-of-type {
+  padding-bottom: 0;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .ImageCard-imageCard-7ftJc {
+    width: 100%;
+    padding: 20px 0 25% 0;
+  }
+  .ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k-,
+  .ImageCard-imageCard-7ftJc .ImageCard-imageContainer-sE1k- picture {
+    width: 70%;
+  }
+  .ImageCard-imageCard-7ftJc .ImageCard-textContainer-QRsKq {
+    flex-direction: column;
+    margin-top: 3%;
+  }
+  .ImageCard-imageCard-7ftJc .ImageCard-textContainer-QRsKq .ImageCard-pageIndex-Jpo-r {
+    font-size: 35px;
+    margin-right: 0;
+    /* 与描述文字间距 */
+    position: unset !important;
+    left: unset !important;
+  }
+  .ImageCard-imageCard-7ftJc .ImageCard-textContainer-QRsKq .ImageCard-description--MUJG {
+    margin-top: 8%;
+  }
+}
+
+.ApplyCritique-imageCard-jgPac {
+  display: flex;
+  align-items: center;
+  background: white;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  padding: 15% 4%;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-imageContainer-hsq1R {
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-imageContainer-hsq1R picture {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN .ApplyCritique-description-3gOmT {
+  font-size: 14px;
+  flex: 1;
+  text-align: center;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN h1 {
+  padding-bottom: 20px;
+  font-size: 80px;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN p {
+  padding-bottom: 10px;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN a {
+  display: inline-block;
+  color: #808080;
+  font-size: 14px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  text-underline-offset: 2.8px;
+  letter-spacing: 0.14px;
+  padding-top: 12%;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .ApplyCritique-imageCard-jgPac {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20vw 6vw;
+  }
+  .ApplyCritique-imageCard-jgPac .ApplyCritique-imageContainer-hsq1R {
+    width: 65%;
+  }
+  .ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN {
+    width: 100%;
+  }
+  .ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN .ApplyCritique-pageIndex-zhI3U {
+    margin-right: 0;
+    /* 与描述文字间距 */
+    position: unset !important;
+    left: unset !important;
+  }
+  .ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN h1 {
+    font-size: 50px;
+  }
+  .ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN a {
+    padding: 0;
+    padding: 5% 0 8% 0;
+  }
+}
+
+.PhotographerMenu-hover-effect-container-WXMcJ {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-color: black;
+  transition: background-image 0.3s ease;
+  background-position: center;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.PhotographerMenu-hover-effect-container-WXMcJ .PhotographerMenu-links-container-vqYzE {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: auto;
+}
+.PhotographerMenu-hover-effect-container-WXMcJ .PhotographerMenu-links-container-vqYzE a {
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  display: block;
+  font-family: Clarkson_light;
+  font-weight: 100;
+  text-align: center;
+  color: #fff;
+  font-size: 5.5vw;
+  letter-spacing: -0.35vw;
+  text-transform: capitalize;
+  line-height: 9vh;
+  font-family: "ivyora-display", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.PhotographerMenu-hover-effect-container-WXMcJ .PhotographerMenu-links-container-vqYzE a:hover,
+.PhotographerMenu-hover-effect-container-WXMcJ .PhotographerMenu-links-container-vqYzE a.PhotographerMenu-active-9cibt {
+  opacity: 1;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PhotographerMenu-hover-effect-container-WXMcJ .PhotographerMenu-links-container-vqYzE a {
+    font-size: 8vw;
+    line-height: 10vw;
+    letter-spacing: -0.2vw;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-nhDhu {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-nhDhu {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-X7Jfn {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-SufZs {
+  color: white;
+}
+.index-blackText-SG9Cl {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-JNSuu {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-iYh9D {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-iYh9D p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-iYh9D p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-JNSuu {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-JNSuu h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-X7Jfn {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-8Bi97:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-8Bi97:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-8Bi97:hover:after {
+  animation-name: index-lineChange-Is75i;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-Is75i {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-GXj9R {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-8Bi97:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.index-magnumGallerySection-wh-zU {
+  background: white;
+}
+.index-gallerySection-bTlee {
+  margin-top: 6%;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-GoEyM {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-GoEyM {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-ydD9M {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-tF\+MV {
+  color: white;
+}
+.index-blackText-QEPTG {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-TEklc {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-2TuBe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-2TuBe p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-2TuBe p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-TEklc {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-TEklc h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-ydD9M {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-y1QZ0:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-y1QZ0:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-y1QZ0:hover:after {
+  animation-name: index-lineChange-3vI1B;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-3vI1B {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-47PaP {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-y1QZ0:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.index-magnumGallerySection-9x\+7M {
+  background: white;
+}
+.index-gallerySection-bXnNG {
+  margin-top: 6%;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-s6Jzs {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-s6Jzs {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-KDdia {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-vBb1j {
+  color: white;
+}
+.index-blackText-OV4jq {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-qYGhh {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-j\+Np7 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-j\+Np7 p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-j\+Np7 p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-qYGhh {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-qYGhh h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-KDdia {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-gbAl0:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-gbAl0:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-gbAl0:hover:after {
+  animation-name: index-lineChange-vqzyy;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-vqzyy {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-akA9o {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-gbAl0:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.index-magnumGallerySection-zf5Iw {
+  background: white;
+}
+.index-gallerySection-UBiIA {
+  margin-top: 6%;
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
+.index-one-grid-kmcPn {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-one-grid-kmcPn {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.index-sectionTitleH1-KGv3y {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.index-whiteText-8E7jR {
+  color: white;
+}
+.index-blackText-eSXeZ {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.index-section-PXJ4z {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.index-titleText-7dTTv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.index-titleText-7dTTv p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-titleText-7dTTv p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .index-section-PXJ4z {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .index-section-PXJ4z h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.index-sectionTitleH1-KGv3y {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.index-underlineAnimation-eW6Jl:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-eW6Jl:after {
+    height: 1.5px !important;
+  }
+}
+.index-underlineAnimation-eW6Jl:hover:after {
+  animation-name: index-lineChange-OiDV2;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes index-lineChange-OiDV2 {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.index-close-6QPfn {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .index-underlineAnimation-eW6Jl:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+.index-grid-e\+cQg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(12, var(--grid-column-width));
+  grid-gap: var(--grid-gutter-width);
+  padding-left: var(--grid-gutter-width);
+}
+.index-gridColumn-51PS7 {
+  width: var(--grid-column-width);
+  height: 100%;
+  background-color: #7B61FF;
+  opacity: 0.3;
+}
+
+
+/*# sourceMappingURL=main.css.map*/
