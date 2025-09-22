@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- to fix -->
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f2f2f2" />
-    <link rel="shortcut icon" href="${require('./favicon.ico')}" />
-    <link rel="stylesheet" href="./defaults.css" />
-    <link rel="stylesheet" href="./globals.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/gub2trj.css" />
+    <title>Creative Sandbox</title>
 
-    <title>Sandbox Dev App</title>
-  <script defer src="/main.js"></script><link href="/main.css" rel="stylesheet"></head>
+    <!-- 关键：让所有以 / 开头的请求都基于仓库根 -->
+    <base href="/collection-creative-sandbox-pages/" />
+
+    <!-- 可选：若真的有图标就放一个 favicon.ico 在 publish/ 下 -->
+    <link rel="icon" href="./favicon.ico" />
+
+    <!-- 先把 CSS 保留；如果仍白屏，第二步我们会临时移除它来排查 -->
+    <link rel="stylesheet" href="./main.css" />
+
+    <!-- 调试脚本：记录启动与错误，并把根路由强制跳到一个有内容的页面 -->
+    <script>
+      console.log("[pages] boot @", location.href);
+      window.addEventListener("error", (e) =>
+        console.log("[pages] error:", e.message)
+      );
+      window.addEventListener("unhandledrejection", (e) =>
+        console.log("[pages] rejection:", e.reason)
+      );
+      try {
+        if (!location.hash || location.hash === "#" || location.hash === "#/") {
+          location.hash = "/rickrubin"; // 确保 #/ 有内容
+        }
+      } catch {}
+    </script>
+  </head>
   <body>
-    <noscript> You need to enable JavaScript to run this app. </noscript>
-    <div id="sandbox-standalone-devapp"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <noscript>JavaScript is required to view this site.</noscript>
+    <div id="root"></div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- 你的打包脚本 -->
+    <script defer src="./main.js"></script>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <!-- 兜底：如果 main.js 没把内容渲染进 #root，1.5s 后注入一段文本，避免纯白屏 -->
+    <script>
+      setTimeout(function () {
+        var root = document.getElementById("root");
+        if (root && !root.innerHTML.trim()) {
+          console.log("[pages] fallback inject (no content mounted)");
+          root.innerHTML =
+            '<div style="padding:24px;font:16px/1.5 -apple-system,system-ui">Fallback content — app did not mount.</div>';
+        }
+      }, 1500);
+    </script>
   </body>
 </html>
