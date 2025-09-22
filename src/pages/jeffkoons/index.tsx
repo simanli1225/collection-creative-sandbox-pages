@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -6,24 +5,11 @@ import FloatTemplateCTA from "../../components/FloatTemplateCTA/FloatTemplateCTA
 import HeaderSection from "../../components/HeaderSection/HeaderSection";
 import JeffImageSection from "../../components/ImageSections/JeffImageSection";
 import WebsiteSection from "../../components/WebsiteSection/WebsiteSection";
+import { useGlobalFadeIn } from "../../hooks/useGlobalFadeIn";
 import FeatureSection from "../../components/FeatureSection/FeatureSection";
 import FeatureCarousel from "../../components/FeatureCarousel/FeatureCarousel";
 import PreviousCollection from "../../components/PreviousCollection/PreviousCollection";
 import { useDynamicScrollBehavior } from "../../hooks/useDynamicScrollBehavior";
-=======
-import React from 'react'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
-import FloatTemplateCTA from '../../components/FloatTemplateCTA/FloatTemplateCTA'
-import HeaderSection from '../../components/HeaderSection/HeaderSection'
-import JeffImageSection from '../../components/ImageSections/JeffImageSection'
-import WebsiteSection from '../../components/WebsiteSection/WebsiteSection'
-import { useGlobalFadeIn } from '../../hooks/useGlobalFadeIn'
-import FeatureSection from '../../components/FeatureSection/FeatureSection'
-import FeatureCarousel from '../../components/FeatureCarousel/FeatureCarousel'
-import PreviousCollection from '../../components/PreviousCollection/PreviousCollection'
-import { useDynamicScrollBehavior } from '../../hooks/useDynamicScrollBehavior'
->>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 
 const featureData = [
   {
@@ -106,12 +92,8 @@ interface GridItem {
 }
 
 const JeffPage = () => {
-<<<<<<< HEAD
-  const { headerTheme, ctaTheme, isCTAHidden } = useDynamicScrollBehavior(); // 获取主题状态
-=======
-  const { headerTheme, ctaTheme, isCTAHidden } = useDynamicScrollBehavior() 
-  useGlobalFadeIn()
->>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
+  const { headerTheme, ctaTheme, isCTAHidden } = useDynamicScrollBehavior();
+  useGlobalFadeIn();
 
   return (
     <div>

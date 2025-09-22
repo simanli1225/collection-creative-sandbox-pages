@@ -15,28 +15,12 @@ export default class ImageFileAnatomy {
   private extension: ImageFileExtension;
 
   constructor(src: string) {
-<<<<<<< HEAD
     console.log("ImageFileAnatomy received src:", src); // ✅ 帮助你调试
 
     if (!src || typeof src !== "string" || !src.includes(".")) {
       console.error("❌ Invalid src passed to ImageFileAnatomy:", src);
       throw new Error("Failed to extract filename");
     }
-=======
-    const splitByFolder = src.split("/");
-    //for saving
-    // const filename = splitByFolder.pop()!
-    // const filename = splitByFolder.pop();
-
-    //for developing
-    // if (!filename) {
-    //   throw new Error("Failed to extract filename");
-    // }
-    const filename = splitByFolder.pop()!
-    const filenameSplit = filename.split(".");
-    const file = filenameSplit[0];
-    const extension = filenameSplit[1];
->>>>>>> dd0a2effb871cfe46aa11965ebbf6d303b85df0b
 
     const splitByFolder = src.split("/").filter(Boolean); // 移除空元素
     const filename = splitByFolder.pop();
