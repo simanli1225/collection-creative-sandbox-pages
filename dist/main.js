@@ -6857,16 +6857,91 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Layout)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _ScrollToTop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScrollToTop */ "./src/components/ScrollToTop/ScrollToTop.tsx");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _ScrollToTop__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ScrollToTop */ "./src/components/ScrollToTop/ScrollToTop.tsx");
+
+
+
+
+
+function _callSuper(t, o, e) { return o = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(o), (0,_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(t).constructor) : o.apply(t, e)); }
+function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+// // components/Layout/Layout.tsx
+// import * as React from 'react'
+// import { Outlet } from 'react-router-dom'
+// import ScrollToTop from './ScrollToTop'
+
+// export default function Layout() {
+//   return (
+//     <>
+//       <ScrollToTop />
+//       <Outlet />
+//     </>
+//   )
+// }
+
 // components/Layout/Layout.tsx
 
 
 
+
+// A tiny error boundary to prevent a blank screen if a child route throws
+var Boundary = /*#__PURE__*/function (_React$Component) {
+  function Boundary(props) {
+    var _this;
+    (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Boundary);
+    _this = _callSuper(this, Boundary, [props]);
+    _this.state = {
+      hasError: false
+    };
+    return _this;
+  }
+  (0,_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Boundary, _React$Component);
+  return (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Boundary, [{
+    key: "componentDidCatch",
+    value: function componentDidCatch(error) {
+      // Capture the error so we can render a friendly fallback
+      this.setState({
+        hasError: true,
+        error: error
+      });
+      // Optional: send to your telemetry here
+      // console.error(error)
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (this.state.hasError) {
+        var _this$state$error;
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement("div", {
+          style: {
+            padding: 24
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement("h3", null, "Oops, something went wrong."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement("pre", {
+          style: {
+            whiteSpace: "pre-wrap"
+          }
+        }, String((_this$state$error = this.state.error) !== null && _this$state$error !== void 0 ? _this$state$error : "")));
+      }
+      return this.props.children;
+    }
+  }]);
+}(react__WEBPACK_IMPORTED_MODULE_5__.Component);
 function Layout() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ScrollToTop__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Outlet, null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(react__WEBPACK_IMPORTED_MODULE_5__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement("noscript", null, "JavaScript is required to view this site."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(_ScrollToTop__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(react__WEBPACK_IMPORTED_MODULE_5__.Suspense, {
+    fallback: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement("div", {
+      style: {
+        padding: 24
+      }
+    }, "Loading\u2026")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(Boundary, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Outlet, null), " ")));
 }
 
 /***/ }),
@@ -9864,7 +9939,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _saibihaCimen__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./saibihaCimen */ "./src/pages/saibihaCimen/index.tsx");
 /* harmony import */ var _williamKeo__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./williamKeo */ "./src/pages/williamKeo/index.tsx");
 /* harmony import */ var _SteveMccurry__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./SteveMccurry */ "./src/pages/SteveMccurry/index.tsx");
-// router.tsx
+// // router.tsx
+// import React from 'react'
+// import Layout from '../components/ScrollToTop/Layout'
+
+// import HomePage from './home'
+// import JeffPage from './jeffkoons'
+// import RickPage from './rickrubin'
+// import BjorkPage from './bjork'
+// import MagnumPage from './magnum'
+// import BrucePage from './brucegilden'
+// import JacobPage from './jacobAueSobol'
+// import OliviaPage from './oliviaArthur'
+// import SabihaPage from './saibihaCimen'
+// import WilliamPage from './williamKeo'
+// import StevePage from './SteveMccurry'
+
+// const routes = [
+//   {
+//     path: '/',
+//     element: <Layout />,
+//     children: [
+//       { index: true, element: <HomePage /> },
+//       { path: 'jeffkoons', element: <JeffPage /> },
+//       { path: 'rickrubin', element: <RickPage /> },
+//       { path: 'bjork', element: <BjorkPage /> },
+//       { path: 'magnum', element: <MagnumPage /> },
+//       { path: 'bruce-gilden', element: <BrucePage /> },
+//       { path: 'jacob-aue-sobol', element: <JacobPage /> },
+//       { path: 'olivia-arthur', element: <OliviaPage /> },
+//       { path: 'sabiha-cimen', element: <SabihaPage /> },
+//       { path: 'william-keo', element: <WilliamPage /> },
+//       { path: 'steve-mccurry', element: <StevePage /> },
+//     ],
+//   },
+// ]
+
+// export default routes
+// src/pages/routes.tsx (excerpt)
 
 
 
@@ -9879,41 +9991,60 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [{
-  path: '/',
+  path: "/",
   element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ScrollToTop_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null),
-  children: [{
+  // Nice-to-have: show a friendly page if a route-level error occurs
+  errorElement: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {
+      padding: 24
+    }
+  }, "Something went wrong. Try going back to Home."),
+  children: [
+  // Default (index) route: renders at "#/"
+  {
     index: true,
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_home__WEBPACK_IMPORTED_MODULE_2__["default"], null)
-  }, {
-    path: 'jeffkoons',
+  },
+  // Other pages (hash URLs: "#/jeffkoons", "#/rickrubin", etc.)
+  {
+    path: "jeffkoons",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_jeffkoons__WEBPACK_IMPORTED_MODULE_3__["default"], null)
   }, {
-    path: 'rickrubin',
+    path: "rickrubin",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_rickrubin__WEBPACK_IMPORTED_MODULE_4__["default"], null)
   }, {
-    path: 'bjork',
+    path: "bjork",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_bjork__WEBPACK_IMPORTED_MODULE_5__["default"], null)
   }, {
-    path: 'magnum',
+    path: "magnum",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_magnum__WEBPACK_IMPORTED_MODULE_6__["default"], null)
   }, {
-    path: 'bruce-gilden',
+    path: "bruce-gilden",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_brucegilden__WEBPACK_IMPORTED_MODULE_7__["default"], null)
   }, {
-    path: 'jacob-aue-sobol',
+    path: "jacob-aue-sobol",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_jacobAueSobol__WEBPACK_IMPORTED_MODULE_8__["default"], null)
   }, {
-    path: 'olivia-arthur',
+    path: "olivia-arthur",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_oliviaArthur__WEBPACK_IMPORTED_MODULE_9__["default"], null)
   }, {
-    path: 'sabiha-cimen',
+    path: "sabiha-cimen",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_saibihaCimen__WEBPACK_IMPORTED_MODULE_10__["default"], null)
   }, {
-    path: 'william-keo',
+    path: "william-keo",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_williamKeo__WEBPACK_IMPORTED_MODULE_11__["default"], null)
   }, {
-    path: 'steve-mccurry',
+    path: "steve-mccurry",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SteveMccurry__WEBPACK_IMPORTED_MODULE_12__["default"], null)
+  },
+  // Optional catch-all: avoids Router's default “Unexpected Application Error”
+  {
+    path: "*",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      style: {
+        padding: 24
+      }
+    }, "Not Found")
   }]
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (routes);
@@ -48924,6 +49055,25 @@ function _arrayWithoutHoles(r) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _assertThisInitialized)
+/* harmony export */ });
+function _assertThisInitialized(e) {
+  if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  return e;
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js ***!
@@ -49014,6 +49164,55 @@ function _extends() {
     }
     return n;
   }, _extends.apply(null, arguments);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _getPrototypeOf)
+/* harmony export */ });
+function _getPrototypeOf(t) {
+  return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) {
+    return t.__proto__ || Object.getPrototypeOf(t);
+  }, _getPrototypeOf(t);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/inherits.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/inherits.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _inherits)
+/* harmony export */ });
+/* harmony import */ var _setPrototypeOf_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setPrototypeOf.js */ "./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js");
+
+function _inherits(t, e) {
+  if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+  t.prototype = Object.create(e && e.prototype, {
+    constructor: {
+      value: t,
+      writable: !0,
+      configurable: !0
+    }
+  }), Object.defineProperty(t, "prototype", {
+    writable: !1
+  }), e && (0,_setPrototypeOf_js__WEBPACK_IMPORTED_MODULE_0__["default"])(t, e);
 }
 
 
@@ -49162,6 +49361,50 @@ function _objectWithoutPropertiesLoose(r, e) {
     t[n] = r[n];
   }
   return t;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _possibleConstructorReturn)
+/* harmony export */ });
+/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var _assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assertThisInitialized.js */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+
+
+function _possibleConstructorReturn(t, e) {
+  if (e && ("object" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(e) || "function" == typeof e)) return e;
+  if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined");
+  return (0,_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_1__["default"])(t);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _setPrototypeOf)
+/* harmony export */ });
+function _setPrototypeOf(t, e) {
+  return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) {
+    return t.__proto__ = e, t;
+  }, _setPrototypeOf(t, e);
 }
 
 
