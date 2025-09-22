@@ -63,7 +63,8 @@ const routes = [
     ),
     children: [
       // Default (index) route: renders at "#/"
-      { index: true, element: <HomePage /> },
+      // { index: true, element: <HomePage /> },
+      { index: true, element: <Navigate to="/rickrubin" replace /> },
 
       // Other pages (hash URLs: "#/jeffkoons", "#/rickrubin", etc.)
       { path: "jeffkoons", element: <JeffPage /> },

@@ -1,26 +1,52 @@
-// ///<reference types="webpack-env" />
+// // ///<reference types="webpack-env" />
+
+// // import React from "react";
+// // import ReactDOM from "react-dom";
+// // import App from "./pages";
+// // import DevApp from "./dev/DevApp";
+// // // import './styles/index.less'
+
+// // if (module.hot) {
+// //   // Enable hot module replacement
+// //   module.hot.accept();
+// // }
+
+// // // Render app independently in devapp
+// // const CreativeSandboxStandalone = document.querySelector(
+// //   "#sandbox-standalone-devapp"
+// // );
+
+// // if (CreativeSandboxStandalone) {
+// //   ReactDOM.render(<DevApp />, CreativeSandboxStandalone);
+// // }
+
+// // export default App;
+
+// /// <reference types="webpack-env" />
 
 // import React from "react";
 // import ReactDOM from "react-dom";
 // import App from "./pages";
 // import DevApp from "./dev/DevApp";
-// // import './styles/index.less'
 
-// if (module.hot) {
-//   // Enable hot module replacement
+// if (module && module.hot) {
 //   module.hot.accept();
 // }
 
-// // Render app independently in devapp
-// const CreativeSandboxStandalone = document.querySelector(
-//   "#sandbox-standalone-devapp"
-// );
+// const devMount = document.getElementById("sandbox-standalone-devapp");
+// const root = document.getElementById("root");
 
-// if (CreativeSandboxStandalone) {
-//   ReactDOM.render(<DevApp />, CreativeSandboxStandalone);
+// if (process.env.NODE_ENV !== "production" && devMount) {
+//   ReactDOM.render(<DevApp />, devMount);
+// } else {
+//   if (!root) throw new Error('Missing <div id="root"></div> in index.html');
+//   ReactDOM.render(
+//     <React.StrictMode>
+//       <App />
+//     </React.StrictMode>,
+//     root
+//   );
 // }
-
-// export default App;
 
 /// <reference types="webpack-env" />
 
@@ -29,21 +55,21 @@ import ReactDOM from "react-dom";
 import App from "./pages";
 import DevApp from "./dev/DevApp";
 
-if (module && module.hot) {
-  module.hot.accept();
+if (typeof module !== "undefined" && (module as any).hot) {
+  (module as any).hot.accept();
 }
 
 const devMount = document.getElementById("sandbox-standalone-devapp");
-const root = document.getElementById("root");
+const rootEl = document.getElementById("root");
 
 if (process.env.NODE_ENV !== "production" && devMount) {
   ReactDOM.render(<DevApp />, devMount);
 } else {
-  if (!root) throw new Error('Missing <div id="root"></div> in index.html');
+  if (!rootEl) throw new Error('Missing <div id="root"></div> in index.html');
   ReactDOM.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>,
-    root
+    rootEl
   );
 }
