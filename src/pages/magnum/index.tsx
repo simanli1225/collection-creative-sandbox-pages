@@ -1,93 +1,93 @@
-import React from 'react'
-import styles from './index.less'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
-import FloatTemplateCTA from '../../components/FloatTemplateCTA/FloatTemplateCTA'
-import HeaderSection from '../../components/HeaderSection/HeaderSection'
-import FeatureCarousel from '../../components/FeatureCarousel/FeatureCarousel'
-import { useDynamicScrollBehavior } from '../../hooks/useDynamicScrollBehavior'
-import GalleryBlock from '../../components/MagnumGalleryBlock/GalleryBlock'
-import { useGlobalFadeIn } from '../../hooks/useGlobalFadeIn'
+import React from "react";
+import styles from "./index.less";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import FloatTemplateCTA from "../../components/FloatTemplateCTA/FloatTemplateCTA";
+import HeaderSection from "../../components/HeaderSection/HeaderSection";
+import FeatureCarousel from "../../components/FeatureCarousel/FeatureCarousel";
+import { useDynamicScrollBehavior } from "../../hooks/useDynamicScrollBehavior";
+import GalleryBlock from "../../components/MagnumGalleryBlock/GalleryBlock";
+import { useGlobalFadeIn } from "../../hooks/useGlobalFadeIn";
 
 const carouselData = [
   {
-    imageSrc: '/collections/magnum/template/MagnumCollection-Arthur.png',
-    title: 'Arthur',
+    imageSrc: "/collections/magnum/template/MagnumCollection-Arthur.png",
+    title: "Arthur",
     description:
-      'An airy design created in collaboration with Olivia Arthur, with abundant white space and an organic layout.',
-    ctaText: 'START WITH THIS DESIGN',
-    ctaLink: 'https://www.squarespace.com/templates/arthur-fluid-demo',
-    openInNewTab: true,  
-    CTAtheme: 'dark',
+      "An airy design created in collaboration with Olivia Arthur, with abundant white space and an organic layout.",
+    ctaText: "START WITH THIS DESIGN",
+    ctaLink: "https://www.squarespace.com/templates/arthur-fluid-demo",
+    openInNewTab: true,
+    CTAtheme: "dark",
   },
   {
-    imageSrc: '/collections/magnum/template/MagnumCollection-AueSobol.png',
-    title: 'Aue Sobol',
+    imageSrc: "/collections/magnum/template/MagnumCollection-AueSobol.png",
+    title: "Aue Sobol",
     description:
-      'A versatile design created in collaboration with Jacob Aue Sobol, with bold typography and a prominent display for products.',
-    ctaText: 'START WITH THIS DESIGN',
-    ctaLink: 'https://www.squarespace.com/templates/aue-sobol-fluid-demo',
-    openInNewTab: true,  
-    CTAtheme: 'dark',
+      "A versatile design created in collaboration with Jacob Aue Sobol, with bold typography and a prominent display for products.",
+    ctaText: "START WITH THIS DESIGN",
+    ctaLink: "https://www.squarespace.com/templates/aue-sobol-fluid-demo",
+    openInNewTab: true,
+    CTAtheme: "dark",
   },
   {
-    imageSrc: '/collections/magnum/template/MagnumCollection-Cimen.gif',
-    title: 'Çimen',
+    imageSrc: "/collections/magnum/template/MagnumCollection-Cimen.gif",
+    title: "Çimen",
     description:
-      'A video-forward design created in collaboration with Sabiha Çimen, with a versatile multi-column layout to exhibit varying work.',
-    ctaText: 'START WITH THIS DESIGN',
-    ctaLink: 'https://www.squarespace.com/templates/cimen-fluid-demo',
-    openInNewTab: true,  
-    CTAtheme: 'dark',
+      "A video-forward design created in collaboration with Sabiha Çimen, with a versatile multi-column layout to exhibit varying work.",
+    ctaText: "START WITH THIS DESIGN",
+    ctaLink: "https://www.squarespace.com/templates/cimen-fluid-demo",
+    openInNewTab: true,
+    CTAtheme: "dark",
   },
   {
-    imageSrc: '/collections/magnum/template/MagnumCollection-Gilden.png',
-    title: 'Gilden',
+    imageSrc: "/collections/magnum/template/MagnumCollection-Gilden.png",
+    title: "Gilden",
     description:
-      'A contemporary and powerful design created in collaboration with Bruce Gilden.',
-    ctaText: 'START WITH THIS DESIGN',
-    ctaLink: 'https://www.squarespace.com/templates/gilden-fluid-demo',
-    openInNewTab: true,  
-    CTAtheme: 'dark',
+      "A contemporary and powerful design created in collaboration with Bruce Gilden.",
+    ctaText: "START WITH THIS DESIGN",
+    ctaLink: "https://www.squarespace.com/templates/gilden-fluid-demo",
+    openInNewTab: true,
+    CTAtheme: "dark",
   },
   {
-    imageSrc: '/collections/magnum/template/MagnumCollection-Keo.png',
-    title: 'Keo',
+    imageSrc: "/collections/magnum/template/MagnumCollection-Keo.png",
+    title: "Keo",
     description:
-      'A brutalist design created in collaboration with William Keo, with a roomy grid layout and a multitude of pages to highlight your work.',
-    ctaText: 'START WITH THIS DESIGN',
-    ctaLink: 'https://www.squarespace.com/templates/keo-fluid-demo',
-    openInNewTab: true,  
-    CTAtheme: 'dark',
+      "A brutalist design created in collaboration with William Keo, with a roomy grid layout and a multitude of pages to highlight your work.",
+    ctaText: "START WITH THIS DESIGN",
+    ctaLink: "https://www.squarespace.com/templates/keo-fluid-demo",
+    openInNewTab: true,
+    CTAtheme: "dark",
   },
   {
-    imageSrc: '/collections/magnum/template/MagnumCollection-McCurry.png',
-    title: 'McCurry',
+    imageSrc: "/collections/magnum/template/MagnumCollection-McCurry.png",
+    title: "McCurry",
     description:
-      'A well-structured design created in collaboration with Steve McCurry, with distinct elements throughout, and generous room for a multitude of projects.',
-    ctaText: 'START WITH THIS DESIGN',
-    ctaLink: 'https://www.squarespace.com/templates/mccurry-fluid-demo',
-    openInNewTab: true,  
-    CTAtheme: 'dark',
+      "A well-structured design created in collaboration with Steve McCurry, with distinct elements throughout, and generous room for a multitude of projects.",
+    ctaText: "START WITH THIS DESIGN",
+    ctaLink: "https://www.squarespace.com/templates/mccurry-fluid-demo",
+    openInNewTab: true,
+    CTAtheme: "dark",
   },
-] as const
+] as const;
 const scrollToLastSection = (event: React.MouseEvent) => {
-  event.preventDefault()
+  event.preventDefault();
 
-  const lastSection = document.querySelector('[data-last-section]')
+  const lastSection = document.querySelector("[data-last-section]");
   if (lastSection) {
     (lastSection as HTMLElement).scrollIntoView({
-      behavior: 'smooth',
-      block: 'end',
-    })
+      behavior: "smooth",
+      block: "end",
+    });
   } else {
     // console.error("no data-last-section");
   }
-}
+};
 
 const MagnumPage = () => {
-  const { headerTheme, ctaTheme, isCTAHidden } = useDynamicScrollBehavior() 
-  useGlobalFadeIn()
+  const { headerTheme, ctaTheme, isCTAHidden } = useDynamicScrollBehavior();
+  useGlobalFadeIn();
 
   return (
     <div>
@@ -96,7 +96,7 @@ const MagnumPage = () => {
         data-theme="dark"
         text={
           <>
-            A collaboration with{' '}
+            A collaboration with{" "}
             <span className="highlight">Magnum Photos</span> for an
             unprecedented project: six iconic photographers shooting on a single
             film roll around the world, and a collection of six website designs
@@ -106,7 +106,7 @@ const MagnumPage = () => {
         FilmButtonLabel="Watch Film"
         showSecondButton={false}
         defaultVideoSrc="https://www.youtube-nocookie.com/embed/_TGYSOaECes?si=_E2LEKK2sFHFrdTo"
-        backgroundVideoSrc="https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/magnum/magnum_bg_bolex_film_roll_edit_EDL_Grade.mov"
+        backgroundVideoSrc="https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/magnum/magnum_bg_bolex_film_roll_edit_EDL_Grade.mov"
       />
       <section
         data-theme="light"
@@ -195,7 +195,7 @@ const MagnumPage = () => {
 
       <Footer isDark={true} />
     </div>
-  )
-}
+  );
+};
 
-export default MagnumPage
+export default MagnumPage;

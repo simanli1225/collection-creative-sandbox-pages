@@ -1,9 +1,9 @@
-import React from 'react'
-import styles from './WebsiteSection.less'
-import UnderlineCTA from '../Cta/UnderlineCTA'
+import React from "react";
+import styles from "./WebsiteSection.less";
+import UnderlineCTA from "../Cta/UnderlineCTA";
 
 interface WebsiteSectionProps {
-  'data-theme': string;
+  "data-theme": string;
   title: string; // Title text, replaceable via props
   description: string; // Description text, replaceable via props
   videoSrc?: string; // Video URL, optional and replaceable via props
@@ -11,19 +11,19 @@ interface WebsiteSectionProps {
   weblink: string;
   backgroundColor?: string; // Background color, optional
   textColor?: string; // Text color, optional
-  CTAtheme?: 'light' | 'dark'; // 限定为 "light" 或 "dark"
+  CTAtheme?: "light" | "dark"; // 限定为 "light" 或 "dark"
 }
 
 const WebsiteSection: React.FC<WebsiteSectionProps> = ({
-  'data-theme': dataTheme,
+  "data-theme": dataTheme,
   title,
   description,
   videoSrc,
   webtext,
   weblink,
-  backgroundColor = 'white',
-  textColor = 'black', // Default text color
-  CTAtheme = 'light',
+  backgroundColor = "white",
+  textColor = "black", // Default text color
+  CTAtheme = "light",
 }) => {
   return (
     <section
@@ -43,7 +43,14 @@ const WebsiteSection: React.FC<WebsiteSectionProps> = ({
 
       {videoSrc && (
         <div className={styles.videoContainer}>
-          <video autoPlay muted loop playsInline className={styles.video}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className={styles.video}
+          >
             <source src={videoSrc} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -56,7 +63,7 @@ const WebsiteSection: React.FC<WebsiteSectionProps> = ({
         theme={CTAtheme}
       />
     </section>
-  )
-}
+  );
+};
 
-export default WebsiteSection
+export default WebsiteSection;

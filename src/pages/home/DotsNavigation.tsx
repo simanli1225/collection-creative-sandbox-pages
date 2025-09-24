@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./DotsNavigation.less";
+import { Link } from "react-router-dom";
 
+// const videoLinks = [
+//   "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_LoadingAnimation_JK1.mp4",
+//   "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_RR_LoadingSequence_1.mp4",
+//   "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_Magnum_LoadingSequence.mp4",
+//   "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_Bjork_LoadingSequence.mp4",
+// ];
 const videoLinks = [
-  "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_LoadingAnimation_JK1.mp4",
-  "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_RR_LoadingSequence_1.mp4",
-  "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_Magnum_LoadingSequence.mp4",
-  "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_Bjork_LoadingSequence.mp4",
+  "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_LoadingAnimation_JK1.mp4",
+  "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_RR_LoadingSequence_1.mp4",
+  "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_Magnum_LoadingSequence.mp4",
+  "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_Bjork_LoadingSequence.mp4",
 ];
 
 const sectionTitles = ["Jeff Koons", "Rick Rubin", "Magnum", "Björk"];
@@ -125,7 +132,8 @@ const App: React.FC = () => {
             id="enter-div"
             className={`${styles.enterDiv} ${styles.underlineAnimation}`}
           >
-            <a href={enterLinks[currentSection]}>Enter</a>
+            {/* <Link to={enterLinks[currentSection]}>Enter</a> */}
+            <Link to={enterLinks[currentSection]}>Enter</Link>
           </div>
         </div>
 
@@ -140,7 +148,7 @@ const App: React.FC = () => {
               transform: `translateY(${(index - currentSection) * 100}%)`,
             }}
           >
-            <video autoPlay muted loop playsInline>
+            <video autoPlay muted loop playsInline preload="auto">
               <source src={link} type="video/mp4" />
               Your browser does not support the video tag.
             </video>

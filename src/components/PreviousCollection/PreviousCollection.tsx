@@ -43,7 +43,7 @@ const PreviousCollection: React.FC<PreviousCollectionProps> = ({
       <div className={styles.imageGrid}>
         {images.map((item, index) => (
           <div key={index} className={styles.imageWrapper}>
-            <a href={item.link} rel="noopener noreferrer">
+            <Link to={item.link} rel="noopener noreferrer">
               <Image
                 className={styles.image}
                 src={item.imageSrc}

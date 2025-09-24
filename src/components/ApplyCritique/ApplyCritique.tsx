@@ -26,7 +26,7 @@ const ApplyCritique: React.FC<ImageCardProps> = ({
             <p className={styles.description}>
               The application window has closed.
             </p>
-            <a href="/rules-apply">*Rules apply</a>
+            <Link to="/rules-apply">*Rules apply</a>
           </div>
         </div>
 

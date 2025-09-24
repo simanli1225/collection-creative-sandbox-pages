@@ -1,5 +1,6 @@
-import React from 'react'
-import styles from './LanguagePicker.less'
+import React from "react";
+import styles from "./LanguagePicker.less";
+import { Link } from "react-router-dom";
 
 interface LanguagePickerProps {
   isOpen: boolean; // 是否显示 Language Picker
@@ -25,29 +26,29 @@ const LanguagePicker: React.FC<LanguagePickerProps> = ({ isOpen, onClose }) => {
             Close
           </span>
           <div>
-            <a href="/de" className={styles.languageLink}>
+            <Link to="/de" className={styles.languageLink}>
               Deutsch
-            </a>
-            <a href="/" className={styles.languageLink} id="english-link">
+            </Link>
+            <Link to="/" className={styles.languageLink} id="english-link">
               English
-            </a>
-            <a href="/fr" className={styles.languageLink}>
+            </Link>
+            <Link to="/fr" className={styles.languageLink}>
               Français
-            </a>
-            <a href="/es" className={styles.languageLink}>
+            </Link>
+            <Link to="/es" className={styles.languageLink}>
               Español
-            </a>
-            <a href="/it" className={styles.languageLink}>
+            </Link>
+            <Link to="/it" className={styles.languageLink}>
               Italiano
-            </a>
-            <a href="/pt" className={styles.languageLink}>
+            </Link>
+            <Link to="/pt" className={styles.languageLink}>
               Português
-            </a>
+            </Link>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LanguagePicker
+export default LanguagePicker;

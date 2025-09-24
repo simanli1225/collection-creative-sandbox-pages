@@ -14,28 +14,28 @@ import { useDynamicScrollBehavior } from "../../hooks/useDynamicScrollBehavior";
 const featureData = [
   {
     imageSrc:
-      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_POWERFUL_DISPLAY_v1_01.gif",
+      "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_POWERFUL_DISPLAY_v1_01.gif",
     title: "A Powerful Display",
     description:
       "Jeff Koons wanted to display multiple images in an overlapping yet organized flow so that each has its own space without any one image overpowering the others.",
   },
   {
     imageSrc:
-      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_FOCUSED_v2_01.gif",
+      "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_FOCUSED_v2_01.gif",
     title: "Focused Viewing",
     description:
       "Clicking into any image opens a full screen view of it in orderto experience the artwork on its own the way you would inside a gallery.",
   },
   {
     imageSrc:
-      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_TIMELINE_v2_01.gif",
+      "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_TIMELINE_v2_01.gif",
     title: "Visual Timeline",
     description:
       "This style of gallery allows the viewer to experience a series of work as a whole, as well as amongst other series, creating a larger picture of Jeff Koons’ work.",
   },
   {
     imageSrc:
-      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_AWARDS_v1_01.gif",
+      "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/website-features/SQSP_Collections_Jeff_Koons_Modules_AWARDS_v1_01.gif",
     title: "Archival Columns",
     description:
       "With such a prolific career, organized columns of information highlight Jeff Koons’ successes in an easy-to-navigate format.",
@@ -44,28 +44,28 @@ const featureData = [
 const carouselData = [
   {
     imageSrc:
-      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_03.gif",
+      "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_03.gif",
     title: "Block Pinning",
     description:
       "Key content blocks are pinned throughout the homepage to deliver an engaging, stylized scrolling experience.",
   },
   {
     imageSrc:
-      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_02.gif",
+      "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_02.gif",
     title: "Gallery Sections",
     description:
       "Our best format for beautifully presenting collections of images or videos sequentially on a page.",
   },
   {
     imageSrc:
-      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_04.gif",
+      "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_04.gif",
     title: "Online Store",
     description:
       "A digital storefront offers a full series of prints for sale, transforming an artist's brand into a business.",
   },
   {
     imageSrc:
-      "https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_01.gif",
+      "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/template-features/SQSP_Collections_Jeff_Koons_Modules_01.gif",
     title: "Accordions",
     description:
       "Supporting text is easily expanded and collapsed — helping core messages stand out even more.",
@@ -113,7 +113,7 @@ const JeffPage = () => {
         showSecondButton={true}
         defaultVideoSrc="https://www.youtube-nocookie.com/embed/w3_Z6V0DH1M?enablejsapi=1&si=XUBE8Y126dRZtL1i"
         secondVideoSrc="https://www.youtube-nocookie.com/embed/another-video-link"
-        backgroundVideoSrc="https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/JK_Header.mp4"
+        backgroundVideoSrc="https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/JK_Header.mp4"
       />
       <FloatTemplateCTA
         theme={ctaTheme}
@@ -128,7 +128,7 @@ const JeffPage = () => {
         title="The Website"
         description="A dynamic design navigates through Jeff Koons’ more than four decades of work – from his early beginnings breaking into the art world to his global fame. Inspired by his focus on pop-culture and recontextualizing everyday objects, the design redefines minimalism with bold and playful elements.
 "
-        videoSrc="https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/SQSP_Collections_Jeff_Koons_Modules_COLLECTIONS_SITE_v1_01.mp4"
+        videoSrc="https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/SQSP_Collections_Jeff_Koons_Modules_COLLECTIONS_SITE_v1_01.mp4"
         webtext="GO TO JEFFKOONS.COM"
         weblink="https://www.jeffkoons.com/"
         backgroundColor="#202020"
@@ -143,7 +143,7 @@ const JeffPage = () => {
         data-theme="dark"
         title="Reflect Template"
         description="Inspired by Jeff Koons’ website, the Reflect Template gives anyone the ability to showcase their own work on a customizable expressive platform."
-        videoSrc="https://storage.cloud.google.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/SQSP_Collections_Jeff_Koons_Modules_EN_REFLECT_SITE_v1_01.mp4"
+        videoSrc="https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/jeff-koons/SQSP_Collections_Jeff_Koons_Modules_EN_REFLECT_SITE_v1_01.mp4"
         webtext="view full demo site"
         weblink="https://www.squarespace.com/templates/reflect-fluid-demo"
         backgroundColor="#202020"
