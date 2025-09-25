@@ -8913,9 +8913,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import "./defaults.css";
-// import "./globals.css";
-
 var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.createHashRouter)(_routes__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Suspense), {
@@ -11037,6 +11034,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"one-grid":"index-one-grid-j7-I+","sectionTitleH1":"index-sectionTitleH1-vrwnF","whiteText":"index-whiteText-sSKfV","blackText":"index-blackText-yIu8h","section":"index-section-eevdE","titleText":"index-titleText-GjZqS","underlineAnimation":"index-underlineAnimation-XVYJY","lineChange":"index-lineChange-UDyQX","close":"index-close-TYPwv","magnumGallerySection":"index-magnumGallerySection-gcAkz","gallerySection":"index-gallerySection-VRHqH"});
+
+/***/ }),
+
+/***/ "./src/styles/style-guide/defaults.less":
+/*!**********************************************!*\
+  !*** ./src/styles/style-guide/defaults.less ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"has-offer-banner":"defaults-has-offer-banner-vz-H9"});
+
+/***/ }),
+
+/***/ "./src/styles/style-guide/globals.less":
+/*!*********************************************!*\
+  !*** ./src/styles/style-guide/globals.less ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"mixin-title-rotate-animation":"globals-mixin-title-rotate-animation-rnO5E","is-revealed":"globals-is-revealed-7YqEh","has-reduced-motion":"globals-has-reduced-motion-0GnF6","is-background":"globals-is-background-Y2MuF","is-foreground":"globals-is-foreground-o3YtL","image-on-image":"globals-image-on-image-58vZM","background":"globals-background-LZq9m","is-loaded":"globals-is-loaded-qLDOH","hidden-in-locale":"globals-hidden-in-locale-YXzEI","has-offer-banner":"globals-has-offer-banner-FDFIL","collection-template-store":"globals-collection-template-store-y5JNy","reduce-motion-toggle":"globals-reduce-motion-toggle-vKDIO","eyebrow":"globals-eyebrow-d5J2S","button":"globals-button-O8xn+","cta":"globals-cta-TgE8C","link--is-button":"globals-link--is-button-4c4gr","link":"globals-link-CAIH4","is-button":"globals-is-button-PMB5e","button--is-outline":"globals-button--is-outline-+Y5PI","button--has-arrow":"globals-button--has-arrow-h5PnS","arrow":"globals-arrow-OcuUu","theme-light-background":"globals-theme-light-background-Zg2mP","theme-dark-background":"globals-theme-dark-background-EVR+H","full-rotation":"globals-full-rotation-VzM4m","underlineSlideOut":"globals-underlineSlideOut-K-gX7","underlineSlideIn":"globals-underlineSlideIn-tS0wR"});
 
 /***/ }),
 
@@ -65824,6 +65853,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages */ "./src/pages/index.tsx");
 /* harmony import */ var _dev_DevApp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dev/DevApp */ "./src/dev/DevApp/index.tsx");
+/* harmony import */ var _styles_style_guide_defaults_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/style-guide/defaults.less */ "./src/styles/style-guide/defaults.less");
+/* harmony import */ var _styles_style_guide_globals_less__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/style-guide/globals.less */ "./src/styles/style-guide/globals.less");
 // // ///<reference types="webpack-env" />
 
 // // import React from "react";
@@ -65880,8 +65911,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import "./styles/style-guide/defaults.css";
-// import "./styles/style-guide/globals.css";
+
 
 if (false) {}
 var devMount = document.getElementById("sandbox-standalone-devapp");
