@@ -141,7 +141,7 @@ const RickPage = () => {
             />
             {/* <Image
               className={styles.heroImage}
-              src="/collections/landing-page/black-logo.png"
+              src="./collections/landing-page/black-logo.png"
               alt=""
               loading="eager"
               width={1440}

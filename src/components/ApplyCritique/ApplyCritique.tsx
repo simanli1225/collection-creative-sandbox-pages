@@ -1,9 +1,10 @@
-import React from 'react'
-import styles from './ApplyCritique.less'
-import Image from '../../components/Image'
+import React from "react";
+import styles from "./ApplyCritique.less";
+import Image from "../../components/Image";
+import { Link } from "react-router-dom";
 
 interface ImageCardProps {
-  'data-theme': string;
+  "data-theme": string;
   imageSrc: string;
   text: string;
 }
@@ -11,7 +12,7 @@ interface ImageCardProps {
 const ApplyCritique: React.FC<ImageCardProps> = ({
   imageSrc,
   text,
-  'data-theme': dataTheme,
+  "data-theme": dataTheme,
 }) => {
   return (
     <section data-theme={dataTheme}>
@@ -26,7 +27,7 @@ const ApplyCritique: React.FC<ImageCardProps> = ({
             <p className={styles.description}>
               The application window has closed.
             </p>
-            <Link to="/rules-apply">*Rules apply</a>
+            <Link to="/rules-apply">*Rules apply</Link>
           </div>
         </div>
 
@@ -42,7 +43,7 @@ const ApplyCritique: React.FC<ImageCardProps> = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ApplyCritique
+export default ApplyCritique;

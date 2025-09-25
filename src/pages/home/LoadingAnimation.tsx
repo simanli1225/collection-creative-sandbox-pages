@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import styles from './LoadingAnimation.less'
-import Image from '../../components/Image'
+import React, { useEffect, useState } from "react";
+import styles from "./LoadingAnimation.less";
+import Image from "../../components/Image";
 
 const LoadingAnimation: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     // Set animation delays for name spans
     const words = document.querySelectorAll<HTMLSpanElement>(
       `.${styles.colNamesSpan}`
-    )
+    );
 
     words.forEach((word, index) => {
-      word.style.animationDelay = `${index * 0.25 + 5.2}s`
-    })
+      word.style.animationDelay = `${index * 0.25 + 5.2}s`;
+    });
 
     // Hide the animation section after 7 seconds
     const timer = setTimeout(() => {
       //   setIsVisible(false);
-    }, 7000)
+    }, 7000);
 
-    return () => clearTimeout(timer) // Clean up the timer on unmount
-  }, [])
+    return () => clearTimeout(timer); // Clean up the timer on unmount
+  }, []);
 
   return isVisible ? (
     <div id={styles.loadingAnimationSection}>
@@ -29,7 +29,7 @@ const LoadingAnimation: React.FC = () => {
       <div className={`${styles.presentFadeAnimation} ${styles.presentLogo}`}>
         <Image
           className={styles.heroImage}
-          src="/collections/landing-page/SQSP_Black.png"
+          src="./collections/landing-page/SQSP_Black.png"
           alt=""
           loading="eager"
           width={1440}
@@ -79,7 +79,7 @@ const LoadingAnimation: React.FC = () => {
         </div>
       </div>
     </div>
-  ) : null
-}
+  ) : null;
+};
 
-export default LoadingAnimation
+export default LoadingAnimation;

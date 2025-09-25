@@ -49,7 +49,8 @@
 // }
 
 /// <reference types="webpack-env" />
-
+import "./styles/style-guide/defaults.less";
+import "./styles/style-guide/globals.less";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import styles from './Footer.less'
-import LanguagePicker from './LanguagePicker'
-import Image from '../../components/Image'
+import React, { useState } from "react";
+import styles from "./Footer.less";
+import LanguagePicker from "./LanguagePicker";
+import Image from "../../components/Image";
 
 interface FooterProps {
   isDark?: boolean; // 是否为黑色主题
@@ -9,21 +9,21 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ isDark = false, style }) => {
-  const [isLanguagePickerOpen, setIsLanguagePickerOpen] = useState(false) // 控制 LanguagePicker 的显示状态
+  const [isLanguagePickerOpen, setIsLanguagePickerOpen] = useState(false); // 控制 LanguagePicker 的显示状态
 
   const toggleLanguagePicker = () => {
-    setIsLanguagePickerOpen((prev) => !prev) // 切换显示状态
-  }
+    setIsLanguagePickerOpen((prev) => !prev); // 切换显示状态
+  };
 
   // 动态设置 Footer 的 z-index
   const footerStyle = {
     zIndex: isLanguagePickerOpen ? 101 : 99,
     ...style,
-  }
+  };
 
   return (
     <footer
-      className={`${styles.footer} ${isDark ? styles.dark : ''}`}
+      className={`${styles.footer} ${isDark ? styles.dark : ""}`}
       style={footerStyle} // 动态设置 z-index
     >
       {/* Bottom Left Links */}
@@ -56,7 +56,7 @@ const Footer: React.FC<FooterProps> = ({ isDark = false, style }) => {
 
       {/* Bottom Right Logo */}
       <a
-        className={`${styles.footer} ${styles['footer--bottom-right']}`}
+        className={`${styles.footer} ${styles["footer--bottom-right"]}`}
         href="https://www.squarespace.com"
         target="_blank"
         rel="noopener noreferrer"
@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ isDark = false, style }) => {
         {/* <img
           className={styles["logo--sqsp"]}
           alt="Squarespace logo"
-          src="https://images.squarespace-cdn.com/content/64ff65b6f8197b243d3c8ee2/96dd5d21-354e-40a5-b75c-9cb96910cfaf/black-logo.png?content-type=image%2Fpng"
+          src="https://images.squarespace-cdn.com/content/64ff65b6f8197b243d3c8ee2/96dd5d21-354e-40a5-b75c-9cb96910cfaf/</Link>.png?content-type=image%2Fpng"
         /> */}
         <Image
           className={styles.heroImage}
@@ -82,7 +82,7 @@ const Footer: React.FC<FooterProps> = ({ isDark = false, style }) => {
         onClose={toggleLanguagePicker}
       />
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

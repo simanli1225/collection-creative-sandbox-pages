@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../components/FloatTemplateCTA/FloatTemplateCTA.less";
+import { Link } from "react-router-dom";
 
 interface FloatTemplateCTAProps {
   theme: "dark" | "light";

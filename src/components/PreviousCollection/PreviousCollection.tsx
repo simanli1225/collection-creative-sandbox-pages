@@ -1,6 +1,7 @@
-import React from 'react'
-import styles from './PreviousCollection.less'
-import Image from '../../components/Image'
+import React from "react";
+import styles from "./PreviousCollection.less";
+import Image from "../../components/Image";
+import { Link } from "react-router-dom";
 
 interface ImageItemProps {
   imageSrc: string; // Path to the image
@@ -8,16 +9,16 @@ interface ImageItemProps {
 }
 
 interface PreviousCollectionProps extends React.HTMLAttributes<HTMLElement> {
-  'data-theme': string; // Theme for the section
+  "data-theme": string; // Theme for the section
   backgroundColor?: string; // Optional background color
   textColor?: string; // Optional text color
   images?: ImageItemProps[]; // Array of image objects
 }
 
 const PreviousCollection: React.FC<PreviousCollectionProps> = ({
-  'data-theme': dataTheme,
-  backgroundColor = 'black',
-  textColor = 'white',
+  "data-theme": dataTheme,
+  backgroundColor = "black",
+  textColor = "white",
   images = [], // Default to an empty array if no images are provided
   ...props // Capture additional props like data-last-section
 }) => {
@@ -25,7 +26,7 @@ const PreviousCollection: React.FC<PreviousCollectionProps> = ({
     <section
       data-theme={dataTheme}
       {...props} // Pass extra props to the root section
-      className={`${styles.section} ${props.className || ''}`} // 将 props.className 添加到根元素
+      className={`${styles.section} ${props.className || ""}`} // 将 props.className 添加到根元素
       style={{
         backgroundColor,
         color: textColor,
@@ -62,12 +63,12 @@ const PreviousCollection: React.FC<PreviousCollectionProps> = ({
                     "https://via.placeholder.com/150";
                 }}
               /> */}
-            </a>
+            </Link>
           </div>
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PreviousCollection
+export default PreviousCollection;
