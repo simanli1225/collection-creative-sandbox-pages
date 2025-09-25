@@ -2,9 +2,14 @@ node_modules/
 .DS_Store
 dist/
 *.log
+<<<<<<< HEAD
 node_modules/
 .DS_Store
 dist/
 docs/
 *.map
 *.log
+=======
+>>>>>>> 66e67d4f6 (Use HashRouter + fix asset paths + import CSS)
+!docs/
+!docs/**
