@@ -13,3 +13,5 @@ docs/
 >>>>>>> 66e67d4f6 (Use HashRouter + fix asset paths + import CSS)
 !docs/
 !docs/**
+!docs/
+!docs/**
