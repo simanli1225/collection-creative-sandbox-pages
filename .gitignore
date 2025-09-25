@@ -2,3 +2,9 @@ node_modules/
 .DS_Store
 dist/
 *.log
+node_modules/
+.DS_Store
+dist/
+docs/
+*.map
+*.log
