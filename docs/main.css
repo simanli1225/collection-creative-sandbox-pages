@@ -4855,6 +4855,324 @@ margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
   font-family: Clarkson_serif_regular;
   src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
 }
+.PreviousCollection-one-grid-FEfFX {
+  width: 3.7vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PreviousCollection-one-grid-FEfFX {
+    width: 5.56vw;
+  }
+}
+h1 {
+  letter-spacing: -0.04em;
+}
+h1,
+h2 {
+  font-family: Clarkson_serif_light;
+}
+h1.PreviousCollection-sectionTitleH1--Pl3n {
+  letter-spacing: -0.05em;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  width: 100%;
+}
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: 10px;
+  color: white;
+  font-family: Clarkson_light;
+  --site-margin: 61px;
+  --heading-1-size-value: 4;
+  --normal-text-size-value: 1.2;
+  --body-font-size-value: 1.1;
+  --title-font-size-value: 1.2;
+  --button-font-size-value: 0.8;
+}
+.PreviousCollection-whiteText-maJjJ {
+  color: white;
+}
+.PreviousCollection-blackText-Oo0gV {
+  color: dark;
+}
+p {
+  line-height: 120%;
+  font-family: Clarkson;
+  text-wrap: pretty;
+  font-weight: 400;
+  font-size: calc((var(--normal-text-size-value) - 1) * 1.2vw + 14px);
+}
+.PreviousCollection-section-7sCFf {
+  width: 100vw;
+  padding: 11.1vw 3.7vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.PreviousCollection-titleText-RrWrB {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.PreviousCollection-titleText-RrWrB p {
+  width: 50%;
+  font-family: Clarkson;
+  font-weight: 300;
+  margin-top: 1.85vw;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PreviousCollection-titleText-RrWrB p {
+    width: 100%;
+    margin-top: 10vw !important;
+    margin-bottom: 7vw;
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+  }
+  .PreviousCollection-section-7sCFf {
+    padding: 20vw 6vw;
+  }
+  p {
+    font-size: calc(0.2 * calc(0.012 * 900px) + 14px);
+    line-height: 120%;
+  }
+}
+@media screen and (min-width: 768px), screen and (max-width: calc(2046.68px)) and (orientation: landscape) {
+  h1 {
+    font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 14px);
+  }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  body {
+    --site-margin: 20px;
+  }
+  body,
+  html {
+    font-size: 8px;
+  }
+  h1 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: -2.085px;
+  }
+  .PreviousCollection-section-7sCFf h1 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+  h1.PreviousCollection-sectionTitleH1--Pl3n {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+  }
+}
+.PreviousCollection-underlineAnimation-y4AN\+:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scalex(0);
+  height: 0.28rem;
+  bottom: 0;
+  left: 0;
+  top: 1.7rem;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  transform: scalex(1);
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PreviousCollection-underlineAnimation-y4AN\+:after {
+    height: 1.5px !important;
+  }
+}
+.PreviousCollection-underlineAnimation-y4AN\+:hover:after {
+  animation-name: PreviousCollection-lineChange-oEzZv;
+  animation-duration: 0.4s;
+  /*transform: scaleX(1);*/
+  transform-origin: bottom left;
+}
+@keyframes PreviousCollection-lineChange-oEzZv {
+  0% {
+    transform: scaleX(1);
+  }
+  20% {
+    transform: scaleX(0.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*close button in pop ups*/
+.PreviousCollection-close-19x4\+ {
+  position: absolute;
+  top: 6.1rem;
+  right: 6.1rem;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  /* 18px */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PreviousCollection-underlineAnimation-y4AN\+:after {
+    height: 0.15rem;
+  }
+  section:last-of-type {
+    padding-bottom: 18vmax;
+  }
+}
+/*global fade in animation*/
+.auto-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  transition-delay: 0.00689655s;
+}
+.auto-fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+.PreviousCollection-titleText-RrWrB {
+  margin-bottom: 20px;
+}
+.PreviousCollection-imageWrapper-KRq-Q {
+  width: var(--image-wrapper-width, 31%);
+  /* 默认值为 31% */
+}
+.PreviousCollection-imageGrid-LPKjv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: var(--grid-column-width) 0;
+}
+.PreviousCollection-imageWrapper-KRq-Q {
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: 31%;
+}
+.PreviousCollection-imageWrapper-KRq-Q:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.PreviousCollection-imageWrapper-KRq-Q a {
+  display: block;
+  text-decoration: none;
+}
+.PreviousCollection-image-nprJj {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.twoImageStyle .PreviousCollection-imageWrapper-KRq-Q {
+  width: 44%;
+  /* 针对全局类名 */
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .PreviousCollection-imageGrid-LPKjv {
+    flex-direction: column;
+  }
+  .PreviousCollection-imageWrapper-KRq-Q,
+  .twoImageStyle .PreviousCollection-imageWrapper-KRq-Q {
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+  }
+  .PreviousCollection-section-7sCFf {
+    padding-left: 6vw;
+    padding-right: 6vw;
+    padding-bottom: 18vw;
+  }
+  .PreviousCollection-image-nprJj {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/**
+Return grid column + gutter spacing. Gutters are optional to pass in, and
+default to number of columns passed in minus one. Returns a variable, so the
+result can be used with any property.
+
+Usage (the brackets at the end of the mixin calls are required, and are used to
+retrieve @result, using Unnamed Lookups in Less):
+
+width: .grid-column(3)[]; // 3 columns, 2 gutters
+margin-right: .grid-column(6, 6)[]; // 6 columns, 6 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no gutters. Removes the
+gutters from the calculation so that the result is just the column width.
+
+Usage:
+
+width: .grid-column(3, 0)[]; // 3 columns, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there is only one column and no
+gutters. Returns just the --grid-column-width variable.
+
+Usage:
+
+width: .grid-column(1, 0)[]; // 1 column, 0 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns. Removes the
+columns from the calculation so that the result is just the gutter width.
+
+Usage:
+
+margin-right: .grid-column(0, 3)[]; // 0 columns, 3 gutters
+**/
+/**
+Mixin guard of the .grid-column mixin for when there are no columns and only one
+gutter. Returns just the --grid-gutter-width variable.
+
+Usage:
+
+margin-right: .grid-column(0, 1)[]; // 0 columns, 1 gutter
+**/
+/**
+  * Linearly scale a font size based on viewport width, from a minimum to a
+  * maximum font-size.
+  *
+  * https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  *
+  * @param {number} minFontSize - Minimum font size in pixels
+  * @param {number} maxFontSize - Maximum font size in pixels
+  * @param {number} minViewportWidth - Minimum viewport width in pixels
+  * @param {number} maxViewportWidth - Maximum viewport width in pixels
+  */
+@font-face {
+  font-family: Clarkson;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64f8868cf6b9251821f4bf2b/1694008973026/Clarkson-BookProduct.otf);
+}
+@font-face {
+  font-family: Clarkson_light;
+  src: url(https://static1.squarespace.com/static/64ee6291a85d407fa4a57514/t/64ff2963b7fb166cc9647d2f/1694443875850/Clarkson-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_med;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/6501e73ace1a3b1cb0195580/1696282733811/Clarkson-Medium.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_light;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66db2c8e21ae7309f523a903/1725639822943/ClarksonSerif-Light.otf);
+}
+@font-face {
+  font-family: Clarkson_serif_regular;
+  src: url(https://static1.squarespace.com/static/64ff65b6f8197b243d3c8ee2/t/66f31cb91c8fe82742d055b1/1727208633499/ClarksonSerif-Regular.otf);
+}
 .index-one-grid-g1B8c {
   width: 3.7vw;
 }
@@ -6288,6 +6606,79 @@ p {
   }
   .ImageCard-imageCard-7ftJc .ImageCard-textContainer-QRsKq .ImageCard-description--MUJG {
     margin-top: 8%;
+  }
+}
+
+.ApplyCritique-imageCard-jgPac {
+  display: flex;
+  align-items: center;
+  background: white;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  padding: 15% 4%;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-imageContainer-hsq1R {
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-imageContainer-hsq1R picture {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN .ApplyCritique-description-3gOmT {
+  font-size: 14px;
+  flex: 1;
+  text-align: center;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN h1 {
+  padding-bottom: 20px;
+  font-size: 80px;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN p {
+  padding-bottom: 10px;
+}
+.ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN a {
+  display: inline-block;
+  color: #808080;
+  font-size: 14px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  text-underline-offset: 2.8px;
+  letter-spacing: 0.14px;
+  padding-top: 12%;
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .ApplyCritique-imageCard-jgPac {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20vw 6vw;
+  }
+  .ApplyCritique-imageCard-jgPac .ApplyCritique-imageContainer-hsq1R {
+    width: 65%;
+  }
+  .ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN {
+    width: 100%;
+  }
+  .ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN .ApplyCritique-pageIndex-zhI3U {
+    margin-right: 0;
+    /* 与描述文字间距 */
+    position: unset !important;
+    left: unset !important;
+  }
+  .ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN h1 {
+    font-size: 50px;
+  }
+  .ApplyCritique-imageCard-jgPac .ApplyCritique-textContainer-QPkMN a {
+    padding: 0;
+    padding: 5% 0 8% 0;
   }
 }
 

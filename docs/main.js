@@ -5150,9 +5150,52 @@ function AnimatedPage(_ref) {
 /*!********************************************************!*\
   !*** ./src/components/ApplyCritique/ApplyCritique.tsx ***!
   \********************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/sili/Documents/GitHub/collection-creative-sandbox/src/components/ApplyCritique/ApplyCritique.tsx: Expected corresponding JSX closing tag for <Link>. (29:48)\n\n\u001b[0m \u001b[90m 27 |\u001b[39m               \u001b[33mThe\u001b[39m application window has closed\u001b[33m.\u001b[39m\n \u001b[90m 28 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mp\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 29 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mLink\u001b[39m to\u001b[33m=\u001b[39m\u001b[32m\"/rules-apply\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33m*\u001b[39m\u001b[33mRules\u001b[39m apply\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33ma\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 30 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 31 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 32 |\u001b[39m\u001b[0m\n    at constructor (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:359:19)\n    at TypeScriptParserMixin.raise (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:3266:19)\n    at TypeScriptParserMixin.jsxParseElementAt (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6781:16)\n    at TypeScriptParserMixin.jsxParseElementAt (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6752:32)\n    at TypeScriptParserMixin.jsxParseElementAt (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6752:32)\n    at TypeScriptParserMixin.jsxParseElementAt (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6752:32)\n    at TypeScriptParserMixin.jsxParseElementAt (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6752:32)\n    at TypeScriptParserMixin.jsxParseElement (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6803:17)\n    at TypeScriptParserMixin.parseExprAtom (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6813:19)\n    at TypeScriptParserMixin.parseExprSubscripts (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10615:23)\n    at TypeScriptParserMixin.parseUpdate (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10600:21)\n    at TypeScriptParserMixin.parseMaybeUnary (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10580:23)\n    at TypeScriptParserMixin.parseMaybeUnary (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9489:18)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10434:61)\n    at TypeScriptParserMixin.parseExprOps (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10439:23)\n    at TypeScriptParserMixin.parseMaybeConditional (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10416:23)\n    at TypeScriptParserMixin.parseMaybeAssign (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10379:21)\n    at /Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9427:39\n    at TypeScriptParserMixin.tryParse (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:3604:20)\n    at TypeScriptParserMixin.parseMaybeAssign (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9427:18)\n    at /Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10349:39\n    at TypeScriptParserMixin.allowInAnd (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11951:12)\n    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10349:17)\n    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11210:28)\n    at TypeScriptParserMixin.parseExprAtom (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10863:23)\n    at TypeScriptParserMixin.parseExprAtom (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6818:20)\n    at TypeScriptParserMixin.parseExprSubscripts (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10615:23)\n    at TypeScriptParserMixin.parseUpdate (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10600:21)\n    at TypeScriptParserMixin.parseMaybeUnary (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10580:23)\n    at TypeScriptParserMixin.parseMaybeUnary (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9489:18)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10434:61)\n    at TypeScriptParserMixin.parseExprOps (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10439:23)\n    at TypeScriptParserMixin.parseMaybeConditional (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10416:23)\n    at TypeScriptParserMixin.parseMaybeAssign (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10379:21)\n    at TypeScriptParserMixin.parseMaybeAssign (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9438:20)\n    at TypeScriptParserMixin.parseExpressionBase (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10333:23)\n    at /Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10329:39\n    at TypeScriptParserMixin.allowInAnd (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11946:16)\n    at TypeScriptParserMixin.parseExpression (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10329:17)\n    at TypeScriptParserMixin.parseReturnStatement (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:12636:28)\n    at TypeScriptParserMixin.parseStatementContent (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:12288:21)\n    at TypeScriptParserMixin.parseStatementContent (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9163:18)\n    at TypeScriptParserMixin.parseStatementLike (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:12257:17)\n    at TypeScriptParserMixin.parseStatementListItem (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:12237:17)\n    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:12810:61)\n    at TypeScriptParserMixin.parseBlockBody (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:12803:10)\n    at TypeScriptParserMixin.parseBlock (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:12791:10)\n    at TypeScriptParserMixin.parseFunctionBody (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11634:24)\n    at TypeScriptParserMixin.parseArrowExpression (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11609:10)\n    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11222:12)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ApplyCritique_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ApplyCritique.less */ "./src/components/ApplyCritique/ApplyCritique.less");
+/* harmony import */ var _components_Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Image */ "./src/components/Image/index.tsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+
+
+
+
+var ApplyCritique = function ApplyCritique(_ref) {
+  var imageSrc = _ref.imageSrc,
+    text = _ref.text,
+    dataTheme = _ref["data-theme"];
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
+    "data-theme": dataTheme
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: _ApplyCritique_less__WEBPACK_IMPORTED_MODULE_1__["default"].imageCard
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: _ApplyCritique_less__WEBPACK_IMPORTED_MODULE_1__["default"].textContainer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    className: _ApplyCritique_less__WEBPACK_IMPORTED_MODULE_1__["default"].applyTitle
+  }, "Apply for a Critique"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: _ApplyCritique_less__WEBPACK_IMPORTED_MODULE_1__["default"].description
+  }, "An opportunity for an exclusive 20-minute session with ", text, " for a one-on-one virtual review of your photography portfolio."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: _ApplyCritique_less__WEBPACK_IMPORTED_MODULE_1__["default"].description
+  }, "The application window has closed."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+    to: "/rules-apply"
+  }, "*Rules apply"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: _ApplyCritique_less__WEBPACK_IMPORTED_MODULE_1__["default"].imageContainer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: _ApplyCritique_less__WEBPACK_IMPORTED_MODULE_1__["default"].heroImage,
+    src: imageSrc,
+    alt: "Image card",
+    loading: "eager",
+    width: 1440,
+    height: 900
+  }))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ApplyCritique);
 
 /***/ }),
 
@@ -6735,9 +6778,77 @@ var ImageCard = function ImageCard(_ref) {
 /*!******************************************************************!*\
   !*** ./src/components/PreviousCollection/PreviousCollection.tsx ***!
   \******************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/sili/Documents/GitHub/collection-creative-sandbox/src/components/PreviousCollection/PreviousCollection.tsx: Expected corresponding JSX closing tag for <Link>. (65:12)\n\n\u001b[0m \u001b[90m 63 |\u001b[39m \u001b[90m                }}\u001b[39m\n \u001b[90m 64 |\u001b[39m \u001b[90m              /> */\u001b[39m}\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33ma\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 67 |\u001b[39m         ))}\n \u001b[90m 68 |\u001b[39m       \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at constructor (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:359:19)\n    at TypeScriptParserMixin.raise (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:3266:19)\n    at TypeScriptParserMixin.jsxParseElementAt (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6781:16)\n    at TypeScriptParserMixin.jsxParseElementAt (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6752:32)\n    at TypeScriptParserMixin.jsxParseElement (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6803:17)\n    at TypeScriptParserMixin.parseExprAtom (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6813:19)\n    at TypeScriptParserMixin.parseExprSubscripts (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10615:23)\n    at TypeScriptParserMixin.parseUpdate (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10600:21)\n    at TypeScriptParserMixin.parseMaybeUnary (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10580:23)\n    at TypeScriptParserMixin.parseMaybeUnary (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9489:18)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10434:61)\n    at TypeScriptParserMixin.parseExprOps (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10439:23)\n    at TypeScriptParserMixin.parseMaybeConditional (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10416:23)\n    at TypeScriptParserMixin.parseMaybeAssign (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10379:21)\n    at /Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9427:39\n    at TypeScriptParserMixin.tryParse (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:3604:20)\n    at TypeScriptParserMixin.parseMaybeAssign (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9427:18)\n    at /Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10349:39\n    at TypeScriptParserMixin.allowInAnd (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11951:12)\n    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10349:17)\n    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11210:28)\n    at TypeScriptParserMixin.parseExprAtom (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10863:23)\n    at TypeScriptParserMixin.parseExprAtom (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6818:20)\n    at TypeScriptParserMixin.parseExprSubscripts (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10615:23)\n    at TypeScriptParserMixin.parseUpdate (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10600:21)\n    at TypeScriptParserMixin.parseMaybeUnary (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10580:23)\n    at TypeScriptParserMixin.parseMaybeUnary (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9489:18)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10434:61)\n    at TypeScriptParserMixin.parseExprOps (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10439:23)\n    at TypeScriptParserMixin.parseMaybeConditional (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10416:23)\n    at TypeScriptParserMixin.parseMaybeAssign (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10379:21)\n    at TypeScriptParserMixin.parseMaybeAssign (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9438:20)\n    at TypeScriptParserMixin.parseFunctionBody (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11627:24)\n    at TypeScriptParserMixin.parseArrowExpression (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11609:10)\n    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11222:12)\n    at TypeScriptParserMixin.parseExprAtom (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10863:23)\n    at TypeScriptParserMixin.parseExprAtom (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:6818:20)\n    at TypeScriptParserMixin.parseExprSubscripts (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10615:23)\n    at TypeScriptParserMixin.parseUpdate (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10600:21)\n    at TypeScriptParserMixin.parseMaybeUnary (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10580:23)\n    at TypeScriptParserMixin.parseMaybeUnary (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9489:18)\n    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10434:61)\n    at TypeScriptParserMixin.parseExprOps (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10439:23)\n    at TypeScriptParserMixin.parseMaybeConditional (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10416:23)\n    at TypeScriptParserMixin.parseMaybeAssign (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10379:21)\n    at TypeScriptParserMixin.parseMaybeAssign (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:9438:20)\n    at /Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10349:39\n    at TypeScriptParserMixin.allowInAnd (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11951:12)\n    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:10349:17)\n    at TypeScriptParserMixin.parseExprListItem (/Users/sili/Documents/GitHub/collection-creative-sandbox/node_modules/@babel/parser/lib/index.js:11709:18)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _PreviousCollection_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PreviousCollection.less */ "./src/components/PreviousCollection/PreviousCollection.less");
+/* harmony import */ var _components_Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Image */ "./src/components/Image/index.tsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+
+
+
+var _excluded = ["data-theme", "backgroundColor", "textColor", "images"];
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+
+
+
+
+var PreviousCollection = function PreviousCollection(_ref) {
+  var dataTheme = _ref["data-theme"],
+    _ref$backgroundColor = _ref.backgroundColor,
+    backgroundColor = _ref$backgroundColor === void 0 ? "black" : _ref$backgroundColor,
+    _ref$textColor = _ref.textColor,
+    textColor = _ref$textColor === void 0 ? "white" : _ref$textColor,
+    _ref$images = _ref.images,
+    images = _ref$images === void 0 ? [] : _ref$images,
+    props = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__["default"])(_ref, _excluded);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("section", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    "data-theme": dataTheme
+  }, props, {
+    // Pass extra props to the root section
+    className: "".concat(_PreviousCollection_less__WEBPACK_IMPORTED_MODULE_4__["default"].section, " ").concat(props.className || "") // 将 props.className 添加到根元素
+    ,
+    style: _objectSpread({
+      backgroundColor: backgroundColor,
+      color: textColor
+    }, props.style)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("div", {
+    className: _PreviousCollection_less__WEBPACK_IMPORTED_MODULE_4__["default"].titleText
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("h1", {
+    className: _PreviousCollection_less__WEBPACK_IMPORTED_MODULE_4__["default"].sectionTitleH1,
+    style: {
+      color: textColor
+    }
+  }, "Previous Collection")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("div", {
+    className: _PreviousCollection_less__WEBPACK_IMPORTED_MODULE_4__["default"].imageGrid
+  }, images.map(function (item, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement("div", {
+      key: index,
+      className: _PreviousCollection_less__WEBPACK_IMPORTED_MODULE_4__["default"].imageWrapper
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+      to: item.link,
+      rel: "noopener noreferrer"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default().createElement(_components_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      className: _PreviousCollection_less__WEBPACK_IMPORTED_MODULE_4__["default"].image,
+      src: item.imageSrc,
+      alt: "Previous Collection ".concat(index + 1),
+      loading: "eager",
+      width: 1440,
+      height: 900
+    })));
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PreviousCollection);
 
 /***/ }),
 
@@ -8802,6 +8913,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import "./defaults.css";
+// import "./globals.css";
+
 var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.createHashRouter)(_routes__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Suspense), {
@@ -10350,6 +10464,22 @@ var WilliamPage = function WilliamPage() {
 
 /***/ }),
 
+/***/ "./src/components/ApplyCritique/ApplyCritique.less":
+/*!*********************************************************!*\
+  !*** ./src/components/ApplyCritique/ApplyCritique.less ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"imageCard":"ApplyCritique-imageCard-jgPac","imageContainer":"ApplyCritique-imageContainer-hsq1R","textContainer":"ApplyCritique-textContainer-QPkMN","description":"ApplyCritique-description-3gOmT","pageIndex":"ApplyCritique-pageIndex-zhI3U"});
+
+/***/ }),
+
 /***/ "./src/components/Cta/UnderlineCTA.less":
 /*!**********************************************!*\
   !*** ./src/components/Cta/UnderlineCTA.less ***!
@@ -10603,6 +10733,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"imageCard":"ImageCard-imageCard-7ftJc","imageContainer":"ImageCard-imageContainer-sE1k-","textContainer":"ImageCard-textContainer-QRsKq","pageIndex":"ImageCard-pageIndex-Jpo-r","description":"ImageCard-description--MUJG"});
+
+/***/ }),
+
+/***/ "./src/components/PreviousCollection/PreviousCollection.less":
+/*!*******************************************************************!*\
+  !*** ./src/components/PreviousCollection/PreviousCollection.less ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"one-grid":"PreviousCollection-one-grid-FEfFX","sectionTitleH1":"PreviousCollection-sectionTitleH1--Pl3n","whiteText":"PreviousCollection-whiteText-maJjJ","blackText":"PreviousCollection-blackText-Oo0gV","section":"PreviousCollection-section-7sCFf","titleText":"PreviousCollection-titleText-RrWrB","underlineAnimation":"PreviousCollection-underlineAnimation-y4AN+","lineChange":"PreviousCollection-lineChange-oEzZv","close":"PreviousCollection-close-19x4+","imageWrapper":"PreviousCollection-imageWrapper-KRq-Q","imageGrid":"PreviousCollection-imageGrid-LPKjv","image":"PreviousCollection-image-nprJj"});
 
 /***/ }),
 
@@ -65678,8 +65824,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages */ "./src/pages/index.tsx");
 /* harmony import */ var _dev_DevApp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dev/DevApp */ "./src/dev/DevApp/index.tsx");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module './defaults.css'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-Object(function webpackMissingModule() { var e = new Error("Cannot find module './globals.css'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 // // ///<reference types="webpack-env" />
 
 // // import React from "react";
@@ -65736,7 +65880,8 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
 
 
 
-
+// import "./styles/style-guide/defaults.css";
+// import "./styles/style-guide/globals.css";
 
 if (false) {}
 var devMount = document.getElementById("sandbox-standalone-devapp");
