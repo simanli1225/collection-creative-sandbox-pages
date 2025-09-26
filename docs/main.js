@@ -5213,24 +5213,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _UnderlineCTA_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UnderlineCTA.less */ "./src/components/Cta/UnderlineCTA.less");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+
 
 
 var UnderlineCTA = function UnderlineCTA(_ref) {
   var text = _ref.text,
     link = _ref.link,
     _ref$theme = _ref.theme,
-    theme = _ref$theme === void 0 ? 'light' : _ref$theme,
+    theme = _ref$theme === void 0 ? "light" : _ref$theme,
     className = _ref.className,
     _ref$openInNewTab = _ref.openInNewTab,
     openInNewTab = _ref$openInNewTab === void 0 ? false : _ref$openInNewTab;
-  var themeClass = theme === 'dark' ? _UnderlineCTA_less__WEBPACK_IMPORTED_MODULE_1__["default"].dark : _UnderlineCTA_less__WEBPACK_IMPORTED_MODULE_1__["default"].light;
+  var themeClass = theme === "dark" ? _UnderlineCTA_less__WEBPACK_IMPORTED_MODULE_1__["default"].dark : _UnderlineCTA_less__WEBPACK_IMPORTED_MODULE_1__["default"].light;
+  var isInternal = !!link && link.startsWith("/");
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "".concat(_UnderlineCTA_less__WEBPACK_IMPORTED_MODULE_1__["default"].underlineCTA, " ").concat(themeClass, " ").concat(className)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, isInternal ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+    to: link
+  }, text) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: link,
-    target: openInNewTab ? '_blank' : '_self',
-    rel: openInNewTab ? 'noopener noreferrer' : undefined
-  }, ' ', text));
+    target: openInNewTab ? "_blank" : "_self",
+    rel: openInNewTab ? "noopener noreferrer" : undefined
+  }, text));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UnderlineCTA);
 
@@ -5821,6 +5826,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var pageToSectionSlug = {
+  "Jeff Koons": "jeff",
+  "Rick Rubin": "rick",
+  Magnum: "magnum",
+  Björk: "bjork"
+};
 var Header = function Header(_ref) {
   var page = _ref.page,
     theme = _ref.theme;
@@ -5829,6 +5840,8 @@ var Header = function Header(_ref) {
     menuVisible = _useState2[0],
     setMenuVisible = _useState2[1]; // Manage menu visibility state
 
+  var sectionSlug = page ? pageToSectionSlug[page] : undefined;
+  var toHome = sectionSlug ? "/?section=".concat(sectionSlug) : "/";
   var handleMenuOpen = function handleMenuOpen() {
     return setMenuVisible(true);
   }; // Open menu
@@ -5841,7 +5854,8 @@ var Header = function Header(_ref) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("header", {
     className: "".concat(_Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].header, " ").concat(_Header_less__WEBPACK_IMPORTED_MODULE_2__["default"][theme], " header")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-    to: "/",
+    to: toHome,
+    replace: true,
     className: _Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].preTopLeft
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("span", {
     className: _Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].logoText
@@ -8540,105 +8554,115 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DotsNavigation_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DotsNavigation.less */ "./src/pages/home/DotsNavigation.less");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 
+// DotsNavigation.tsx
 
 
 
 
-// const videoLinks = [
-//   "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_LoadingAnimation_JK1.mp4",
-//   "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_RR_LoadingSequence_1.mp4",
-//   "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_Magnum_LoadingSequence.mp4",
-//   "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_Bjork_LoadingSequence.mp4",
-// ];
+// 1) 配置：索引 ↔ slug 的双向映射
+var sectionSlugs = ["jeff", "rick", "magnum", "bjork"];
+var slugToIndex = {
+  jeff: 0,
+  rick: 1,
+  magnum: 2,
+  bjork: 3
+};
 var videoLinks = ["https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_LoadingAnimation_JK1.mp4", "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_RR_LoadingSequence_1.mp4", "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_Magnum_LoadingSequence.mp4", "https://storage.googleapis.com/fdfc-www-prod-001-media-www/images/pages/creative-sandbox/collections/landing-page/DotsNavigation/Co_Bjork_LoadingSequence.mp4"];
 var sectionTitles = ["Jeff Koons", "Rick Rubin", "Magnum", "Björk"];
 var enterLinks = ["/jeffkoons", "/rickrubin", "/magnum", "/bjork"];
 var App = function App() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var totalSections = videoLinks.length;
+  var isScrolling = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(false);
+  var wheelDeltaSum = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(0);
+
+  // 2) 读取 / 写入 ?section=
+  var _useSearchParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useSearchParams)(),
+    _useSearchParams2 = (0,_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useSearchParams, 2),
+    searchParams = _useSearchParams2[0],
+    setSearchParams = _useSearchParams2[1];
+  var initialSlug = (searchParams.get("section") || "").toLowerCase();
+  var initialIndex = initialSlug in slugToIndex ? slugToIndex[initialSlug] : 0;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(initialIndex),
     _useState2 = (0,_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
     currentSection = _useState2[0],
-    setCurrentSection = _useState2[1]; // Current active section
-  var totalSections = videoLinks.length; // Total number of sections
+    setCurrentSection = _useState2[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    var s = (searchParams.get("section") || "").toLowerCase();
+    if (s in slugToIndex) {
+      var idx = slugToIndex[s];
+      if (idx !== currentSection) setCurrentSection(idx);
+    }
+    // 只在 searchParams 或 currentSection 变化时检查
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
-  var isScrolling = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(false); // Flag to prevent multiple scrolls
-  var wheelDeltaSum = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(0); // Sum of wheel delta for scroll noise control
+  // 4) 把当前 section 写回 URL（这样刷新/分享链接都能还原）
+  var syncUrl = function syncUrl(index) {
+    var slug = sectionSlugs[index];
+    var params = new URLSearchParams(searchParams);
+    params.set("section", slug);
+    setSearchParams(params, {
+      replace: true
+    }); // 避免堆栈过长
+  };
 
-  var touchStartY = 0; // Start position for touch
-  var touchEndY = 0; // End position for touch
-  var swipeThreshold = 50; // Threshold to detect swipe
-
-  // Function to scroll to a specific section
+  // 5) 切换 section 的统一方法
+  var goToSection = function goToSection(index) {
+    setCurrentSection(index);
+    syncUrl(index);
+  };
   function scrollToSection(direction) {
-    if (isScrolling.current) {
-      return;
-    } // Exit if already scrolling
-
-    isScrolling.current = true; // Lock scrolling
-    setCurrentSection(function (prevSection) {
-      var nextSection = (prevSection + direction + totalSections) % totalSections; // Circular navigation
-      return nextSection;
+    if (isScrolling.current) return;
+    isScrolling.current = true;
+    setCurrentSection(function (prev) {
+      var next = (prev + direction + totalSections) % totalSections;
+      // setState 是批量的，所以用微任务再同步 URL，避免取到旧值
+      queueMicrotask(function () {
+        return syncUrl(next);
+      });
+      return next;
     });
-
-    // Unlock scrolling after a timeout (matches CSS transition duration)
     setTimeout(function () {
       isScrolling.current = false;
-      wheelDeltaSum.current = 0; // Reset wheel delta sum
+      wheelDeltaSum.current = 0;
     }, 900);
   }
-
-  // Function to handle dot click navigation
   var handleDotClick = function handleDotClick(index) {
     if (currentSection !== index && !isScrolling.current) {
-      setCurrentSection(index); // Set the current section
+      goToSection(index);
     }
   };
-  // Initialize event listeners for scrolling, keyboard, and touch
+
+  // 6) 交互事件（保持你的原逻辑）
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    // Handle scroll events
     var handleWheel = function handleWheel(event) {
-      if (isScrolling.current) {
-        return;
-      } // Exit if scrolling is locked
-      wheelDeltaSum.current += event.deltaY; // Accumulate wheel delta
-
-      var threshold = 50; // Minimum scroll threshold to trigger section change
+      if (isScrolling.current) return;
+      wheelDeltaSum.current += event.deltaY;
+      var threshold = 50;
       if (Math.abs(wheelDeltaSum.current) >= threshold) {
-        var direction = wheelDeltaSum.current > 0 ? 1 : -1; // Determine direction
+        var direction = wheelDeltaSum.current > 0 ? 1 : -1;
         scrollToSection(direction);
-        wheelDeltaSum.current = 0; // Reset wheel delta sum
+        wheelDeltaSum.current = 0;
       }
     };
-
-    // Handle keyboard arrow controls
     var handleKeyDown = function handleKeyDown(event) {
-      if (isScrolling.current) {
-        return;
-      } // Exit if scrolling is locked
-      if (event.key === "ArrowDown") {
-        scrollToSection(1);
-      } // Scroll down
-      if (event.key === "ArrowUp") {
-        scrollToSection(-1);
-      } // Scroll up
+      if (isScrolling.current) return;
+      if (event.key === "ArrowDown") scrollToSection(1);
+      if (event.key === "ArrowUp") scrollToSection(-1);
     };
-
-    // Handle touch start on mobile
+    var touchStartY = 0;
+    var swipeThreshold = 50;
     var handleTouchStart = function handleTouchStart(event) {
-      touchStartY = event.changedTouches[0].screenY; // Record starting touch position
+      touchStartY = event.changedTouches[0].screenY;
     };
-
-    // Handle touch end and detect swipe direction
     var handleTouchEnd = function handleTouchEnd(event) {
-      touchEndY = event.changedTouches[0].screenY; // Record ending touch position
-      var touchDistance = touchStartY - touchEndY; // Calculate swipe distance
-
-      if (Math.abs(touchDistance) > swipeThreshold) {
-        var direction = touchDistance > 0 ? 1 : -1; // Determine swipe direction
+      var touchEndY = event.changedTouches[0].screenY;
+      var distance = touchStartY - touchEndY;
+      if (Math.abs(distance) > swipeThreshold) {
+        var direction = distance > 0 ? 1 : -1;
         scrollToSection(direction);
       }
     };
-
-    // Add event listeners
     window.addEventListener("wheel", handleWheel, {
       passive: false
     });
@@ -8649,14 +8673,13 @@ var App = function App() {
     window.addEventListener("touchend", handleTouchEnd, {
       passive: true
     });
-
-    // Cleanup event listeners on unmount
     return function () {
       window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchend", handleTouchEnd);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: _DotsNavigation_less__WEBPACK_IMPORTED_MODULE_2__["default"].app
