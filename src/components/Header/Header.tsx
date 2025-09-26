@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import styles from './Header.less'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "./Header.less";
 
 interface pageName {
   page?: string;
-  theme: 'dark' | 'light';
+  theme: "dark" | "light";
 }
 
 const Header: React.FC<pageName> = ({ page, theme }) => {
-  const [menuVisible, setMenuVisible] = useState(false) // Manage menu visibility state
+  const [menuVisible, setMenuVisible] = useState(false); // Manage menu visibility state
 
-  const handleMenuOpen = () => setMenuVisible(true) // Open menu
-  const handleMenuClose = () => setMenuVisible(false) // Close menu
+  const handleMenuOpen = () => setMenuVisible(true); // Open menu
+  const handleMenuClose = () => setMenuVisible(false); // Close menu
 
   // when LanguagePicker opens hide Header
 
@@ -21,7 +21,7 @@ const Header: React.FC<pageName> = ({ page, theme }) => {
       <Link to="/" className={styles.preTopLeft}>
         <span className={styles.logoText}>Co</span> {/* Logo text */}
         <div className={styles.logoDash}></div> {/* Small dash */}
-        {page && <span className={styles.pageText}>{page}</span>}{' '}
+        {page && <span className={styles.pageText}>{page}</span>}{" "}
         {/* Render only if page is provided */}
       </Link>
 
@@ -29,7 +29,7 @@ const Header: React.FC<pageName> = ({ page, theme }) => {
       <div
         className={styles.hamburger}
         onClick={() => {
-          handleMenuOpen()
+          handleMenuOpen();
         }}
         aria-expanded={false} // set false for now
         aria-label="Open menu"
@@ -40,7 +40,7 @@ const Header: React.FC<pageName> = ({ page, theme }) => {
 
       {/* Slide-out menu */}
       <div
-        className={`${styles.popUpMenu} ${menuVisible ? styles.slideIn : ''}`} // Add slide-in animation when visible
+        className={`${styles.popUpMenu} ${menuVisible ? styles.slideIn : ""}`} // Add slide-in animation when visible
       >
         {/* Close button */}
         <span className={styles.close} onClick={handleMenuClose}>
@@ -50,10 +50,10 @@ const Header: React.FC<pageName> = ({ page, theme }) => {
         {/* Menu content */}
         <div className={styles.menuContent}>
           {[
-            { name: 'Jeff Koons', path: '/jeffkoons' },
-            { name: 'Rick Rubin', path: '/rickrubin' },
-            { name: 'Magnum', path: '/magnum' },
-            { name: 'Björk', path: '/bjork' },
+            { name: "Jeff Koons", path: "/jeffkoons" },
+            { name: "Rick Rubin", path: "/rickrubin" },
+            { name: "Magnum", path: "/magnum" },
+            { name: "Björk", path: "/bjork" },
           ].map((item, index) => (
             <div className={styles.menuItem} key={index}>
               <Link to={item.path} className={styles.menuLink}>
@@ -70,7 +70,7 @@ const Header: React.FC<pageName> = ({ page, theme }) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
