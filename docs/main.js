@@ -5734,7 +5734,7 @@ var Footer = function Footer(_ref) {
     rel: "noopener noreferrer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_components_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: _Footer_less__WEBPACK_IMPORTED_MODULE_3__["default"].heroImage,
-    src: "/collections/landing-page/</Link>.png",
+    src: "/collections/landing-page/black-logo.png",
     alt: "",
     loading: "eager",
     width: 1440,
@@ -5849,7 +5849,7 @@ var Header = function Header(_ref) {
     className: _Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].logoDash
   }), " ", page && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("span", {
     className: _Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].pageText
-  }, page), ' '), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+  }, page), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: _Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].hamburger,
     onClick: function onClick() {
       handleMenuOpen();
@@ -5858,24 +5858,24 @@ var Header = function Header(_ref) {
     ,
     "aria-label": "Open menu"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    className: "".concat(_Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].popUpMenu, " ").concat(menuVisible ? _Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].slideIn : '') // Add slide-in animation when visible
+    className: "".concat(_Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].popUpMenu, " ").concat(menuVisible ? _Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].slideIn : "") // Add slide-in animation when visible
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("span", {
     className: _Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].close,
     onClick: handleMenuClose
   }, "Close"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: _Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].menuContent
   }, [{
-    name: 'Jeff Koons',
-    path: '/jeffkoons'
+    name: "Jeff Koons",
+    path: "/jeffkoons"
   }, {
-    name: 'Rick Rubin',
-    path: '/rickrubin'
+    name: "Rick Rubin",
+    path: "/rickrubin"
   }, {
-    name: 'Magnum',
-    path: '/magnum'
+    name: "Magnum",
+    path: "/magnum"
   }, {
-    name: 'Björk',
-    path: '/bjork'
+    name: "Björk",
+    path: "/bjork"
   }].map(function (item, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
       className: _Header_less__WEBPACK_IMPORTED_MODULE_2__["default"].menuItem,
@@ -65848,13 +65848,13 @@ var __webpack_exports__ = {};
   !*** ./src/index.tsx ***!
   \***********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages */ "./src/pages/index.tsx");
-/* harmony import */ var _dev_DevApp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dev/DevApp */ "./src/dev/DevApp/index.tsx");
-/* harmony import */ var _styles_style_guide_defaults_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/style-guide/defaults.less */ "./src/styles/style-guide/defaults.less");
-/* harmony import */ var _styles_style_guide_globals_less__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/style-guide/globals.less */ "./src/styles/style-guide/globals.less");
+/* harmony import */ var _styles_style_guide_defaults_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style-guide/defaults.less */ "./src/styles/style-guide/defaults.less");
+/* harmony import */ var _styles_style_guide_globals_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/style-guide/globals.less */ "./src/styles/style-guide/globals.less");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages */ "./src/pages/index.tsx");
+/* harmony import */ var _dev_DevApp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dev/DevApp */ "./src/dev/DevApp/index.tsx");
 // // ///<reference types="webpack-env" />
 
 // // import React from "react";
@@ -65912,15 +65912,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 if (false) {}
 var devMount = document.getElementById("sandbox-standalone-devapp");
 var rootEl = document.getElementById("root");
 if ( true && devMount) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_dev_DevApp__WEBPACK_IMPORTED_MODULE_3__["default"], null), devMount);
+  react_dom__WEBPACK_IMPORTED_MODULE_3__.render(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_dev_DevApp__WEBPACK_IMPORTED_MODULE_5__["default"], null), devMount);
 } else {
   if (!rootEl) throw new Error('Missing <div id="root"></div> in index.html');
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages__WEBPACK_IMPORTED_MODULE_2__["default"], null)), rootEl);
+  react_dom__WEBPACK_IMPORTED_MODULE_3__.render(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement((react__WEBPACK_IMPORTED_MODULE_2___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_pages__WEBPACK_IMPORTED_MODULE_4__["default"], null)), rootEl);
 }
 })();
 
